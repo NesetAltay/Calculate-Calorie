@@ -1,0 +1,402 @@
+﻿
+namespace CalorieCalculate.Forms
+{
+    partial class KayitOl
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KayitOl));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dtpBirthdate = new KLCToolbox.KLCControls.KLCDatePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPassword2 = new KLCToolbox.KLCControls.KLCTextBox();
+            this.txtPassword = new KLCToolbox.KLCControls.KLCTextBox();
+            this.txtEmail = new KLCToolbox.KLCControls.KLCTextBox();
+            this.txtWeight = new KLCToolbox.KLCControls.KLCTextBox();
+            this.txtHeight = new KLCToolbox.KLCControls.KLCTextBox();
+            this.btnLastName = new KLCToolbox.KLCControls.KLCTextBox();
+            this.btnName = new KLCToolbox.KLCControls.KLCTextBox();
+            this.btnIptalEt = new KLCToolbox.KLCControls.KLCButton();
+            this.btnKayitOl = new KLCToolbox.KLCControls.KLCButton();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.dtpBirthdate);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txtPassword2);
+            this.panel1.Controls.Add(this.txtPassword);
+            this.panel1.Controls.Add(this.txtEmail);
+            this.panel1.Controls.Add(this.txtWeight);
+            this.panel1.Controls.Add(this.txtHeight);
+            this.panel1.Controls.Add(this.btnLastName);
+            this.panel1.Controls.Add(this.btnName);
+            this.panel1.Controls.Add(this.btnIptalEt);
+            this.panel1.Controls.Add(this.btnKayitOl);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(332, 498);
+            this.panel1.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(61, 122);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(105, 15);
+            this.label7.TabIndex = 45;
+            this.label7.Text = "Doğum Tarihi :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(61, 234);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(49, 15);
+            this.label8.TabIndex = 44;
+            this.label8.Text = "Kilo :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(61, 183);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 15);
+            this.label6.TabIndex = 43;
+            this.label6.Text = "Boy :";
+            // 
+            // dtpBirthdate
+            // 
+            this.dtpBirthdate.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpBirthdate.KLCBorderColor = System.Drawing.Color.PaleVioletRed;
+            this.dtpBirthdate.KLCBorderSize = 0;
+            this.dtpBirthdate.KLCSkinColor = System.Drawing.Color.OrangeRed;
+            this.dtpBirthdate.KLCTextColor = System.Drawing.Color.Black;
+            this.dtpBirthdate.Location = new System.Drawing.Point(61, 144);
+            this.dtpBirthdate.MinimumSize = new System.Drawing.Size(4, 35);
+            this.dtpBirthdate.Name = "dtpBirthdate";
+            this.dtpBirthdate.Size = new System.Drawing.Size(211, 35);
+            this.dtpBirthdate.TabIndex = 42;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(61, 401);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(105, 15);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "Şifre Tekrar :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(61, 347);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 15);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "Şifre :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(61, 293);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 15);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "E-mail :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(61, 68);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 15);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Soyad :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(61, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 15);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Ad :";
+            // 
+            // txtPassword2
+            // 
+            this.txtPassword2.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPassword2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPassword2.ForeColor = System.Drawing.Color.DimGray;
+            this.txtPassword2.KLCBorderColor = System.Drawing.Color.OrangeRed;
+            this.txtPassword2.KLCBorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtPassword2.KLCBorderRadius = 0;
+            this.txtPassword2.KLCBorderSize = 2;
+            this.txtPassword2.KLCMultiline = false;
+            this.txtPassword2.KLCPasswordChar = false;
+            this.txtPassword2.KLCPlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtPassword2.KLCPlaceholderText = "";
+            this.txtPassword2.KLCText = "";
+            this.txtPassword2.KLCUnderlinedStyle = false;
+            this.txtPassword2.Location = new System.Drawing.Point(61, 420);
+            this.txtPassword2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPassword2.Name = "txtPassword2";
+            this.txtPassword2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtPassword2.Size = new System.Drawing.Size(211, 31);
+            this.txtPassword2.TabIndex = 36;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPassword.ForeColor = System.Drawing.Color.DimGray;
+            this.txtPassword.KLCBorderColor = System.Drawing.Color.OrangeRed;
+            this.txtPassword.KLCBorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtPassword.KLCBorderRadius = 0;
+            this.txtPassword.KLCBorderSize = 2;
+            this.txtPassword.KLCMultiline = false;
+            this.txtPassword.KLCPasswordChar = false;
+            this.txtPassword.KLCPlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtPassword.KLCPlaceholderText = "";
+            this.txtPassword.KLCText = "";
+            this.txtPassword.KLCUnderlinedStyle = false;
+            this.txtPassword.Location = new System.Drawing.Point(61, 366);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtPassword.Size = new System.Drawing.Size(211, 31);
+            this.txtPassword.TabIndex = 35;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEmail.ForeColor = System.Drawing.Color.DimGray;
+            this.txtEmail.KLCBorderColor = System.Drawing.Color.OrangeRed;
+            this.txtEmail.KLCBorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtEmail.KLCBorderRadius = 0;
+            this.txtEmail.KLCBorderSize = 2;
+            this.txtEmail.KLCMultiline = false;
+            this.txtEmail.KLCPasswordChar = false;
+            this.txtEmail.KLCPlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtEmail.KLCPlaceholderText = "";
+            this.txtEmail.KLCText = "";
+            this.txtEmail.KLCUnderlinedStyle = false;
+            this.txtEmail.Location = new System.Drawing.Point(61, 312);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtEmail.Size = new System.Drawing.Size(211, 31);
+            this.txtEmail.TabIndex = 31;
+            // 
+            // txtWeight
+            // 
+            this.txtWeight.BackColor = System.Drawing.SystemColors.Window;
+            this.txtWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtWeight.ForeColor = System.Drawing.Color.DimGray;
+            this.txtWeight.KLCBorderColor = System.Drawing.Color.OrangeRed;
+            this.txtWeight.KLCBorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtWeight.KLCBorderRadius = 0;
+            this.txtWeight.KLCBorderSize = 2;
+            this.txtWeight.KLCMultiline = false;
+            this.txtWeight.KLCPasswordChar = false;
+            this.txtWeight.KLCPlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtWeight.KLCPlaceholderText = "";
+            this.txtWeight.KLCText = "";
+            this.txtWeight.KLCUnderlinedStyle = false;
+            this.txtWeight.Location = new System.Drawing.Point(61, 253);
+            this.txtWeight.Margin = new System.Windows.Forms.Padding(4);
+            this.txtWeight.Name = "txtWeight";
+            this.txtWeight.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtWeight.Size = new System.Drawing.Size(211, 31);
+            this.txtWeight.TabIndex = 34;
+            // 
+            // txtHeight
+            // 
+            this.txtHeight.BackColor = System.Drawing.SystemColors.Window;
+            this.txtHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtHeight.ForeColor = System.Drawing.Color.DimGray;
+            this.txtHeight.KLCBorderColor = System.Drawing.Color.OrangeRed;
+            this.txtHeight.KLCBorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtHeight.KLCBorderRadius = 0;
+            this.txtHeight.KLCBorderSize = 2;
+            this.txtHeight.KLCMultiline = false;
+            this.txtHeight.KLCPasswordChar = false;
+            this.txtHeight.KLCPlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtHeight.KLCPlaceholderText = "";
+            this.txtHeight.KLCText = "";
+            this.txtHeight.KLCUnderlinedStyle = false;
+            this.txtHeight.Location = new System.Drawing.Point(61, 202);
+            this.txtHeight.Margin = new System.Windows.Forms.Padding(4);
+            this.txtHeight.Name = "txtHeight";
+            this.txtHeight.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtHeight.Size = new System.Drawing.Size(211, 31);
+            this.txtHeight.TabIndex = 33;
+            // 
+            // btnLastName
+            // 
+            this.btnLastName.BackColor = System.Drawing.SystemColors.Window;
+            this.btnLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLastName.ForeColor = System.Drawing.Color.DimGray;
+            this.btnLastName.KLCBorderColor = System.Drawing.Color.OrangeRed;
+            this.btnLastName.KLCBorderFocusColor = System.Drawing.Color.HotPink;
+            this.btnLastName.KLCBorderRadius = 0;
+            this.btnLastName.KLCBorderSize = 2;
+            this.btnLastName.KLCMultiline = false;
+            this.btnLastName.KLCPasswordChar = false;
+            this.btnLastName.KLCPlaceholderColor = System.Drawing.Color.DarkGray;
+            this.btnLastName.KLCPlaceholderText = "";
+            this.btnLastName.KLCText = "";
+            this.btnLastName.KLCUnderlinedStyle = false;
+            this.btnLastName.Location = new System.Drawing.Point(61, 87);
+            this.btnLastName.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLastName.Name = "btnLastName";
+            this.btnLastName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.btnLastName.Size = new System.Drawing.Size(211, 31);
+            this.btnLastName.TabIndex = 32;
+            // 
+            // btnName
+            // 
+            this.btnName.BackColor = System.Drawing.SystemColors.Window;
+            this.btnName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnName.ForeColor = System.Drawing.Color.DimGray;
+            this.btnName.KLCBorderColor = System.Drawing.Color.OrangeRed;
+            this.btnName.KLCBorderFocusColor = System.Drawing.Color.HotPink;
+            this.btnName.KLCBorderRadius = 0;
+            this.btnName.KLCBorderSize = 2;
+            this.btnName.KLCMultiline = false;
+            this.btnName.KLCPasswordChar = false;
+            this.btnName.KLCPlaceholderColor = System.Drawing.Color.DarkGray;
+            this.btnName.KLCPlaceholderText = "";
+            this.btnName.KLCText = "";
+            this.btnName.KLCUnderlinedStyle = false;
+            this.btnName.Location = new System.Drawing.Point(61, 33);
+            this.btnName.Margin = new System.Windows.Forms.Padding(4);
+            this.btnName.Name = "btnName";
+            this.btnName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.btnName.Size = new System.Drawing.Size(211, 31);
+            this.btnName.TabIndex = 30;
+            // 
+            // btnIptalEt
+            // 
+            this.btnIptalEt.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnIptalEt.FlatAppearance.BorderSize = 0;
+            this.btnIptalEt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIptalEt.ForeColor = System.Drawing.Color.Black;
+            this.btnIptalEt.KLCBackgroundColor = System.Drawing.Color.OrangeRed;
+            this.btnIptalEt.KLCBorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnIptalEt.KLCBorderRadius = 26;
+            this.btnIptalEt.KLCBorderSize = 0;
+            this.btnIptalEt.KLCTextColor = System.Drawing.Color.Black;
+            this.btnIptalEt.Location = new System.Drawing.Point(61, 458);
+            this.btnIptalEt.Name = "btnIptalEt";
+            this.btnIptalEt.Size = new System.Drawing.Size(102, 27);
+            this.btnIptalEt.TabIndex = 29;
+            this.btnIptalEt.Text = "İptal Et";
+            this.btnIptalEt.UseVisualStyleBackColor = false;
+            // 
+            // btnKayitOl
+            // 
+            this.btnKayitOl.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnKayitOl.FlatAppearance.BorderSize = 0;
+            this.btnKayitOl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKayitOl.ForeColor = System.Drawing.Color.Black;
+            this.btnKayitOl.KLCBackgroundColor = System.Drawing.Color.OrangeRed;
+            this.btnKayitOl.KLCBorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnKayitOl.KLCBorderRadius = 26;
+            this.btnKayitOl.KLCBorderSize = 0;
+            this.btnKayitOl.KLCTextColor = System.Drawing.Color.Black;
+            this.btnKayitOl.Location = new System.Drawing.Point(169, 458);
+            this.btnKayitOl.Name = "btnKayitOl";
+            this.btnKayitOl.Size = new System.Drawing.Size(103, 27);
+            this.btnKayitOl.TabIndex = 28;
+            this.btnKayitOl.Text = "Kayıt Ol";
+            this.btnKayitOl.UseVisualStyleBackColor = false;
+            // 
+            // KayitOl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(332, 498);
+            this.Controls.Add(this.panel1);
+            this.Name = "KayitOl";
+            this.Text = "KayitOl";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
+        private KLCToolbox.KLCControls.KLCDatePicker dtpBirthdate;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private KLCToolbox.KLCControls.KLCTextBox txtPassword2;
+        private KLCToolbox.KLCControls.KLCTextBox txtPassword;
+        private KLCToolbox.KLCControls.KLCTextBox txtEmail;
+        private KLCToolbox.KLCControls.KLCTextBox txtWeight;
+        private KLCToolbox.KLCControls.KLCTextBox txtHeight;
+        private KLCToolbox.KLCControls.KLCTextBox btnLastName;
+        private KLCToolbox.KLCControls.KLCTextBox btnName;
+        private KLCToolbox.KLCControls.KLCButton btnIptalEt;
+        private KLCToolbox.KLCControls.KLCButton btnKayitOl;
+    }
+}
