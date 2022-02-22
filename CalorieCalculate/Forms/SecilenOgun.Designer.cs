@@ -31,14 +31,14 @@ namespace CalorieCalculate.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SecilenOgun));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnÜrünEkle = new KLCToolbox.KLCControls.KLCButton();
-            this.klcButton1 = new KLCToolbox.KLCControls.KLCButton();
-            this.dgvOgun = new System.Windows.Forms.DataGridView();
             this.lblOgunAdi = new System.Windows.Forms.Label();
+            this.dgvOgun = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.klcButton1 = new KLCToolbox.KLCControls.KLCButton();
+            this.btnÜrünEkle = new KLCToolbox.KLCControls.KLCButton();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOgun)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -56,9 +56,29 @@ namespace CalorieCalculate.Forms
             this.panel1.Size = new System.Drawing.Size(336, 502);
             this.panel1.TabIndex = 3;
             // 
+            // lblOgunAdi
+            // 
+            this.lblOgunAdi.AutoSize = true;
+            this.lblOgunAdi.BackColor = System.Drawing.Color.Silver;
+            this.lblOgunAdi.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblOgunAdi.Location = new System.Drawing.Point(12, 62);
+            this.lblOgunAdi.Name = "lblOgunAdi";
+            this.lblOgunAdi.Size = new System.Drawing.Size(64, 18);
+            this.lblOgunAdi.TabIndex = 23;
+            this.lblOgunAdi.Text = "OgunAdi";
+            // 
+            // dgvOgun
+            // 
+            this.dgvOgun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOgun.Location = new System.Drawing.Point(12, 86);
+            this.dgvOgun.Name = "dgvOgun";
+            this.dgvOgun.RowTemplate.Height = 25;
+            this.dgvOgun.Size = new System.Drawing.Size(312, 237);
+            this.dgvOgun.TabIndex = 22;
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(134, 450);
             this.pictureBox1.Name = "pictureBox1";
@@ -66,24 +86,6 @@ namespace CalorieCalculate.Forms
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnÜrünEkle
-            // 
-            this.btnÜrünEkle.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnÜrünEkle.FlatAppearance.BorderSize = 0;
-            this.btnÜrünEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnÜrünEkle.ForeColor = System.Drawing.Color.Black;
-            this.btnÜrünEkle.KLCBackgroundColor = System.Drawing.Color.OrangeRed;
-            this.btnÜrünEkle.KLCBorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnÜrünEkle.KLCBorderRadius = 24;
-            this.btnÜrünEkle.KLCBorderSize = 0;
-            this.btnÜrünEkle.KLCTextColor = System.Drawing.Color.Black;
-            this.btnÜrünEkle.Location = new System.Drawing.Point(242, 12);
-            this.btnÜrünEkle.Name = "btnÜrünEkle";
-            this.btnÜrünEkle.Size = new System.Drawing.Size(82, 31);
-            this.btnÜrünEkle.TabIndex = 21;
-            this.btnÜrünEkle.Text = "Gıda Ekle";
-            this.btnÜrünEkle.UseVisualStyleBackColor = false;
             // 
             // klcButton1
             // 
@@ -103,25 +105,23 @@ namespace CalorieCalculate.Forms
             this.klcButton1.Text = "Gıda Sil";
             this.klcButton1.UseVisualStyleBackColor = false;
             // 
-            // dgvOgun
+            // btnÜrünEkle
             // 
-            this.dgvOgun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOgun.Location = new System.Drawing.Point(12, 86);
-            this.dgvOgun.Name = "dgvOgun";
-            this.dgvOgun.RowTemplate.Height = 25;
-            this.dgvOgun.Size = new System.Drawing.Size(312, 237);
-            this.dgvOgun.TabIndex = 22;
-            // 
-            // lblOgunAdi
-            // 
-            this.lblOgunAdi.AutoSize = true;
-            this.lblOgunAdi.BackColor = System.Drawing.Color.Silver;
-            this.lblOgunAdi.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblOgunAdi.Location = new System.Drawing.Point(12, 62);
-            this.lblOgunAdi.Name = "lblOgunAdi";
-            this.lblOgunAdi.Size = new System.Drawing.Size(64, 18);
-            this.lblOgunAdi.TabIndex = 23;
-            this.lblOgunAdi.Text = "OgunAdi";
+            this.btnÜrünEkle.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnÜrünEkle.FlatAppearance.BorderSize = 0;
+            this.btnÜrünEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnÜrünEkle.ForeColor = System.Drawing.Color.Black;
+            this.btnÜrünEkle.KLCBackgroundColor = System.Drawing.Color.OrangeRed;
+            this.btnÜrünEkle.KLCBorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnÜrünEkle.KLCBorderRadius = 24;
+            this.btnÜrünEkle.KLCBorderSize = 0;
+            this.btnÜrünEkle.KLCTextColor = System.Drawing.Color.Black;
+            this.btnÜrünEkle.Location = new System.Drawing.Point(242, 12);
+            this.btnÜrünEkle.Name = "btnÜrünEkle";
+            this.btnÜrünEkle.Size = new System.Drawing.Size(82, 31);
+            this.btnÜrünEkle.TabIndex = 21;
+            this.btnÜrünEkle.Text = "Gıda Ekle";
+            this.btnÜrünEkle.UseVisualStyleBackColor = false;
             // 
             // SecilenOgun
             // 
@@ -134,8 +134,8 @@ namespace CalorieCalculate.Forms
             this.Text = "AVOCADO";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOgun)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -31,6 +31,7 @@ namespace CalorieCalculate.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KayitOl));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@ namespace CalorieCalculate.Forms
             this.txtName = new KLCToolbox.KLCControls.KLCTextBox();
             this.btnIptalEt = new KLCToolbox.KLCControls.KLCButton();
             this.btnKayitOl = new KLCToolbox.KLCControls.KLCButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -82,6 +82,17 @@ namespace CalorieCalculate.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(332, 498);
             this.panel1.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(148, 473);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 46;
+            this.pictureBox1.TabStop = false;
             // 
             // label7
             // 
@@ -192,7 +203,7 @@ namespace CalorieCalculate.Forms
             this.txtPassword2.KLCText = "";
             this.txtPassword2.KLCUnderlinedStyle = false;
             this.txtPassword2.Location = new System.Drawing.Point(61, 410);
-            this.txtPassword2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword2.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword2.Name = "txtPassword2";
             this.txtPassword2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtPassword2.Size = new System.Drawing.Size(211, 31);
@@ -214,7 +225,7 @@ namespace CalorieCalculate.Forms
             this.txtPassword.KLCText = "";
             this.txtPassword.KLCUnderlinedStyle = false;
             this.txtPassword.Location = new System.Drawing.Point(61, 356);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtPassword.Size = new System.Drawing.Size(211, 31);
@@ -236,7 +247,7 @@ namespace CalorieCalculate.Forms
             this.txtEmail.KLCText = "";
             this.txtEmail.KLCUnderlinedStyle = false;
             this.txtEmail.Location = new System.Drawing.Point(61, 302);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtEmail.Size = new System.Drawing.Size(211, 31);
@@ -258,7 +269,7 @@ namespace CalorieCalculate.Forms
             this.txtWeight.KLCText = "";
             this.txtWeight.KLCUnderlinedStyle = false;
             this.txtWeight.Location = new System.Drawing.Point(61, 243);
-            this.txtWeight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtWeight.Margin = new System.Windows.Forms.Padding(4);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtWeight.Size = new System.Drawing.Size(211, 31);
@@ -280,7 +291,7 @@ namespace CalorieCalculate.Forms
             this.txtHeight.KLCText = "";
             this.txtHeight.KLCUnderlinedStyle = false;
             this.txtHeight.Location = new System.Drawing.Point(61, 192);
-            this.txtHeight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHeight.Margin = new System.Windows.Forms.Padding(4);
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtHeight.Size = new System.Drawing.Size(211, 31);
@@ -302,7 +313,7 @@ namespace CalorieCalculate.Forms
             this.txtLastName.KLCText = "";
             this.txtLastName.KLCUnderlinedStyle = false;
             this.txtLastName.Location = new System.Drawing.Point(61, 77);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtLastName.Size = new System.Drawing.Size(211, 31);
@@ -324,7 +335,7 @@ namespace CalorieCalculate.Forms
             this.txtName.KLCText = "";
             this.txtName.KLCUnderlinedStyle = false;
             this.txtName.Location = new System.Drawing.Point(61, 23);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtName.Size = new System.Drawing.Size(211, 31);
@@ -369,17 +380,6 @@ namespace CalorieCalculate.Forms
             this.btnKayitOl.Text = "Kayıt Ol";
             this.btnKayitOl.UseVisualStyleBackColor = false;
             this.btnKayitOl.Click += new System.EventHandler(this.Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(148, 473);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 46;
-            this.pictureBox1.TabStop = false;
             // 
             // KayitOl
             // 

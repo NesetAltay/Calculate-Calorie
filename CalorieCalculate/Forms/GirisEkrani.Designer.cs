@@ -55,6 +55,7 @@ namespace CalorieCalculate.Forms
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(130, 224);
             this.pictureBox1.Name = "pictureBox1";
