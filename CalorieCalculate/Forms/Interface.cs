@@ -16,5 +16,35 @@ namespace CalorieCalculate.Forms
         {
             InitializeComponent();
         }
+
+        private void Interface_Click(object sender, EventArgs e)
+        {
+            PictureBox pb = (PictureBox)sender;
+            Form frm = default;
+            switch (pb.Tag.ToString())
+            {
+                case "1":
+                    //linq sorguları çalışacak aktif üyenin gün içerisinde yediği öğünler ait oldukları öğün listesine aktarılacak.
+                    frm = new Ogunler();
+                    break;
+                case "2":
+                    //
+                    frm = new Raporlar();
+                    break;
+                case "3":
+                   // BedenKitleHesapla(height,weight);
+                   //cıkan sonucu bedenkitle formunda sonuc labelinin textine yazdır.
+                    frm = new BedenKitle();
+                    break;
+            }
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void BedenKitleHesapla(double height, double weight)
+        {
+            //kilo ve boy parametre olarak verilecek hesaplama yapılacak.
+        }
     }
 }

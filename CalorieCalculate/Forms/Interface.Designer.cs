@@ -37,16 +37,19 @@ namespace CalorieCalculate.Forms
             this.pbOgunler = new KLCToolbox.KLCControls.KLCCircularPictureBox();
             this.pbRaporlar = new KLCToolbox.KLCControls.KLCCircularPictureBox();
             this.pbKitle = new KLCToolbox.KLCControls.KLCCircularPictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOgunler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRaporlar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbKitle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
@@ -108,6 +111,7 @@ namespace CalorieCalculate.Forms
             this.pbOgunler.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbOgunler.TabIndex = 14;
             this.pbOgunler.TabStop = false;
+            this.pbOgunler.Tag = "1";
             // 
             // pbRaporlar
             // 
@@ -124,6 +128,7 @@ namespace CalorieCalculate.Forms
             this.pbRaporlar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbRaporlar.TabIndex = 13;
             this.pbRaporlar.TabStop = false;
+            this.pbRaporlar.Tag = "2";
             // 
             // pbKitle
             // 
@@ -140,6 +145,17 @@ namespace CalorieCalculate.Forms
             this.pbKitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbKitle.TabIndex = 12;
             this.pbKitle.TabStop = false;
+            this.pbKitle.Tag = "3";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(125, 416);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(61, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
             // 
             // Interface
             // 
@@ -147,13 +163,20 @@ namespace CalorieCalculate.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(316, 459);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Interface";
-            this.Text = "Interface";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "AVOCADO";
+            this.Click += new System.EventHandler(this.Interface_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOgunler)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRaporlar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbKitle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -167,5 +190,6 @@ namespace CalorieCalculate.Forms
         private KLCToolbox.KLCControls.KLCCircularPictureBox pbOgunler;
         private KLCToolbox.KLCControls.KLCCircularPictureBox pbRaporlar;
         private KLCToolbox.KLCControls.KLCCircularPictureBox pbKitle;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

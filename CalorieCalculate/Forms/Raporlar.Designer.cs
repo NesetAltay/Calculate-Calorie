@@ -32,15 +32,15 @@ namespace CalorieCalculate.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Raporlar));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pbBack = new System.Windows.Forms.PictureBox();
+            this.pbProfil = new KLCToolbox.KLCControls.KLCCircularPictureBox();
             this.btnRekabetRaporu = new KLCToolbox.KLCControls.KLCButton();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnKaloriRaporu = new KLCToolbox.KLCControls.KLCButton();
             this.btnEnCokTercih = new KLCToolbox.KLCControls.KLCButton();
-            this.pbProfil = new KLCToolbox.KLCControls.KLCCircularPictureBox();
-            this.pbBack = new System.Windows.Forms.PictureBox();
-            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfil)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -56,6 +56,34 @@ namespace CalorieCalculate.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(340, 498);
             this.panel1.TabIndex = 0;
+            // 
+            // pbBack
+            // 
+            this.pbBack.Image = ((System.Drawing.Image)(resources.GetObject("pbBack.Image")));
+            this.pbBack.Location = new System.Drawing.Point(0, 0);
+            this.pbBack.Name = "pbBack";
+            this.pbBack.Size = new System.Drawing.Size(57, 34);
+            this.pbBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbBack.TabIndex = 22;
+            this.pbBack.TabStop = false;
+            this.pbBack.Tag = "4";
+            // 
+            // pbProfil
+            // 
+            this.pbProfil.Image = ((System.Drawing.Image)(resources.GetObject("pbProfil.Image")));
+            this.pbProfil.KLCBorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pbProfil.KLCBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.pbProfil.KLCBorderColor2 = System.Drawing.Color.OrangeRed;
+            this.pbProfil.KLCBorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pbProfil.KLCBorderSize = 2;
+            this.pbProfil.KLCGradientAngle = 50F;
+            this.pbProfil.Location = new System.Drawing.Point(280, 0);
+            this.pbProfil.Name = "pbProfil";
+            this.pbProfil.Size = new System.Drawing.Size(34, 34);
+            this.pbProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbProfil.TabIndex = 21;
+            this.pbProfil.TabStop = false;
+            this.pbProfil.Tag = "5";
             // 
             // btnRekabetRaporu
             // 
@@ -75,9 +103,19 @@ namespace CalorieCalculate.Forms
             this.btnRekabetRaporu.Name = "btnRekabetRaporu";
             this.btnRekabetRaporu.Size = new System.Drawing.Size(162, 82);
             this.btnRekabetRaporu.TabIndex = 18;
+            this.btnRekabetRaporu.Tag = "2";
             this.btnRekabetRaporu.Text = "Rekabet Raporum";
             this.btnRekabetRaporu.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnRekabetRaporu.UseVisualStyleBackColor = false;
+            // 
+            // ımageList1
+            // 
+            this.ımageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
+            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.ımageList1.Images.SetKeyName(0, "55.png");
+            this.ımageList1.Images.SetKeyName(1, "eticarette-rekabet-etmek.jpg");
+            this.ımageList1.Images.SetKeyName(2, "istanbul-rekabet-forumu-25-26-kasim-da-gerceklestirilecek-8708.jpg");
             // 
             // btnKaloriRaporu
             // 
@@ -97,6 +135,7 @@ namespace CalorieCalculate.Forms
             this.btnKaloriRaporu.Name = "btnKaloriRaporu";
             this.btnKaloriRaporu.Size = new System.Drawing.Size(162, 93);
             this.btnKaloriRaporu.TabIndex = 19;
+            this.btnKaloriRaporu.Tag = "1";
             this.btnKaloriRaporu.Text = "Kalori Raporum";
             this.btnKaloriRaporu.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnKaloriRaporu.UseVisualStyleBackColor = false;
@@ -119,44 +158,10 @@ namespace CalorieCalculate.Forms
             this.btnEnCokTercih.Name = "btnEnCokTercih";
             this.btnEnCokTercih.Size = new System.Drawing.Size(162, 82);
             this.btnEnCokTercih.TabIndex = 20;
+            this.btnEnCokTercih.Tag = "3";
             this.btnEnCokTercih.Text = "En çok Tercih Edilenler";
             this.btnEnCokTercih.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnEnCokTercih.UseVisualStyleBackColor = false;
-            // 
-            // pbProfil
-            // 
-            this.pbProfil.Image = ((System.Drawing.Image)(resources.GetObject("pbProfil.Image")));
-            this.pbProfil.KLCBorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.pbProfil.KLCBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.pbProfil.KLCBorderColor2 = System.Drawing.Color.OrangeRed;
-            this.pbProfil.KLCBorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pbProfil.KLCBorderSize = 2;
-            this.pbProfil.KLCGradientAngle = 50F;
-            this.pbProfil.Location = new System.Drawing.Point(280, 0);
-            this.pbProfil.Name = "pbProfil";
-            this.pbProfil.Size = new System.Drawing.Size(34, 34);
-            this.pbProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbProfil.TabIndex = 21;
-            this.pbProfil.TabStop = false;
-            // 
-            // pbBack
-            // 
-            this.pbBack.Image = ((System.Drawing.Image)(resources.GetObject("pbBack.Image")));
-            this.pbBack.Location = new System.Drawing.Point(0, 0);
-            this.pbBack.Name = "pbBack";
-            this.pbBack.Size = new System.Drawing.Size(57, 34);
-            this.pbBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbBack.TabIndex = 22;
-            this.pbBack.TabStop = false;
-            // 
-            // ımageList1
-            // 
-            this.ımageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
-            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.ımageList1.Images.SetKeyName(0, "55.png");
-            this.ımageList1.Images.SetKeyName(1, "eticarette-rekabet-etmek.jpg");
-            this.ımageList1.Images.SetKeyName(2, "istanbul-rekabet-forumu-25-26-kasim-da-gerceklestirilecek-8708.jpg");
             // 
             // Raporlar
             // 
@@ -164,11 +169,16 @@ namespace CalorieCalculate.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(316, 459);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Raporlar";
-            this.Text = "Raporlar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "AVOCADO";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfil)).EndInit();
             this.ResumeLayout(false);
 
         }
