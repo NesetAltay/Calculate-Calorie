@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CalorieCalculate.Model.Data
 {
-    class DatabaseContext : DbContext
+    public class DatabaseContext : DbContext
     {
         public DbSet<UserInformation> UserInformations { get; set; }
         public DbSet<User> Users { get; set; }

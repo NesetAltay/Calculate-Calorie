@@ -9,32 +9,34 @@ using System.Threading.Tasks;
 
 namespace CalorieCalculate.Model.EntityTypeConfiguration
 {
-    public class MealConfiguration : IEntityTypeConfiguration<Meal>
+    public class MealConfiguration : IEntityTypeConfiguration<Meal> // IEntityTypeConfiguration<SınıfAdı> Hangi sınıfın adı yazıldıysa o sınıftan oluşturulan tablo içerisinde ki özellikleri tanımlar
     {
-        public void Configure(EntityTypeBuilder<Meal> builder)
+        public void Configure(EntityTypeBuilder<Meal> builder) // kullanılan hazırlanmış method sınıf içerisinde hangi özellikleri kullanıcağımızı belirmemize yardımcı olur, builder sınıf içerisinde yaptığımız değişikleri tanımlar
         {
             #region Kolon Bilgileri
-            builder.ToTable("Yemek Bilgileri");
+            builder.ToTable("Yemek Bilgileri"); // ToTable : Tabloya isim verir
 
-            builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).UseIdentityColumn();
+            builder.HasKey(x => x.Id); // HasKey Primery key belirtir
+            builder.Property(x => x.Id).UseIdentityColumn(); // UseIdentityColumn kolona ıdentity özelliği tanımlar
 
-            builder.Property(x => x.MealName).IsRequired();
-            builder.Property(x => x.MealName).HasMaxLength(50);
+            builder.Property(x => x.MealName).IsRequired(); // IsRequired kolonun boş geçilemez olduğunu belirtir
+            builder.Property(x => x.MealName).HasMaxLength(50); // HasMaxLenght string ifadenin en fazla kaç karakter alacağını belirtir
 
             builder.Property(x => x.MealDescription).IsRequired();
             builder.Property(x => x.MealDescription).HasMaxLength(300);
 
-            builder.Property(x => x.Calorie).HasPrecision(18, 2);
+            builder.Property(x => x.Calorie).HasPrecision(18, 2); // HasPrecision decimal sayı değerini ifade eder
 
             builder.HasOne(x => x.TypeOfMeal).WithMany(x => x.Meals).HasForeignKey(x => x.TypeMealId);
+            // HasOne sınıf içerisinde ilişkili olan sınıfı belirtir
+            // WithMany Çoklu ilişki belirtir
+            // HasForeignKey Sınıf içerisinde ki foreignkey i belirtir
             #endregion
 
             #region Veri Girisi
             builder.HasData(
                new Meal { Id = 1, MealName = "Süt", MealDescription = "1 porsiyon, 1 su bardağı, 200 ml", Calorie = 114000, TypeMealId = 1 },
                new Meal { Id = 2, MealName = "Yoğurt", MealDescription = "1 porsiyon, 1 kase, 200 gram", Calorie = 114000, TypeMealId = 1 },
-               new Meal { Id = 3, MealName = "Süzme Yoğurt", MealDescription = "1 porsiyon, 2 yemek kaşığı, 50 gram", Calorie = 114000, TypeMealId = 1 },
                new Meal { Id = 3, MealName = "Süzme Yoğurt", MealDescription = "1 porsiyon, 2 yemek kaşığı, 50 gram", Calorie = 114000, TypeMealId = 1 },
                new Meal { Id = 4, MealName = "Ayran", MealDescription = "1 porsiyon, 1 su bardağı, 200 ml", Calorie = 57000, TypeMealId = 1 },
                new Meal { Id = 5, MealName = "Kefir", MealDescription = "1 porsiyon, 1 su bardağı, 200 ml", Calorie = 114000, TypeMealId = 1 },
@@ -135,7 +137,8 @@ namespace CalorieCalculate.Model.EntityTypeConfiguration
                new Meal { Id = 100, MealName = "Kabak Çekirdeği", MealDescription = "1 porsiyon, 1 avuç, 10 gram", Calorie = 68000, TypeMealId = 9 },
                new Meal { Id = 101, MealName = "Badem içi", MealDescription = "1 porsiyon, 5 adet, 10 gram", Calorie = 68000, TypeMealId = 9 },
                new Meal { Id = 102, MealName = "Fındık içi", MealDescription = "1 porsiyon, 7 adet, 10 gram", Calorie = 68000, TypeMealId = 9 },
-               new Meal { Id = 103, MealName = "Fıstık içi", MealDescription = "1 porsiyon, 7 adet, 10 gram", Calorie = 68000, TypeMealId = 9 }); 
+               new Meal { Id = 103, MealName = "Fıstık içi", MealDescription = "1 porsiyon, 7 adet, 10 gram", Calorie = 68000, TypeMealId = 9 }
+               ); 
             #endregion
         }
     }

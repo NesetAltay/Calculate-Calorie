@@ -42,22 +42,25 @@ namespace CalorieCalculate.Forms
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lblOturumAc);
             this.panel1.Controls.Add(this.lblKayitOl);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(332, 498);
+            this.panel1.Size = new System.Drawing.Size(379, 664);
             this.panel1.TabIndex = 1;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CalorieCalculate.Properties.Resources.apple;
-            this.pictureBox1.Location = new System.Drawing.Point(134, 230);
+            this.pictureBox1.Location = new System.Drawing.Point(153, 307);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(78, 37);
+            this.pictureBox1.Size = new System.Drawing.Size(89, 49);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -65,9 +68,9 @@ namespace CalorieCalculate.Forms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(168, 296);
+            this.label3.Location = new System.Drawing.Point(192, 395);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(10, 15);
+            this.label3.Size = new System.Drawing.Size(13, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "I";
             // 
@@ -75,29 +78,38 @@ namespace CalorieCalculate.Forms
             // 
             this.lblOturumAc.AutoSize = true;
             this.lblOturumAc.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblOturumAc.Location = new System.Drawing.Point(184, 296);
+            this.lblOturumAc.Location = new System.Drawing.Point(210, 395);
             this.lblOturumAc.Name = "lblOturumAc";
-            this.lblOturumAc.Size = new System.Drawing.Size(70, 15);
+            this.lblOturumAc.Size = new System.Drawing.Size(90, 20);
             this.lblOturumAc.TabIndex = 0;
+            this.lblOturumAc.Tag = "2";
             this.lblOturumAc.Text = "Oturum Aç";
+            this.lblOturumAc.Click += new System.EventHandler(this.Click);
             // 
             // lblKayitOl
             // 
             this.lblKayitOl.AutoSize = true;
             this.lblKayitOl.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblKayitOl.Location = new System.Drawing.Point(99, 296);
+            this.lblKayitOl.Location = new System.Drawing.Point(113, 395);
             this.lblKayitOl.Name = "lblKayitOl";
-            this.lblKayitOl.Size = new System.Drawing.Size(63, 15);
+            this.lblKayitOl.Size = new System.Drawing.Size(81, 20);
             this.lblKayitOl.TabIndex = 0;
+            this.lblKayitOl.Tag = "1";
             this.lblKayitOl.Text = "Kayıt Ol";
+            this.lblKayitOl.Click += new System.EventHandler(this.Click);
             // 
             // GirisEkrani
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 498);
+            this.ClientSize = new System.Drawing.Size(379, 664);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "GirisEkrani";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GirisEkrani";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

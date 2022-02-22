@@ -17,7 +17,7 @@ namespace CalorieCalculate.Model.EntityTypeConfiguration
 
             builder.Property(x => x.EatenPortion).HasPrecision(18, 2);
 
-            builder.Property(x => x.MealImage).IsRequired(false);
+            builder.Property(x => x.MealImage).IsRequired(false); // null geçilebilir
             builder.Property(x => x.MealImage).HasMaxLength(600);
 
             builder.HasKey(x => new { x.MealId, x.RepastId });

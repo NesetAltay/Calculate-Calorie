@@ -10,7 +10,7 @@ namespace CalorieCalculate.Model.Entities
 {
    public abstract class BaseProperty
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //[Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
     }
 }

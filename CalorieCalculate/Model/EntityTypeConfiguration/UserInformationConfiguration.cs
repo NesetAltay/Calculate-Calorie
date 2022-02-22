@@ -16,7 +16,6 @@ namespace CalorieCalculate.Model.EntityTypeCondiguration
             builder.ToTable("Kullanıcı Bilgileri");
 
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).UseIdentityColumn();
 
             builder.Property(x => x.FirstName).IsRequired();
             builder.Property(x => x.FirstName).HasMaxLength(50);
@@ -24,7 +23,7 @@ namespace CalorieCalculate.Model.EntityTypeCondiguration
             builder.Property(x => x.LastName).IsRequired();
             builder.Property(x => x.LastName).HasMaxLength(50);
 
-            builder.Property(x => x.BirthDate).HasDefaultValueSql("DateTime");
+            builder.Property(x => x.BirthDate).HasColumnType("datetime2");
 
             builder.Property(x => x.Height).HasPrecision(18, 2);
 
