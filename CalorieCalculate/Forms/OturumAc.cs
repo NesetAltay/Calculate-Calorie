@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalorieCalculate.Model.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,10 +20,18 @@ namespace CalorieCalculate.Forms
 
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
-            //context = database olacak.
-            //result sorgusu bir if içerisine yazılıp nullorempty metodu çağırılır.Eğer resultın bir id si varsa bu girilen emailin dogru oldugunu gösterir, ardından lastResult sorgusu çalışır ve email-password uyusuyor mu bu sorgulanır.
-            //var result = from x in context.user where x.Email == txtEmail.KLCText.ToString() select x.Id;
-            //var lastResult = from x in context.user where x.Id == result select x.Password;
+            using (DatabaseContext context = new DatabaseContext())
+            {
+                var result = context.Users.Any(x => x.Email == txtEmail.KLCText && x.Password == txtPassword.KLCText);
+                if (result)
+                {
+                    Form frm = new Interface();
+                    frm.ShowDialog();
+                }
+                else
+                    MessageBox.Show("Girdiğiniz bilgiler eşleşmiyor", "Uyarı", MessageBoxButtons.OK,MessageBoxIcon.Error );
+            }
+            
 
         }
     }
