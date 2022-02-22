@@ -78,6 +78,7 @@ namespace CalorieCalculate.Forms
             // 
             // pbBack
             // 
+            this.pbBack.BackColor = System.Drawing.Color.Transparent;
             this.pbBack.Image = ((System.Drawing.Image)(resources.GetObject("pbBack.Image")));
             this.pbBack.Location = new System.Drawing.Point(0, 0);
             this.pbBack.Name = "pbBack";
