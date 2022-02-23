@@ -12,9 +12,16 @@ namespace CalorieCalculate.Forms
 {
     public partial class Interface : Form
     {
+        private int user;
+
         public Interface()
         {
             InitializeComponent();
+        }
+
+        public Interface(int user)
+        {
+            this.user = user;
         }
 
         private void Interface_Click(object sender, EventArgs e)
@@ -25,11 +32,11 @@ namespace CalorieCalculate.Forms
             {
                 case "1":
                     //linq sorguları çalışacak aktif üyenin gün içerisinde yediği öğünler ait oldukları öğün listesine aktarılacak.
-                    frm = new Ogunler();
+                    frm = new Ogunler(user);
                     break;
                 case "2":
                     //
-                    frm = new Raporlar();
+                    frm = new Raporlar(user);
                     break;
                 case "3":
                    // BedenKitleHesapla(height,weight);

@@ -12,9 +12,16 @@ namespace CalorieCalculate.Forms
 {
     public partial class Raporlar : Form
     {
+        private int user;
+
         public Raporlar()
         {
             InitializeComponent();
+        }
+
+        public Raporlar(int user)
+        {
+            this.user = user;
         }
     }
 }

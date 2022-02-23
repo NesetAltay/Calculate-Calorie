@@ -1,6 +1,8 @@
-﻿using CalorieCalculate.Extensions;
+﻿using CalorieCalculate.Crud;
+using CalorieCalculate.Extensions;
 using CalorieCalculate.Model.Data;
 using CalorieCalculate.Model.Entities;
+using KLCToolbox.KLCControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,6 +54,20 @@ namespace CalorieCalculate.Forms
                     MessageBox.Show("Verilerinizi kontrol edin", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            // Bir sınıf yapısı oluşturuldu ancak metotlar null değerlerde hataya düşmüyor hocaya sorulacak, klasör adı Crud oluşturulan sınıf DataCreate
+            /*
+            try
+            {
+                DataCreate create = new DataCreate();
+
+                create.CreateUser(txtEmail.KLCText, txtPassword.KLCText);
+                create.CreateUserInformation(txtName.KLCText, txtLastName.KLCText, txtHeight.KLCText, txtWeight.KLCText, dtpBirthdate.Value);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Verilerinizi kontrol edin", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            */
         }
         // Yeni kullanıcı oluşturma
         private void Create(out UserInformation information, out User user)
@@ -73,7 +89,8 @@ namespace CalorieCalculate.Forms
         // Oluşturulan kullanıcıların bilgilerinin kontrolu
         private void CreateControl(DatabaseContext db, UserInformation information, User user)
         {
-            if (txtPassword.KLCText != txtPassword2.KLCText || !txtEmail.KLCText.IsValidEmail())
+            bool result = db.Users.Any(x => x.Email.Equals(txtEmail.KLCText));
+            if (txtPassword.KLCText != txtPassword2.KLCText || !txtEmail.KLCText.IsValidEmail() || result)
             {
                 MessageBox.Show("Email veya parola hatalı", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
