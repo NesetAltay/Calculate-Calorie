@@ -16,7 +16,9 @@ namespace CalorieCalculate.Forms
         public OturumAc()
         {
             InitializeComponent();
+            txtEmail.Select();
         }
+        public string KLCText { get; }
 
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
@@ -31,16 +33,19 @@ namespace CalorieCalculate.Forms
                     frm.ShowDialog();
                 }
                 else
-                    MessageBox.Show("Girdiğiniz bilgiler eşleşmiyor", "Uyarı", MessageBoxButtons.OK,MessageBoxIcon.Error );
+                    MessageBox.Show("Girdiğiniz bilgiler eşleşmiyor", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void lnkKayitOl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Form f = new KayitOl();
-            this.Hide();
-            f.ShowDialog();
-            this.ShowDialog();
+            Form f = default;
+            if (f is null)
+            {
+                f = new KayitOl();
+                this.Close();
+                f.ShowDialog();
+            }
         }
     }
 }

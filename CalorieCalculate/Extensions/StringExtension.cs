@@ -21,7 +21,7 @@ namespace CalorieCalculate.Extensions
             bool result = text.Any(x => x == "" || x == null);
             return result;
         }
-        public static bool IsStokEmail(this string email)
+        public static bool IsEquelsEmail(this string email)
         {
             using (DatabaseContext db = new DatabaseContext())
             {

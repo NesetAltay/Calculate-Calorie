@@ -26,7 +26,6 @@ namespace CalorieCalculate.Crud
                 };
                 db.Users.Add(user);
                 db.SaveChanges();
-
             }
 
         }

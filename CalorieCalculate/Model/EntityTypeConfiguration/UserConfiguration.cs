@@ -22,7 +22,7 @@ namespace CalorieCalculate.Model.EntityTypeConfiguration
             builder.Property(x => x.Email).HasMaxLength(150);
 
             builder.Property(x => x.Password).IsRequired();
-            builder.Property(x => x.Password).HasMaxLength(8);
+            builder.Property(x => x.Password).HasMaxLength(50);
 
         }
     }
