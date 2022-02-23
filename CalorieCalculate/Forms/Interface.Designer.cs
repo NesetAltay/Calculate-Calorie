@@ -48,7 +48,7 @@ namespace CalorieCalculate.Forms
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
@@ -58,17 +58,19 @@ namespace CalorieCalculate.Forms
             this.panel1.Controls.Add(this.pbKitle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(316, 459);
+            this.panel1.Size = new System.Drawing.Size(379, 664);
             this.panel1.TabIndex = 2;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(125, 416);
+            this.pictureBox1.Location = new System.Drawing.Point(143, 555);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(61, 40);
+            this.pictureBox1.Size = new System.Drawing.Size(70, 53);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
@@ -79,9 +81,9 @@ namespace CalorieCalculate.Forms
             this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label2.Location = new System.Drawing.Point(201, 185);
+            this.label2.Location = new System.Drawing.Point(230, 247);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 15);
+            this.label2.Size = new System.Drawing.Size(99, 20);
             this.label2.TabIndex = 16;
             this.label2.Text = "Raporlarım";
             // 
@@ -90,9 +92,9 @@ namespace CalorieCalculate.Forms
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label3.Location = new System.Drawing.Point(45, 122);
+            this.label3.Location = new System.Drawing.Point(51, 163);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 15);
+            this.label3.Size = new System.Drawing.Size(90, 20);
             this.label3.TabIndex = 17;
             this.label3.Text = "Öğünlerim";
             // 
@@ -101,9 +103,9 @@ namespace CalorieCalculate.Forms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label1.Location = new System.Drawing.Point(23, 353);
+            this.label1.Location = new System.Drawing.Point(26, 471);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 15);
+            this.label1.Size = new System.Drawing.Size(189, 20);
             this.label1.TabIndex = 15;
             this.label1.Text = "Beden Kitle İndeksim";
             // 
@@ -116,13 +118,15 @@ namespace CalorieCalculate.Forms
             this.pbOgunler.KLCBorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             this.pbOgunler.KLCBorderSize = 2;
             this.pbOgunler.KLCGradientAngle = 50F;
-            this.pbOgunler.Location = new System.Drawing.Point(23, 12);
+            this.pbOgunler.Location = new System.Drawing.Point(26, 16);
+            this.pbOgunler.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbOgunler.Name = "pbOgunler";
-            this.pbOgunler.Size = new System.Drawing.Size(107, 107);
+            this.pbOgunler.Size = new System.Drawing.Size(122, 122);
             this.pbOgunler.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbOgunler.TabIndex = 14;
             this.pbOgunler.TabStop = false;
             this.pbOgunler.Tag = "1";
+            this.pbOgunler.Click += new System.EventHandler(this.Interface_Click);
             // 
             // pbRaporlar
             // 
@@ -133,13 +137,15 @@ namespace CalorieCalculate.Forms
             this.pbRaporlar.KLCBorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             this.pbRaporlar.KLCBorderSize = 2;
             this.pbRaporlar.KLCGradientAngle = 50F;
-            this.pbRaporlar.Location = new System.Drawing.Point(188, 82);
+            this.pbRaporlar.Location = new System.Drawing.Point(215, 109);
+            this.pbRaporlar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbRaporlar.Name = "pbRaporlar";
-            this.pbRaporlar.Size = new System.Drawing.Size(100, 100);
+            this.pbRaporlar.Size = new System.Drawing.Size(114, 114);
             this.pbRaporlar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbRaporlar.TabIndex = 13;
             this.pbRaporlar.TabStop = false;
             this.pbRaporlar.Tag = "2";
+            this.pbRaporlar.Click += new System.EventHandler(this.Interface_Click);
             // 
             // pbKitle
             // 
@@ -150,22 +156,25 @@ namespace CalorieCalculate.Forms
             this.pbKitle.KLCBorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             this.pbKitle.KLCBorderSize = 2;
             this.pbKitle.KLCGradientAngle = 50F;
-            this.pbKitle.Location = new System.Drawing.Point(36, 243);
+            this.pbKitle.Location = new System.Drawing.Point(41, 324);
+            this.pbKitle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbKitle.Name = "pbKitle";
-            this.pbKitle.Size = new System.Drawing.Size(107, 107);
+            this.pbKitle.Size = new System.Drawing.Size(122, 122);
             this.pbKitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbKitle.TabIndex = 12;
             this.pbKitle.TabStop = false;
             this.pbKitle.Tag = "3";
+            this.pbKitle.Click += new System.EventHandler(this.Interface_Click);
             // 
             // Interface
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(316, 459);
+            this.ClientSize = new System.Drawing.Size(379, 664);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Interface";

@@ -48,7 +48,7 @@ namespace CalorieCalculate.Forms
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pbBack);
             this.panel1.Controls.Add(this.pbProfil);
@@ -56,17 +56,19 @@ namespace CalorieCalculate.Forms
             this.panel1.Controls.Add(this.btnKaloriRaporu);
             this.panel1.Controls.Add(this.btnEnCokTercih);
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(340, 498);
+            this.panel1.Size = new System.Drawing.Size(389, 664);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(127, 416);
+            this.pictureBox2.Location = new System.Drawing.Point(151, 611);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(61, 40);
+            this.pictureBox2.Size = new System.Drawing.Size(70, 53);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 23;
             this.pictureBox2.TabStop = false;
@@ -76,8 +78,9 @@ namespace CalorieCalculate.Forms
             this.pbBack.BackColor = System.Drawing.Color.Transparent;
             this.pbBack.Image = ((System.Drawing.Image)(resources.GetObject("pbBack.Image")));
             this.pbBack.Location = new System.Drawing.Point(0, 0);
+            this.pbBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbBack.Name = "pbBack";
-            this.pbBack.Size = new System.Drawing.Size(57, 34);
+            this.pbBack.Size = new System.Drawing.Size(65, 45);
             this.pbBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbBack.TabIndex = 22;
             this.pbBack.TabStop = false;
@@ -92,9 +95,10 @@ namespace CalorieCalculate.Forms
             this.pbProfil.KLCBorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             this.pbProfil.KLCBorderSize = 2;
             this.pbProfil.KLCGradientAngle = 50F;
-            this.pbProfil.Location = new System.Drawing.Point(280, 0);
+            this.pbProfil.Location = new System.Drawing.Point(320, 0);
+            this.pbProfil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbProfil.Name = "pbProfil";
-            this.pbProfil.Size = new System.Drawing.Size(34, 34);
+            this.pbProfil.Size = new System.Drawing.Size(39, 39);
             this.pbProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbProfil.TabIndex = 21;
             this.pbProfil.TabStop = false;
@@ -114,9 +118,10 @@ namespace CalorieCalculate.Forms
             this.btnRekabetRaporu.KLCBorderRadius = 40;
             this.btnRekabetRaporu.KLCBorderSize = 0;
             this.btnRekabetRaporu.KLCTextColor = System.Drawing.Color.Black;
-            this.btnRekabetRaporu.Location = new System.Drawing.Point(90, 156);
+            this.btnRekabetRaporu.Location = new System.Drawing.Point(103, 208);
+            this.btnRekabetRaporu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRekabetRaporu.Name = "btnRekabetRaporu";
-            this.btnRekabetRaporu.Size = new System.Drawing.Size(162, 82);
+            this.btnRekabetRaporu.Size = new System.Drawing.Size(185, 109);
             this.btnRekabetRaporu.TabIndex = 2;
             this.btnRekabetRaporu.Tag = "2";
             this.btnRekabetRaporu.Text = "Rekabet Raporum";
@@ -146,9 +151,10 @@ namespace CalorieCalculate.Forms
             this.btnKaloriRaporu.KLCBorderRadius = 40;
             this.btnKaloriRaporu.KLCBorderSize = 0;
             this.btnKaloriRaporu.KLCTextColor = System.Drawing.Color.Black;
-            this.btnKaloriRaporu.Location = new System.Drawing.Point(90, 47);
+            this.btnKaloriRaporu.Location = new System.Drawing.Point(103, 63);
+            this.btnKaloriRaporu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnKaloriRaporu.Name = "btnKaloriRaporu";
-            this.btnKaloriRaporu.Size = new System.Drawing.Size(162, 93);
+            this.btnKaloriRaporu.Size = new System.Drawing.Size(185, 124);
             this.btnKaloriRaporu.TabIndex = 1;
             this.btnKaloriRaporu.Tag = "1";
             this.btnKaloriRaporu.Text = "Kalori Raporum";
@@ -169,9 +175,10 @@ namespace CalorieCalculate.Forms
             this.btnEnCokTercih.KLCBorderRadius = 40;
             this.btnEnCokTercih.KLCBorderSize = 0;
             this.btnEnCokTercih.KLCTextColor = System.Drawing.Color.Black;
-            this.btnEnCokTercih.Location = new System.Drawing.Point(90, 259);
+            this.btnEnCokTercih.Location = new System.Drawing.Point(103, 345);
+            this.btnEnCokTercih.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEnCokTercih.Name = "btnEnCokTercih";
-            this.btnEnCokTercih.Size = new System.Drawing.Size(162, 82);
+            this.btnEnCokTercih.Size = new System.Drawing.Size(185, 109);
             this.btnEnCokTercih.TabIndex = 3;
             this.btnEnCokTercih.Tag = "3";
             this.btnEnCokTercih.Text = "En çok Tercih Edilenler";
@@ -180,12 +187,13 @@ namespace CalorieCalculate.Forms
             // 
             // Raporlar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(316, 459);
+            this.ClientSize = new System.Drawing.Size(379, 664);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Raporlar";

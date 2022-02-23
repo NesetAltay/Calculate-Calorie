@@ -13,7 +13,7 @@ namespace CalorieCalculate.Model.EntityTypeConfiguration
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.ToTable("Kullanıcı");
+            builder.ToTable("Kullanici");
 
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).UseIdentityColumn();

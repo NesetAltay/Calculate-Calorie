@@ -14,7 +14,7 @@ namespace CalorieCalculate.Model.EntityTypeConfiguration
         public void Configure(EntityTypeBuilder<Meal> builder) // kullanılan hazırlanmış method sınıf içerisinde hangi özellikleri kullanıcağımızı belirmemize yardımcı olur, builder sınıf içerisinde yaptığımız değişikleri tanımlar
         {
             #region Kolon Bilgileri
-            builder.ToTable("Yemek Bilgileri"); // ToTable : Tabloya isim verir
+            builder.ToTable("YemekBilgileri"); // ToTable : Tabloya isim verir
 
             builder.HasKey(x => x.Id); // HasKey Primery key belirtir
             builder.Property(x => x.Id).UseIdentityColumn(); // UseIdentityColumn kolona ıdentity özelliği tanımlar
@@ -24,8 +24,6 @@ namespace CalorieCalculate.Model.EntityTypeConfiguration
 
             builder.Property(x => x.MealDescription).IsRequired();
             builder.Property(x => x.MealDescription).HasMaxLength(300);
-
-            builder.Property(x => x.Calorie).HasPrecision(18, 2); // HasPrecision decimal sayı değerini ifade eder
 
             builder.HasOne(x => x.TypeOfMeal).WithMany(x => x.Meals).HasForeignKey(x => x.TypeMealId);
             // HasOne sınıf içerisinde ilişkili olan sınıfı belirtir

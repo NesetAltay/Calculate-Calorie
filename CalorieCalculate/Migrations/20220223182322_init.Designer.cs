@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CalorieCalculate.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20220221154932_versiyon_bir")]
-    partial class versiyon_bir
+    [Migration("20220223182322_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -51,7 +51,7 @@ namespace CalorieCalculate.Migrations
 
                     b.HasIndex("TypeMealId");
 
-                    b.ToTable("Yemek Bilgileri");
+                    b.ToTable("YemekBilgileri");
 
                     b.HasData(
                         new
@@ -906,7 +906,7 @@ namespace CalorieCalculate.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Öğün Bilgileri");
+                    b.ToTable("OgunBilgileri");
                 });
 
             modelBuilder.Entity("CalorieCalculate.Model.Entities.RepastMeal", b =>
@@ -929,7 +929,7 @@ namespace CalorieCalculate.Migrations
 
                     b.HasIndex("RepastId");
 
-                    b.ToTable("ÖğünYemek");
+                    b.ToTable("OgunYemek");
                 });
 
             modelBuilder.Entity("CalorieCalculate.Model.Entities.TypeOfMeal", b =>
@@ -948,7 +948,7 @@ namespace CalorieCalculate.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Yemek Grupları");
+                    b.ToTable("YemekGruplari");
 
                     b.HasData(
                         new
@@ -1008,16 +1008,18 @@ namespace CalorieCalculate.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("Password")
-                        .HasMaxLength(8)
-                        .HasColumnType("nvarchar(8)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Kullanıcı");
+                    b.ToTable("Kullanici");
                 });
 
             modelBuilder.Entity("CalorieCalculate.Model.Entities.UserInformation", b =>
@@ -1029,24 +1031,26 @@ namespace CalorieCalculate.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("FirstName")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("Height")
+                    b.Property<decimal>("Height")
                         .HasPrecision(18, 2)
-                        .HasColumnType("int");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("LastName")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("Weight")
+                    b.Property<decimal>("Weight")
                         .HasPrecision(18, 2)
-                        .HasColumnType("int");
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Kullanıcı Bilgileri");
+                    b.ToTable("KullaniciBilgileri");
                 });
 
             modelBuilder.Entity("CalorieCalculate.Model.Entities.Meal", b =>

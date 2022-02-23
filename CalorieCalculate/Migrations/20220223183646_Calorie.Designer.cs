@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CalorieCalculate.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20220221174707_ikinci_migration")]
-    partial class ikinci_migration
+    [Migration("20220223183646_Calorie")]
+    partial class Calorie
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,8 +31,7 @@ namespace CalorieCalculate.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<double>("Calorie")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("float(18)");
+                        .HasColumnType("float");
 
                     b.Property<string>("MealDescription")
                         .IsRequired()
@@ -51,7 +50,7 @@ namespace CalorieCalculate.Migrations
 
                     b.HasIndex("TypeMealId");
 
-                    b.ToTable("Yemek Bilgileri");
+                    b.ToTable("YemekBilgileri");
 
                     b.HasData(
                         new
@@ -906,7 +905,7 @@ namespace CalorieCalculate.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Öğün Bilgileri");
+                    b.ToTable("OgunBilgileri");
                 });
 
             modelBuilder.Entity("CalorieCalculate.Model.Entities.RepastMeal", b =>
@@ -929,7 +928,7 @@ namespace CalorieCalculate.Migrations
 
                     b.HasIndex("RepastId");
 
-                    b.ToTable("ÖğünYemek");
+                    b.ToTable("OgunYemek");
                 });
 
             modelBuilder.Entity("CalorieCalculate.Model.Entities.TypeOfMeal", b =>
@@ -948,7 +947,7 @@ namespace CalorieCalculate.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Yemek Grupları");
+                    b.ToTable("YemekGruplari");
 
                     b.HasData(
                         new
@@ -1014,12 +1013,12 @@ namespace CalorieCalculate.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(8)
-                        .HasColumnType("nvarchar(8)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Kullanıcı");
+                    b.ToTable("Kullanici");
                 });
 
             modelBuilder.Entity("CalorieCalculate.Model.Entities.UserInformation", b =>
@@ -1050,7 +1049,7 @@ namespace CalorieCalculate.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Kullanıcı Bilgileri");
+                    b.ToTable("KullaniciBilgileri");
                 });
 
             modelBuilder.Entity("CalorieCalculate.Model.Entities.Meal", b =>

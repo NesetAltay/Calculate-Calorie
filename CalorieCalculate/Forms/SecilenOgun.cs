@@ -19,10 +19,12 @@ namespace CalorieCalculate.Forms
         public SecilenOgun()
         {
             InitializeComponent();
+
         }
 
         public SecilenOgun(Repast repast)
         {
+            InitializeComponent();
             this.repast = repast;
             lblOgunAdi.Text = repast.RepastName;
         }
@@ -42,7 +44,10 @@ namespace CalorieCalculate.Forms
         {
             using (DatabaseContext db = new DatabaseContext())
             {
-                var yemekler = db.Meals.Select(x => new { Id = x.Id, MealName = x.MealName, Description = x.MealDescription, Calorie = x.Calorie, TypMeal = x.TypeMealId }).ToList();
+                var yemekler = db.Meals.ToList();
+                var filter = yemekler.Select(x => new YemekDTO() { MealName = x.MealName, Calorie = x.Calorie, Description = x.MealDescription, MealType = x.TypeMealId }).ToList();
+                //List<Meal> meals = db.Meals.ToList();
+                dgvOgun.DataSource = yemekler;
             }
         }
     }

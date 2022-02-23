@@ -3,26 +3,26 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CalorieCalculate.Migrations
 {
-    public partial class versiyon_bir : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Kullanıcı",
+                name: "Kullanici",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Email = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: true),
-                    Password = table.Column<string>(type: "nvarchar(8)", maxLength: 8, nullable: true)
+                    Email = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Kullanıcı", x => x.Id);
+                    table.PrimaryKey("PK_Kullanici", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Yemek Grupları",
+                name: "YemekGruplari",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -31,33 +31,33 @@ namespace CalorieCalculate.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Yemek Grupları", x => x.Id);
+                    table.PrimaryKey("PK_YemekGruplari", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Kullanıcı Bilgileri",
+                name: "KullaniciBilgileri",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Height = table.Column<int>(type: "int", precision: 18, scale: 2, nullable: false),
-                    Weight = table.Column<int>(type: "int", precision: 18, scale: 2, nullable: false)
+                    Height = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    Weight = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Kullanıcı Bilgileri", x => x.Id);
+                    table.PrimaryKey("PK_KullaniciBilgileri", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Kullanıcı Bilgileri_Kullanıcı_Id",
+                        name: "FK_KullaniciBilgileri_Kullanici_Id",
                         column: x => x.Id,
-                        principalTable: "Kullanıcı",
+                        principalTable: "Kullanici",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Öğün Bilgileri",
+                name: "OgunBilgileri",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -68,17 +68,17 @@ namespace CalorieCalculate.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Öğün Bilgileri", x => x.Id);
+                    table.PrimaryKey("PK_OgunBilgileri", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Öğün Bilgileri_Kullanıcı_UserId",
+                        name: "FK_OgunBilgileri_Kullanici_UserId",
                         column: x => x.UserId,
-                        principalTable: "Kullanıcı",
+                        principalTable: "Kullanici",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Yemek Bilgileri",
+                name: "YemekBilgileri",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -90,17 +90,17 @@ namespace CalorieCalculate.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Yemek Bilgileri", x => x.Id);
+                    table.PrimaryKey("PK_YemekBilgileri", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Yemek Bilgileri_Yemek Grupları_TypeMealId",
+                        name: "FK_YemekBilgileri_YemekGruplari_TypeMealId",
                         column: x => x.TypeMealId,
-                        principalTable: "Yemek Grupları",
+                        principalTable: "YemekGruplari",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ÖğünYemek",
+                name: "OgunYemek",
                 columns: table => new
                 {
                     RepastId = table.Column<int>(type: "int", nullable: false),
@@ -110,23 +110,23 @@ namespace CalorieCalculate.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ÖğünYemek", x => new { x.MealId, x.RepastId });
+                    table.PrimaryKey("PK_OgunYemek", x => new { x.MealId, x.RepastId });
                     table.ForeignKey(
-                        name: "FK_ÖğünYemek_Öğün Bilgileri_RepastId",
+                        name: "FK_OgunYemek_OgunBilgileri_RepastId",
                         column: x => x.RepastId,
-                        principalTable: "Öğün Bilgileri",
+                        principalTable: "OgunBilgileri",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ÖğünYemek_Yemek Bilgileri_MealId",
+                        name: "FK_OgunYemek_YemekBilgileri_MealId",
                         column: x => x.MealId,
-                        principalTable: "Yemek Bilgileri",
+                        principalTable: "YemekBilgileri",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
-                table: "Yemek Grupları",
+                table: "YemekGruplari",
                 columns: new[] { "Id", "MealType" },
                 values: new object[,]
                 {
@@ -142,7 +142,7 @@ namespace CalorieCalculate.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Yemek Bilgileri",
+                table: "YemekBilgileri",
                 columns: new[] { "Id", "Calorie", "MealDescription", "MealName", "TypeMealId" },
                 values: new object[,]
                 {
@@ -191,7 +191,7 @@ namespace CalorieCalculate.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Yemek Bilgileri",
+                table: "YemekBilgileri",
                 columns: new[] { "Id", "Calorie", "MealDescription", "MealName", "TypeMealId" },
                 values: new object[,]
                 {
@@ -240,7 +240,7 @@ namespace CalorieCalculate.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Yemek Bilgileri",
+                table: "YemekBilgileri",
                 columns: new[] { "Id", "Calorie", "MealDescription", "MealName", "TypeMealId" },
                 values: new object[,]
                 {
@@ -266,40 +266,40 @@ namespace CalorieCalculate.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Öğün Bilgileri_UserId",
-                table: "Öğün Bilgileri",
+                name: "IX_OgunBilgileri_UserId",
+                table: "OgunBilgileri",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ÖğünYemek_RepastId",
-                table: "ÖğünYemek",
+                name: "IX_OgunYemek_RepastId",
+                table: "OgunYemek",
                 column: "RepastId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Yemek Bilgileri_TypeMealId",
-                table: "Yemek Bilgileri",
+                name: "IX_YemekBilgileri_TypeMealId",
+                table: "YemekBilgileri",
                 column: "TypeMealId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Kullanıcı Bilgileri");
+                name: "KullaniciBilgileri");
 
             migrationBuilder.DropTable(
-                name: "ÖğünYemek");
+                name: "OgunYemek");
 
             migrationBuilder.DropTable(
-                name: "Öğün Bilgileri");
+                name: "OgunBilgileri");
 
             migrationBuilder.DropTable(
-                name: "Yemek Bilgileri");
+                name: "YemekBilgileri");
 
             migrationBuilder.DropTable(
-                name: "Kullanıcı");
+                name: "Kullanici");
 
             migrationBuilder.DropTable(
-                name: "Yemek Grupları");
+                name: "YemekGruplari");
         }
     }
 }

@@ -22,6 +22,7 @@ namespace CalorieCalculate.Forms
 
         public Interface(int user)
         {
+            InitializeComponent();
             this.user = user;
         }
 
@@ -44,13 +45,13 @@ namespace CalorieCalculate.Forms
                     using (DatabaseContext context = new DatabaseContext())
                     {
 
-                        var result = context.UserInformations.Where(x => x.Id == user).Select(x=> new {y = x.Weight, z = x.Height}).FirstOrDefault();
+                        var result = context.UserInformations.Where(x => x.Id == user).Select(x=> new {y = x.Weight, 
+                            z = x.Height}).FirstOrDefault();
                         BedenKitle bd = new BedenKitle();
                         bd.lblSonuc.Text = BedenKitleHesapla(result.z,result.y).ToString();
-                        frm = new BedenKitle();
+                        frm = bd;
                         break;
                     }
-
             }
             this.Hide();
             frm.ShowDialog();
@@ -61,9 +62,9 @@ namespace CalorieCalculate.Forms
         {
             decimal x;
             decimal vki;
-            x = height * height;
+            x = (height * height)/10000;
             vki = weight / x;
-            return vki;
+            return Math.Round(vki,2);
         }
     }
 }

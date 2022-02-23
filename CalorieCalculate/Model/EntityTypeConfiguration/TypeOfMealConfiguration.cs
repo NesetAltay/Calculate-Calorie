@@ -14,7 +14,7 @@ namespace CalorieCalculate.Model.EntityTypeConfiguration
         public void Configure(EntityTypeBuilder<TypeOfMeal> builder)
         {
             #region Kolon Bilgileri
-            builder.ToTable("Yemek Grupları");
+            builder.ToTable("YemekGruplari");
 
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).UseIdentityColumn();

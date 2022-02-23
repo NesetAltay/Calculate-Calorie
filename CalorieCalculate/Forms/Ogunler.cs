@@ -26,13 +26,14 @@ namespace CalorieCalculate.Forms
 
         public Ogunler(int user)
         {
+            InitializeComponent();
             this.user = user;
         }
 
         //oop icin yapı olusturuldugunda acılacak form isimleri veri olarak metod icerisinde gönderilecek.
         private void Interface_Click(object sender, EventArgs e)
         {
-            PictureBox pb = (PictureBox)sender;
+            Button pb = (Button)sender;
             Form frm = default;
             OgunEkle(pb);
             switch (pb.Tag.ToString())
@@ -47,7 +48,7 @@ namespace CalorieCalculate.Forms
                     frm = new SecilenOgun(repast);
                     break;
                 case "4":
-                    frm = new Interface();
+                    this.Close();
                     break;
                 //case "5":
                 //    frm = new Profil();    profil sayfası olusturulunca aktif olacak.
@@ -58,14 +59,15 @@ namespace CalorieCalculate.Forms
             this.Show();
         }
         
-        private void OgunEkle(PictureBox pb)
+        private void OgunEkle(Button pb)
         {
             using (DatabaseContext db = new DatabaseContext())
             {
                 repast = new Repast()
                 {
-                    RepastName = pb.Name.ToString(),
-                    UserId = user
+                    RepastName = pb.Text,
+                    UserId = user,
+                    Date = DateTime.Now
                 };
                 db.Repasts.Add(repast);
                 db.SaveChanges();

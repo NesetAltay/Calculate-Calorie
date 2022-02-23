@@ -18,18 +18,18 @@ namespace CalorieCalculate.Forms
             InitializeComponent();
             txtEmail.Select();
         }
-        public string KLCText { get; }
-
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
             using (DatabaseContext context = new DatabaseContext())
             {
-                var result = context.Users.Any(x => x.Email == txtEmail.KLCText && x.Password == txtPassword.KLCText);
-                var user = context.Users.Where(x => x.Email.Equals(txtEmail.KLCText) && x.Password.Equals(txtPassword.KLCText))
+                //var result = context.Users.Any(x => x.Email == txtEmail.KLCText && x.Password == txtPassword.KLCText);
+                //var user = context.Users.Where(x => x.Email.Equals(txtEmail.KLCText) && x.Password.Equals(txtPassword.KLCText))
+                //    .Select(x => x.Id).FirstOrDefault();
+                var user = context.Users.Where(x => x.Email.Equals("altayneset@gmail.com") && x.Password.Equals("12345Neset"))
                     .Select(x => x.Id).FirstOrDefault();
-                if (result)
+                if (user != null)
                 {
-                    Form frm = new Interface(user);
+                    Interface frm = new Interface(user);
                     frm.ShowDialog();
                 }
                 else

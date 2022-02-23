@@ -13,7 +13,7 @@ namespace CalorieCalculate.Model.EntityTypeConfiguration
     {
         public void Configure(EntityTypeBuilder<RepastMeal> builder)
         {
-            builder.ToTable("ÖğünYemek");
+            builder.ToTable("OgunYemek");
 
             builder.Property(x => x.EatenPortion).HasPrecision(18, 2);
 
