@@ -112,14 +112,12 @@ namespace CalorieCalculate.Forms
             this.btnGirisYap.KLCTextColor = System.Drawing.Color.Black;
             this.btnGirisYap.Location = new System.Drawing.Point(163, 341);
             this.btnGirisYap.Name = "btnGirisYap";
-//<<<<<<< HEAD
-            this.btnGirisYap.Size = new System.Drawing.Size(109, 41);
-            this.btnGirisYap.TabIndex = 21;
+
             this.btnGirisYap.Tag = "3";
-//=======
+
             this.btnGirisYap.Size = new System.Drawing.Size(95, 31);
             this.btnGirisYap.TabIndex = 3;
-//>>>>>>> oguzbranch
+
             this.btnGirisYap.Text = "Giriş Yap";
             this.btnGirisYap.UseVisualStyleBackColor = false;
             this.btnGirisYap.Click += new System.EventHandler(this.btnGirisYap_Click);
@@ -165,22 +163,16 @@ namespace CalorieCalculate.Forms
             this.txtEmail.KLCPlaceholderText = "";
             this.txtEmail.KLCText = "";
             this.txtEmail.KLCUnderlinedStyle = false;
-//<<<<<<< HEAD
-            this.txtEmail.Location = new System.Drawing.Point(78, 329);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(5);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Padding = new System.Windows.Forms.Padding(11, 9, 11, 9);
-            this.txtEmail.Size = new System.Drawing.Size(217, 39);
-            this.txtEmail.TabIndex = 18;
+
             this.txtEmail.Tag = "1";
-//=======
+
             this.txtEmail.Location = new System.Drawing.Point(68, 247);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtEmail.Size = new System.Drawing.Size(190, 31);
             this.txtEmail.TabIndex = 1;
-//>>>>>>> oguzbranch
+
             // 
             // label1
             // 
@@ -217,22 +209,17 @@ namespace CalorieCalculate.Forms
             this.txtPassword.KLCPlaceholderText = "";
             this.txtPassword.KLCText = "";
             this.txtPassword.KLCUnderlinedStyle = false;
-//<<<<<<< HEAD
-            this.txtPassword.Location = new System.Drawing.Point(78, 404);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(5);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Padding = new System.Windows.Forms.Padding(11, 9, 11, 9);
-            this.txtPassword.Size = new System.Drawing.Size(217, 39);
-            this.txtPassword.TabIndex = 17;
+
+            
             this.txtPassword.Tag = "2";
-//=======
+
             this.txtPassword.Location = new System.Drawing.Point(68, 303);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtPassword.Size = new System.Drawing.Size(190, 31);
             this.txtPassword.TabIndex = 2;
-//>>>>>>> oguzbranch
+
             // 
             // OturumAc
             // 
@@ -266,9 +253,8 @@ namespace CalorieCalculate.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         public KLCToolbox.KLCControls.KLCTextBox txtEmail;
-//<<<<<<< HEAD
-//=======
+
         public KLCToolbox.KLCControls.KLCTextBox txtPassword;
-//>>>>>>> oguzbranch
+
     }
 }
