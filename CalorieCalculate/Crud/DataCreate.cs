@@ -19,46 +19,33 @@ namespace CalorieCalculate.Crud
         {
             using (DatabaseContext db = new DatabaseContext())
             {
-                try
+                user = new User()
                 {
-                    user = new User()
-                    {
-                        Email = email,
-                        Password = password
-                    };
-                    db.Users.Add(user);
-                    db.SaveChanges();
+                    Email = email,
+                    Password = password
+                };
+                db.Users.Add(user);
+                db.SaveChanges();
 
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Email ve Şifre alanı boş bırakılamaz", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
 
         }
-        public void CreateUserInformation( string name, string lastname, string height, string weight, DateTime dt)
+        public void CreateUserInformation(string name, string lastname, string height, string weight, DateTime dt)
         {
             using (DatabaseContext db = new DatabaseContext())
             {
-                try
+                userInformation = new UserInformation()
                 {
-                    userInformation = new UserInformation()
-                    {
-                        Id = user.Id,
-                        FirstName = name,
-                        LastName = lastname,
-                        Height = decimal.Parse(height),
-                        Weight = decimal.Parse(weight),
-                        BirthDate = dt
-                    };
-                    db.UserInformations.Add(userInformation);
-                    db.SaveChanges();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Verilerinizi kontrol edin", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                    Id = user.Id,
+                    FirstName = name,
+                    LastName = lastname,
+                    Height = decimal.Parse(height),
+                    Weight = decimal.Parse(weight),
+                    BirthDate = dt
+                };
+                db.UserInformations.Add(userInformation);
+                db.SaveChanges();
+
             }
         }
     }

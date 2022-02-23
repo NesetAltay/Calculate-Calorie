@@ -40,34 +40,43 @@ namespace CalorieCalculate.Forms
         // Database e yeni kullanıcı ekleme
         private void DataLoad()
         {
-            using (DatabaseContext db = new DatabaseContext())
-            {
-                try
-                {
-                    UserInformation information;
-                    User user;
-                    Create(out information, out user);
-                    CreateControl(db, information, user);
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Verilerinizi kontrol edin", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+            //using (DatabaseContext db = new DatabaseContext())
+            //{
+            //    try
+            //    {
+            //        UserInformation information;
+            //        User user;
+            //        Create(out information, out user);
+            //        CreateControl(db, information, user);
+            //    }
+            //    catch (Exception)
+            //    {
+            //        MessageBox.Show("Verilerinizi kontrol edin", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
+            //}
             // Bir sınıf yapısı oluşturuldu ancak metotlar null değerlerde hataya düşmüyor hocaya sorulacak, klasör adı Crud oluşturulan sınıf DataCreate
-            /*
-            try
-            {
-                DataCreate create = new DataCreate();
 
-                create.CreateUser(txtEmail.KLCText, txtPassword.KLCText);
-                create.CreateUserInformation(txtName.KLCText, txtLastName.KLCText, txtHeight.KLCText, txtWeight.KLCText, dtpBirthdate.Value);
-            }
-            catch (Exception)
+            List<string> text = new List<string>() { txtName.KLCText, txtLastName.KLCText, txtEmail.KLCText, txtHeight.KLCText, txtPassword.KLCText, txtWeight.KLCText };
+
+            DataCreate create = new DataCreate();
+           
+
+            if (!StringExtension.TestForNullOrEmpty(text) && !StringExtension.IsStokEmail(txtEmail.KLCText) && StringExtension.IsValidEmail(txtEmail.KLCText))
             {
-                MessageBox.Show("Verilerinizi kontrol edin", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (txtPassword.KLCText == txtPassword2.KLCText && StringExtension.IsValidPassword(txtPassword.KLCText))
+                {
+
+                    create.CreateUser(txtEmail.KLCText, txtPassword.KLCText);
+                    create.CreateUserInformation(txtName.KLCText, txtLastName.KLCText, txtHeight.KLCText, txtWeight.KLCText, dtpBirthdate.Value); 
+                }
+                else MessageBox.Show("Şifre alanları eşleşmiyor veya Şifre belirlenen kriterlere uygun değil, Lütfen kontrol edin!", "Uyarı",MessageBoxButtons.OK,MessageBoxIcon.Error);
+
             }
-            */
+            else
+            {
+                MessageBox.Show("Lütfen girmiş olduğunuz verileri kontrol edin", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
         // Yeni kullanıcı oluşturma
         private void Create(out UserInformation information, out User user)
@@ -105,5 +114,8 @@ namespace CalorieCalculate.Forms
                 f.ShowDialog();
             }
         }
+
+       
+
     }
 }
