@@ -32,17 +32,17 @@ namespace CalorieCalculate.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Raporlar));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pbBack = new System.Windows.Forms.PictureBox();
             this.pbProfil = new KLCToolbox.KLCControls.KLCCircularPictureBox();
             this.btnRekabetRaporu = new KLCToolbox.KLCControls.KLCButton();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnKaloriRaporu = new KLCToolbox.KLCControls.KLCButton();
             this.btnEnCokTercih = new KLCToolbox.KLCControls.KLCButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfil)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -59,6 +59,17 @@ namespace CalorieCalculate.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(340, 498);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(127, 416);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(61, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 23;
+            this.pictureBox2.TabStop = false;
             // 
             // pbBack
             // 
@@ -106,7 +117,7 @@ namespace CalorieCalculate.Forms
             this.btnRekabetRaporu.Location = new System.Drawing.Point(90, 156);
             this.btnRekabetRaporu.Name = "btnRekabetRaporu";
             this.btnRekabetRaporu.Size = new System.Drawing.Size(162, 82);
-            this.btnRekabetRaporu.TabIndex = 18;
+            this.btnRekabetRaporu.TabIndex = 2;
             this.btnRekabetRaporu.Tag = "2";
             this.btnRekabetRaporu.Text = "Rekabet Raporum";
             this.btnRekabetRaporu.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -138,7 +149,7 @@ namespace CalorieCalculate.Forms
             this.btnKaloriRaporu.Location = new System.Drawing.Point(90, 47);
             this.btnKaloriRaporu.Name = "btnKaloriRaporu";
             this.btnKaloriRaporu.Size = new System.Drawing.Size(162, 93);
-            this.btnKaloriRaporu.TabIndex = 19;
+            this.btnKaloriRaporu.TabIndex = 1;
             this.btnKaloriRaporu.Tag = "1";
             this.btnKaloriRaporu.Text = "Kalori Raporum";
             this.btnKaloriRaporu.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -161,22 +172,11 @@ namespace CalorieCalculate.Forms
             this.btnEnCokTercih.Location = new System.Drawing.Point(90, 259);
             this.btnEnCokTercih.Name = "btnEnCokTercih";
             this.btnEnCokTercih.Size = new System.Drawing.Size(162, 82);
-            this.btnEnCokTercih.TabIndex = 20;
+            this.btnEnCokTercih.TabIndex = 3;
             this.btnEnCokTercih.Tag = "3";
             this.btnEnCokTercih.Text = "En çok Tercih Edilenler";
             this.btnEnCokTercih.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnEnCokTercih.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(127, 416);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(61, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 23;
-            this.pictureBox2.TabStop = false;
             // 
             // Raporlar
             // 
@@ -192,9 +192,9 @@ namespace CalorieCalculate.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AVOCADO";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfil)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

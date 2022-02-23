@@ -80,7 +80,7 @@ namespace CalorieCalculate.Forms
             this.lblOturumAc.Location = new System.Drawing.Point(184, 296);
             this.lblOturumAc.Name = "lblOturumAc";
             this.lblOturumAc.Size = new System.Drawing.Size(70, 15);
-            this.lblOturumAc.TabIndex = 0;
+            this.lblOturumAc.TabIndex = 2;
             this.lblOturumAc.Tag = "2";
             this.lblOturumAc.Text = "Oturum Aç";
             this.lblOturumAc.Click += new System.EventHandler(this.Click);
@@ -92,7 +92,7 @@ namespace CalorieCalculate.Forms
             this.lblKayitOl.Location = new System.Drawing.Point(99, 296);
             this.lblKayitOl.Name = "lblKayitOl";
             this.lblKayitOl.Size = new System.Drawing.Size(63, 15);
-            this.lblKayitOl.TabIndex = 0;
+            this.lblKayitOl.TabIndex = 1;
             this.lblKayitOl.Tag = "1";
             this.lblKayitOl.Text = "Kayıt Ol";
             this.lblKayitOl.Click += new System.EventHandler(this.Click);

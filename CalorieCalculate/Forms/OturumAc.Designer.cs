@@ -84,7 +84,7 @@ namespace CalorieCalculate.Forms
             this.lnkKayitOl.Location = new System.Drawing.Point(125, 404);
             this.lnkKayitOl.Name = "lnkKayitOl";
             this.lnkKayitOl.Size = new System.Drawing.Size(63, 15);
-            this.lnkKayitOl.TabIndex = 22;
+            this.lnkKayitOl.TabIndex = 4;
             this.lnkKayitOl.TabStop = true;
             this.lnkKayitOl.Text = "Kayıt Ol";
             this.lnkKayitOl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkKayitOl_LinkClicked);
@@ -113,7 +113,7 @@ namespace CalorieCalculate.Forms
             this.btnGirisYap.Location = new System.Drawing.Point(163, 341);
             this.btnGirisYap.Name = "btnGirisYap";
             this.btnGirisYap.Size = new System.Drawing.Size(95, 31);
-            this.btnGirisYap.TabIndex = 21;
+            this.btnGirisYap.TabIndex = 3;
             this.btnGirisYap.Text = "Giriş Yap";
             this.btnGirisYap.UseVisualStyleBackColor = false;
             this.btnGirisYap.Click += new System.EventHandler(this.btnGirisYap_Click);
@@ -160,11 +160,11 @@ namespace CalorieCalculate.Forms
             this.txtEmail.KLCText = "";
             this.txtEmail.KLCUnderlinedStyle = false;
             this.txtEmail.Location = new System.Drawing.Point(68, 247);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtEmail.Size = new System.Drawing.Size(190, 31);
-            this.txtEmail.TabIndex = 18;
+            this.txtEmail.TabIndex = 1;
             // 
             // label1
             // 
@@ -202,11 +202,11 @@ namespace CalorieCalculate.Forms
             this.txtPassword.KLCText = "";
             this.txtPassword.KLCUnderlinedStyle = false;
             this.txtPassword.Location = new System.Drawing.Point(68, 303);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtPassword.Size = new System.Drawing.Size(190, 31);
-            this.txtPassword.TabIndex = 17;
+            this.txtPassword.TabIndex = 2;
             // 
             // OturumAc
             // 
