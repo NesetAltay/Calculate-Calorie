@@ -146,7 +146,7 @@ namespace CalorieCalculate.Forms
             this.btnOgleYemegi.Location = new System.Drawing.Point(78, 202);
             this.btnOgleYemegi.Name = "btnOgleYemegi";
             this.btnOgleYemegi.Size = new System.Drawing.Size(172, 93);
-            this.btnOgleYemegi.TabIndex = 18;
+            this.btnOgleYemegi.TabIndex = 2;
             this.btnOgleYemegi.Tag = "2";
             this.btnOgleYemegi.Text = " Öğle Yemeği";
             this.btnOgleYemegi.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -177,7 +177,7 @@ namespace CalorieCalculate.Forms
             this.btnKahvalti.Location = new System.Drawing.Point(78, 89);
             this.btnKahvalti.Name = "btnKahvalti";
             this.btnKahvalti.Size = new System.Drawing.Size(172, 93);
-            this.btnKahvalti.TabIndex = 19;
+            this.btnKahvalti.TabIndex = 1;
             this.btnKahvalti.Tag = "1";
             this.btnKahvalti.Text = " Kahvaltı";
             this.btnKahvalti.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -199,7 +199,7 @@ namespace CalorieCalculate.Forms
             this.btnAksamYemegi.Location = new System.Drawing.Point(78, 318);
             this.btnAksamYemegi.Name = "btnAksamYemegi";
             this.btnAksamYemegi.Size = new System.Drawing.Size(172, 93);
-            this.btnAksamYemegi.TabIndex = 20;
+            this.btnAksamYemegi.TabIndex = 3;
             this.btnAksamYemegi.Tag = "3";
             this.btnAksamYemegi.Text = " Akşam Yemeği";
             this.btnAksamYemegi.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -229,14 +229,14 @@ namespace CalorieCalculate.Forms
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pbBack;
-        private KLCToolbox.KLCControls.KLCDatePicker dtpDate;
-        private KLCToolbox.KLCControls.KLCCircularPictureBox pbProfil;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private KLCToolbox.KLCControls.KLCButton btnOgleYemegi;
         private System.Windows.Forms.ImageList ımageList1;
-        private KLCToolbox.KLCControls.KLCButton btnKahvalti;
-        private KLCToolbox.KLCControls.KLCButton btnAksamYemegi;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.PictureBox pbBack;
+        public KLCToolbox.KLCControls.KLCDatePicker dtpDate;
+        public KLCToolbox.KLCControls.KLCCircularPictureBox pbProfil;
+        public KLCToolbox.KLCControls.KLCButton btnOgleYemegi;
+        public KLCToolbox.KLCControls.KLCButton btnKahvalti;
+        public KLCToolbox.KLCControls.KLCButton btnAksamYemegi;
     }
 }

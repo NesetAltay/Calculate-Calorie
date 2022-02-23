@@ -61,19 +61,17 @@ namespace CalorieCalculate.Forms
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(379, 664);
+            this.panel1.Size = new System.Drawing.Size(332, 498);
             this.panel1.TabIndex = 2;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(143, 580);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(125, 435);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 53);
+            this.pictureBox1.Size = new System.Drawing.Size(61, 40);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
@@ -83,10 +81,10 @@ namespace CalorieCalculate.Forms
             this.lnkKayitOl.AutoSize = true;
             this.lnkKayitOl.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lnkKayitOl.LinkColor = System.Drawing.Color.OrangeRed;
-            this.lnkKayitOl.Location = new System.Drawing.Point(143, 539);
+            this.lnkKayitOl.Location = new System.Drawing.Point(125, 404);
             this.lnkKayitOl.Name = "lnkKayitOl";
-            this.lnkKayitOl.Size = new System.Drawing.Size(81, 20);
-            this.lnkKayitOl.TabIndex = 22;
+            this.lnkKayitOl.Size = new System.Drawing.Size(63, 15);
+            this.lnkKayitOl.TabIndex = 4;
             this.lnkKayitOl.TabStop = true;
             this.lnkKayitOl.Text = "Kayıt Ol";
             this.lnkKayitOl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkKayitOl_LinkClicked);
@@ -95,9 +93,9 @@ namespace CalorieCalculate.Forms
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(78, 488);
+            this.label4.Location = new System.Drawing.Point(68, 366);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 20);
+            this.label4.Size = new System.Drawing.Size(91, 15);
             this.label4.TabIndex = 25;
             this.label4.Text = "Beni Hatırla";
             // 
@@ -112,12 +110,16 @@ namespace CalorieCalculate.Forms
             this.btnGirisYap.KLCBorderRadius = 24;
             this.btnGirisYap.KLCBorderSize = 0;
             this.btnGirisYap.KLCTextColor = System.Drawing.Color.Black;
-            this.btnGirisYap.Location = new System.Drawing.Point(186, 455);
-            this.btnGirisYap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGirisYap.Location = new System.Drawing.Point(163, 341);
             this.btnGirisYap.Name = "btnGirisYap";
+<<<<<<< HEAD
             this.btnGirisYap.Size = new System.Drawing.Size(109, 41);
             this.btnGirisYap.TabIndex = 21;
             this.btnGirisYap.Tag = "3";
+=======
+            this.btnGirisYap.Size = new System.Drawing.Size(95, 31);
+            this.btnGirisYap.TabIndex = 3;
+>>>>>>> oguzbranch
             this.btnGirisYap.Text = "Giriş Yap";
             this.btnGirisYap.UseVisualStyleBackColor = false;
             this.btnGirisYap.Click += new System.EventHandler(this.btnGirisYap_Click);
@@ -126,9 +128,9 @@ namespace CalorieCalculate.Forms
             // 
             this.label3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(91, 76);
+            this.label3.Location = new System.Drawing.Point(80, 57);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(203, 213);
+            this.label3.Size = new System.Drawing.Size(178, 160);
             this.label3.TabIndex = 23;
             this.label3.Text = "AVOCADO Tarafından geliştirilen ücretsiz Kalori Sayacı Uygulaması ile yiyecek gün" +
     "lüğünü yönetebilir ve başarıyla kilo verebilirsin. Kalori saymak ve kilo vermek " +
@@ -141,11 +143,10 @@ namespace CalorieCalculate.Forms
             this.klcToggleButton1.KLCOffToggleColor = System.Drawing.Color.OrangeRed;
             this.klcToggleButton1.KLCOnBackColor = System.Drawing.Color.SeaGreen;
             this.klcToggleButton1.KLCOnToggleColor = System.Drawing.Color.MediumSeaGreen;
-            this.klcToggleButton1.Location = new System.Drawing.Point(78, 455);
-            this.klcToggleButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.klcToggleButton1.MinimumSize = new System.Drawing.Size(51, 29);
+            this.klcToggleButton1.Location = new System.Drawing.Point(68, 341);
+            this.klcToggleButton1.MinimumSize = new System.Drawing.Size(45, 22);
             this.klcToggleButton1.Name = "klcToggleButton1";
-            this.klcToggleButton1.Size = new System.Drawing.Size(51, 29);
+            this.klcToggleButton1.Size = new System.Drawing.Size(45, 22);
             this.klcToggleButton1.TabIndex = 24;
             this.klcToggleButton1.UseVisualStyleBackColor = true;
             // 
@@ -164,6 +165,7 @@ namespace CalorieCalculate.Forms
             this.txtEmail.KLCPlaceholderText = "";
             this.txtEmail.KLCText = "";
             this.txtEmail.KLCUnderlinedStyle = false;
+<<<<<<< HEAD
             this.txtEmail.Location = new System.Drawing.Point(78, 329);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(5);
             this.txtEmail.Name = "txtEmail";
@@ -171,14 +173,22 @@ namespace CalorieCalculate.Forms
             this.txtEmail.Size = new System.Drawing.Size(217, 39);
             this.txtEmail.TabIndex = 18;
             this.txtEmail.Tag = "1";
+=======
+            this.txtEmail.Location = new System.Drawing.Point(68, 247);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtEmail.Size = new System.Drawing.Size(190, 31);
+            this.txtEmail.TabIndex = 1;
+>>>>>>> oguzbranch
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(78, 301);
+            this.label1.Location = new System.Drawing.Point(68, 226);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 20);
+            this.label1.Size = new System.Drawing.Size(63, 15);
             this.label1.TabIndex = 19;
             this.label1.Text = "E-mail :";
             // 
@@ -186,9 +196,9 @@ namespace CalorieCalculate.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(78, 376);
+            this.label2.Location = new System.Drawing.Point(68, 282);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 20);
+            this.label2.Size = new System.Drawing.Size(56, 15);
             this.label2.TabIndex = 20;
             this.label2.Text = "Şifre :";
             // 
@@ -207,6 +217,7 @@ namespace CalorieCalculate.Forms
             this.txtPassword.KLCPlaceholderText = "";
             this.txtPassword.KLCText = "";
             this.txtPassword.KLCUnderlinedStyle = false;
+<<<<<<< HEAD
             this.txtPassword.Location = new System.Drawing.Point(78, 404);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(5);
             this.txtPassword.Name = "txtPassword";
@@ -214,16 +225,23 @@ namespace CalorieCalculate.Forms
             this.txtPassword.Size = new System.Drawing.Size(217, 39);
             this.txtPassword.TabIndex = 17;
             this.txtPassword.Tag = "2";
+=======
+            this.txtPassword.Location = new System.Drawing.Point(68, 303);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtPassword.Size = new System.Drawing.Size(190, 31);
+            this.txtPassword.TabIndex = 2;
+>>>>>>> oguzbranch
             // 
             // OturumAc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 664);
+            this.ClientSize = new System.Drawing.Size(332, 498);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "OturumAc";
@@ -246,8 +264,11 @@ namespace CalorieCalculate.Forms
         private KLCToolbox.KLCControls.KLCToggleButton klcToggleButton1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private KLCToolbox.KLCControls.KLCTextBox txtPassword;
         private System.Windows.Forms.PictureBox pictureBox1;
         public KLCToolbox.KLCControls.KLCTextBox txtEmail;
+<<<<<<< HEAD
+=======
+        public KLCToolbox.KLCControls.KLCTextBox txtPassword;
+>>>>>>> oguzbranch
     }
 }

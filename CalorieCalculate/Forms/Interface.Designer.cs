@@ -188,9 +188,9 @@ namespace CalorieCalculate.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private KLCToolbox.KLCControls.KLCCircularPictureBox pbOgunler;
-        private KLCToolbox.KLCControls.KLCCircularPictureBox pbRaporlar;
-        private KLCToolbox.KLCControls.KLCCircularPictureBox pbKitle;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public KLCToolbox.KLCControls.KLCCircularPictureBox pbOgunler;
+        public KLCToolbox.KLCControls.KLCCircularPictureBox pbRaporlar;
+        public KLCToolbox.KLCControls.KLCCircularPictureBox pbKitle;
     }
 }

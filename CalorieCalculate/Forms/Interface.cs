@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalorieCalculate.Model.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,30 +29,41 @@ namespace CalorieCalculate.Forms
         {
             PictureBox pb = (PictureBox)sender;
             Form frm = default;
+
             switch (pb.Tag.ToString())
             {
                 case "1":
-                    //linq sorguları çalışacak aktif üyenin gün içerisinde yediği öğünler ait oldukları öğün listesine aktarılacak.
                     frm = new Ogunler(user);
                     break;
                 case "2":
-                    //
                     frm = new Raporlar(user);
                     break;
                 case "3":
-                   // BedenKitleHesapla(height,weight);
-                   //cıkan sonucu bedenkitle formunda sonuc labelinin textine yazdır.
-                    frm = new BedenKitle();
-                    break;
+                    //Database tarafından kişinin kilo ve boy bilgileri çekilerek beden kitle indeksi hesaplanır.Bu sonuc beden kitle indeksi tablosuna aktarılır.
+                    OturumAc oturum = new OturumAc();
+                    using (DatabaseContext context = new DatabaseContext())
+                    {
+
+                        var result = context.UserInformations.Where(x => x.Id == user).Select(x=> new {y = x.Weight, z = x.Height}).FirstOrDefault();
+                        BedenKitle bd = new BedenKitle();
+                        bd.lblSonuc.Text = BedenKitleHesapla(result.z,result.y).ToString();
+                        frm = new BedenKitle();
+                        break;
+                    }
+
             }
             this.Hide();
             frm.ShowDialog();
             this.Show();
         }
 
-        private void BedenKitleHesapla(double height, double weight)
+        private decimal BedenKitleHesapla(decimal height, decimal weight)
         {
-            //kilo ve boy parametre olarak verilecek hesaplama yapılacak.
+            decimal x;
+            decimal vki;
+            x = height * height;
+            vki = weight / x;
+            return vki;
         }
     }
 }
