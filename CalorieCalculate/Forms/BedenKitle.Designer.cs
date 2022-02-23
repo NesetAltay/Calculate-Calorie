@@ -134,8 +134,8 @@ namespace CalorieCalculate.Forms
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblOneri;
-        private System.Windows.Forms.Label lblSonuc;
         private System.Windows.Forms.Label lblKitle;
         private System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.Label lblSonuc;
     }
 }

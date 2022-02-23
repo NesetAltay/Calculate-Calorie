@@ -229,14 +229,14 @@ namespace CalorieCalculate.Forms
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pbBack;
-        private KLCToolbox.KLCControls.KLCDatePicker dtpDate;
-        private KLCToolbox.KLCControls.KLCCircularPictureBox pbProfil;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private KLCToolbox.KLCControls.KLCButton btnOgleYemegi;
         private System.Windows.Forms.ImageList ımageList1;
-        private KLCToolbox.KLCControls.KLCButton btnKahvalti;
-        private KLCToolbox.KLCControls.KLCButton btnAksamYemegi;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.PictureBox pbBack;
+        public KLCToolbox.KLCControls.KLCDatePicker dtpDate;
+        public KLCToolbox.KLCControls.KLCCircularPictureBox pbProfil;
+        public KLCToolbox.KLCControls.KLCButton btnOgleYemegi;
+        public KLCToolbox.KLCControls.KLCButton btnKahvalti;
+        public KLCToolbox.KLCControls.KLCButton btnAksamYemegi;
     }
 }
