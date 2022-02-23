@@ -56,7 +56,7 @@ namespace CalorieCalculate.Forms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(336, 502);
+            this.panel1.Size = new System.Drawing.Size(320, 463);
             this.panel1.TabIndex = 3;
             // 
             // pbBack
@@ -76,6 +76,7 @@ namespace CalorieCalculate.Forms
             this.lblOgunAdi.AutoSize = true;
             this.lblOgunAdi.BackColor = System.Drawing.Color.Silver;
             this.lblOgunAdi.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblOgunAdi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblOgunAdi.Location = new System.Drawing.Point(12, 62);
             this.lblOgunAdi.Name = "lblOgunAdi";
             this.lblOgunAdi.Size = new System.Drawing.Size(64, 18);
@@ -85,18 +86,18 @@ namespace CalorieCalculate.Forms
             // dgvOgun
             // 
             this.dgvOgun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOgun.Location = new System.Drawing.Point(12, 86);
+            this.dgvOgun.Location = new System.Drawing.Point(3, 86);
             this.dgvOgun.Name = "dgvOgun";
             this.dgvOgun.RowHeadersWidth = 51;
             this.dgvOgun.RowTemplate.Height = 25;
-            this.dgvOgun.Size = new System.Drawing.Size(312, 237);
+            this.dgvOgun.Size = new System.Drawing.Size(314, 235);
             this.dgvOgun.TabIndex = 3;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(134, 450);
+            this.pictureBox1.Location = new System.Drawing.Point(125, 423);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(61, 40);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -114,7 +115,7 @@ namespace CalorieCalculate.Forms
             this.klcButton1.KLCBorderRadius = 24;
             this.klcButton1.KLCBorderSize = 0;
             this.klcButton1.KLCTextColor = System.Drawing.Color.Black;
-            this.klcButton1.Location = new System.Drawing.Point(242, 49);
+            this.klcButton1.Location = new System.Drawing.Point(226, 49);
             this.klcButton1.Name = "klcButton1";
             this.klcButton1.Size = new System.Drawing.Size(82, 31);
             this.klcButton1.TabIndex = 2;
@@ -134,7 +135,7 @@ namespace CalorieCalculate.Forms
             this.btnÜrünEkle.KLCBorderRadius = 24;
             this.btnÜrünEkle.KLCBorderSize = 0;
             this.btnÜrünEkle.KLCTextColor = System.Drawing.Color.Black;
-            this.btnÜrünEkle.Location = new System.Drawing.Point(242, 12);
+            this.btnÜrünEkle.Location = new System.Drawing.Point(226, 12);
             this.btnÜrünEkle.Name = "btnÜrünEkle";
             this.btnÜrünEkle.Size = new System.Drawing.Size(82, 31);
             this.btnÜrünEkle.TabIndex = 1;
@@ -147,7 +148,7 @@ namespace CalorieCalculate.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(336, 502);
+            this.ClientSize = new System.Drawing.Size(320, 463);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SecilenOgun";
