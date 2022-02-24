@@ -18,7 +18,6 @@ namespace CalorieCalculate.Forms
             InitializeComponent();
 
         }
-
         private void Click(object sender, EventArgs e)
         {
             Label lbl = (Label)sender;

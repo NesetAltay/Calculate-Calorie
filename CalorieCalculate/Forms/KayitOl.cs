@@ -23,7 +23,6 @@ namespace CalorieCalculate.Forms
             InitializeComponent();
             txtName.Select();
         }
-
         private void Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -31,7 +30,6 @@ namespace CalorieCalculate.Forms
             {
                 case "1":
                     DataLoad();
-                    this.Close();
                     break;
                 case "2":
                     this.Close();
@@ -44,27 +42,28 @@ namespace CalorieCalculate.Forms
         {
             List<string> text = new List<string>() { txtName.KLCText, txtLastName.KLCText, txtEmail.KLCText, txtHeight.KLCText, txtPassword.KLCText, txtWeight.KLCText };
 
-            DataCreate create = new DataCreate();
+            if (StringExtension.TestForNullOrEmpty(text))
+            { MessageBox.Show("Lütfen bilgilerini tam girin", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Stop); return; }
 
-            if (!StringExtension.TestForNullOrEmpty(text) 
-                && !StringExtension.IsEquelsEmail(txtEmail.KLCText) 
-                && StringExtension.IsValidEmail(txtEmail.KLCText))
-            {
-                if (txtPassword.KLCText == txtPassword2.KLCText 
-                    && StringExtension.IsValidPassword(txtPassword.KLCText))
-                {
-                    create.CreateUser(txtEmail.KLCText, txtPassword.KLCText);
-                    create.CreateUserInformation(txtName.KLCText, txtLastName.KLCText, txtHeight.KLCText, txtWeight.KLCText, dtpBirthdate.Value);
-                    OturumAc ac = new OturumAc();
-                    ac.txtEmail.KLCText = txtEmail.KLCText;
-                    ac.ShowDialog();
-                }
-                else MessageBox.Show("Şifre alanları eşleşmiyor veya Şifre belirlenen kriterlere uygun değil, Lütfen kontrol edin!", "Uyarı",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            if (StringExtension.IsEquelsEmail(txtEmail.KLCText))
+            { MessageBox.Show("Farklı bir kullanıcı adı seçin", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information); return; }
 
-            }
+            if (!StringExtension.IsValidEmail(txtEmail.KLCText))
+            { MessageBox.Show("Geçerli bir mail adresi girin", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+
+            if (!StringExtension.IsValidPassword(txtPassword.KLCText))
+            { MessageBox.Show("Şifreniz 8 karakter uzunluğunda olmalı ve en az bir sayı, bir büyük harf ve bir küçük harf içermelidir", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information); return; }
+
+            if (txtPassword.KLCText != txtPassword2.KLCText)
+            { MessageBox.Show("Şifrenizi kontrol edin", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); return; }
             else
             {
-                MessageBox.Show("Lütfen girmiş olduğunuz verileri kontrol edin", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DataCreate.CreateUser(txtEmail.KLCText, txtPassword.KLCText);
+                DataCreate.CreateUserInformation(txtName.KLCText, txtLastName.KLCText, txtHeight.KLCText, txtWeight.KLCText, dtpBirthdate.Value);
+                OturumAc ac = new OturumAc();
+                ac.txtEmail.KLCText = txtEmail.KLCText;
+                ac.ShowDialog();
+                this.Close();
             }
         }
     }

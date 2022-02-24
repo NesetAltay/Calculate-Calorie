@@ -32,5 +32,13 @@ namespace CalorieCalculate.Model.Data
             modelBuilder.ApplyConfiguration(new RepastConfiguration());
             modelBuilder.ApplyConfiguration(new MealConfiguration());
         }
+        // Singilton yapı
+        private static DatabaseContext _db;
+        public static DatabaseContext GetInstance()
+        {
+            if (_db is null)
+                _db = new DatabaseContext();
+            return _db;
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using CalorieCalculate.Model.Data;
+﻿using CalorieCalculate.Crud;
+using CalorieCalculate.Model.Data;
 using CalorieCalculate.Model.Entities;
 using System;
 using System.Collections.Generic;
@@ -14,8 +15,7 @@ namespace CalorieCalculate.Forms
 {
     public partial class Ogunler : Form
     {
-        private int user;
-        private Repast repast;
+        private User user;
         public Ogunler()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace CalorieCalculate.Forms
 
         }
 
-        public Ogunler(int user)
+        public Ogunler(User user)
         {
             InitializeComponent();
             this.user = user;
@@ -33,10 +33,10 @@ namespace CalorieCalculate.Forms
         //oop icin yapı olusturuldugunda acılacak form isimleri veri olarak metod icerisinde gönderilecek.
         private void Interface_Click(object sender, EventArgs e)
         {
-            Button pb = (Button)sender;
+            Button btn = (Button)sender;
             Form frm = default;
-            OgunEkle(pb);
-            switch (pb.Tag.ToString())
+            Repast repast = DataCreate.CreateRepast(btn, user);
+            switch (btn.Tag.ToString())
             {
                 case "1":
                     frm = new SecilenOgun(repast);
@@ -50,28 +50,13 @@ namespace CalorieCalculate.Forms
                 case "4":
                     this.Close();
                     break;
-                //case "5":
-                //    frm = new Profil();    profil sayfası olusturulunca aktif olacak.
-                //    break;
+                    //case "5":
+                    //    frm = new Profil();    profil sayfası olusturulunca aktif olacak.
+                    //    break;
             }
             this.Hide();
             frm.ShowDialog();
             this.Show();
-        }
-        
-        private void OgunEkle(Button pb)
-        {
-            using (DatabaseContext db = new DatabaseContext())
-            {
-                repast = new Repast()
-                {
-                    RepastName = pb.Text,
-                    UserId = user,
-                    Date = DateTime.Now
-                };
-                db.Repasts.Add(repast);
-                db.SaveChanges();
-            }
         }
     }
 }

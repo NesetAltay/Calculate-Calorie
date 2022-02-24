@@ -127,9 +127,9 @@ namespace CalorieCalculate.Forms
             // 
             this.linkLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linkLabel1.LinkColor = System.Drawing.Color.OrangeRed;
-            this.linkLabel1.Location = new System.Drawing.Point(155, 627);
+            this.linkLabel1.Location = new System.Drawing.Point(134, 624);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(88, 31);
+            this.linkLabel1.Size = new System.Drawing.Size(94, 31);
             this.linkLabel1.TabIndex = 21;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Öğün Ekle";

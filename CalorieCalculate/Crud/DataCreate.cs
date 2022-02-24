@@ -1,4 +1,5 @@
-﻿using CalorieCalculate.Model.Data;
+﻿using CalorieCalculate.Extensions;
+using CalorieCalculate.Model.Data;
 using CalorieCalculate.Model.Entities;
 using KLCToolbox.KLCControls;
 using System;
@@ -10,42 +11,68 @@ using System.Windows.Forms;
 
 namespace CalorieCalculate.Crud
 {
-    public class DataCreate
+    public static class DataCreate
     {
-        User user;
-        UserInformation userInformation;
-
-        public void CreateUser(string email, string password)
+        private static DatabaseContext _db;
+        private static User user;
+        private static UserInformation userInformation;
+        /// <summary>
+        /// Yeni kullanıcı verisi oluşturur
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        public static void CreateUser(string email, string password)
         {
-            using (DatabaseContext db = new DatabaseContext())
+            _db = DatabaseContext.GetInstance();
+            user = new User()
             {
-                user = new User()
-                {
-                    Email = email,
-                    Password = password
-                };
-                db.Users.Add(user);
-                db.SaveChanges();
-            }
-
+                Email = email,
+                Password = password
+            };
+            _db.Users.Add(user);
+            _db.SaveChanges();
         }
-        public void CreateUserInformation(string name, string lastname, string height, string weight, DateTime dt)
+        /// <summary>
+        /// Yeni kullanıcının kişisel bilgilerini oluşturur
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="lastname"></param>
+        /// <param name="height"></param>
+        /// <param name="weight"></param>
+        /// <param name="dt"></param>
+        public static void CreateUserInformation(string name, string lastname, string height, string weight, DateTime dt)
         {
-            using (DatabaseContext db = new DatabaseContext())
+            _db = DatabaseContext.GetInstance();
+            userInformation = new UserInformation()
             {
-                userInformation = new UserInformation()
-                {
-                    Id = user.Id,
-                    FirstName = name,
-                    LastName = lastname,
-                    Height = decimal.Parse(height),
-                    Weight = decimal.Parse(weight),
-                    BirthDate = dt
-                };
-                db.UserInformations.Add(userInformation);
-                db.SaveChanges();
-
-            }
+                Id = user.Id,
+                FirstName = name,
+                LastName = lastname,
+                Height = decimal.Parse(height),
+                Weight = decimal.Parse(weight),
+                BirthDate = dt
+            };
+            _db.UserInformations.Add(userInformation);
+            _db.SaveChanges();
+        }
+        /// <summary>
+        /// Kullanıcının yaptığı seçim doğrultusunda öğün datası oluşturur
+        /// </summary>
+        /// <param name="btn"></param>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public static Repast CreateRepast(Button btn, User user)
+        {
+            _db = DatabaseContext.GetInstance();
+            Repast repast = new Repast()
+            {
+                RepastName = btn.Text,
+                UserId = user.Id,
+                Date = DateTime.Now
+            };
+            _db.Repasts.Add(repast);
+            _db.SaveChanges();
+            return repast;
         }
     }
 }

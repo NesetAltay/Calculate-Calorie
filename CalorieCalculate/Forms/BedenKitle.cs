@@ -12,9 +12,17 @@ namespace CalorieCalculate.Forms
 {
     public partial class BedenKitle : Form
     {
+        private string v;
+
         public BedenKitle()
         {
             InitializeComponent();
+        }
+        public BedenKitle(string v)
+        {
+            InitializeComponent();
+            this.v = v;
+            lblSonuc.Text = v;
         }
     }
 }
