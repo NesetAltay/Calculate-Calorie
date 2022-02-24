@@ -31,14 +31,16 @@ namespace CalorieCalculate.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SecilenRapor));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSorgu1 = new KLCToolbox.KLCControls.KLCButton();
+            this.btnSorgu2 = new KLCToolbox.KLCControls.KLCButton();
             this.pbProfil = new KLCToolbox.KLCControls.KLCCircularPictureBox();
             this.pbBack = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvSorgu = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSorgu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,9 +49,11 @@ namespace CalorieCalculate.Forms
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.btnSorgu1);
+            this.panel1.Controls.Add(this.btnSorgu2);
             this.panel1.Controls.Add(this.pbProfil);
             this.panel1.Controls.Add(this.pbBack);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgvSorgu);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -57,6 +61,42 @@ namespace CalorieCalculate.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(379, 664);
             this.panel1.TabIndex = 4;
+            // 
+            // btnSorgu1
+            // 
+            this.btnSorgu1.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnSorgu1.FlatAppearance.BorderSize = 0;
+            this.btnSorgu1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSorgu1.ForeColor = System.Drawing.Color.White;
+            this.btnSorgu1.KLCBackgroundColor = System.Drawing.Color.OrangeRed;
+            this.btnSorgu1.KLCBorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSorgu1.KLCBorderRadius = 40;
+            this.btnSorgu1.KLCBorderSize = 0;
+            this.btnSorgu1.KLCTextColor = System.Drawing.Color.White;
+            this.btnSorgu1.Location = new System.Drawing.Point(29, 439);
+            this.btnSorgu1.Name = "btnSorgu1";
+            this.btnSorgu1.Size = new System.Drawing.Size(123, 50);
+            this.btnSorgu1.TabIndex = 25;
+            this.btnSorgu1.UseVisualStyleBackColor = false;
+            this.btnSorgu1.Click += new System.EventHandler(this.Click);
+            // 
+            // btnSorgu2
+            // 
+            this.btnSorgu2.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnSorgu2.FlatAppearance.BorderSize = 0;
+            this.btnSorgu2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSorgu2.ForeColor = System.Drawing.Color.White;
+            this.btnSorgu2.KLCBackgroundColor = System.Drawing.Color.OrangeRed;
+            this.btnSorgu2.KLCBorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSorgu2.KLCBorderRadius = 40;
+            this.btnSorgu2.KLCBorderSize = 0;
+            this.btnSorgu2.KLCTextColor = System.Drawing.Color.White;
+            this.btnSorgu2.Location = new System.Drawing.Point(226, 439);
+            this.btnSorgu2.Name = "btnSorgu2";
+            this.btnSorgu2.Size = new System.Drawing.Size(123, 50);
+            this.btnSorgu2.TabIndex = 25;
+            this.btnSorgu2.UseVisualStyleBackColor = false;
+            this.btnSorgu2.Click += new System.EventHandler(this.Click);
             // 
             // pbProfil
             // 
@@ -89,17 +129,17 @@ namespace CalorieCalculate.Forms
             this.pbBack.TabStop = false;
             this.pbBack.Tag = "4";
             // 
-            // dataGridView1
+            // dgvSorgu
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.PeachPuff;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 69);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(376, 348);
-            this.dataGridView1.TabIndex = 20;
+            this.dgvSorgu.BackgroundColor = System.Drawing.Color.PeachPuff;
+            this.dgvSorgu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSorgu.Location = new System.Drawing.Point(3, 69);
+            this.dgvSorgu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvSorgu.Name = "dgvSorgu";
+            this.dgvSorgu.RowHeadersWidth = 51;
+            this.dgvSorgu.RowTemplate.Height = 25;
+            this.dgvSorgu.Size = new System.Drawing.Size(376, 348);
+            this.dgvSorgu.TabIndex = 20;
             // 
             // pictureBox2
             // 
@@ -127,10 +167,11 @@ namespace CalorieCalculate.Forms
             this.Name = "SecilenRapor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AVOCADO";
+            this.Load += new System.EventHandler(this.SecilenRapor_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbProfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSorgu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -140,8 +181,10 @@ namespace CalorieCalculate.Forms
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvSorgu;
         private System.Windows.Forms.PictureBox pbBack;
         private KLCToolbox.KLCControls.KLCCircularPictureBox pbProfil;
+        private KLCToolbox.KLCControls.KLCButton btnSorgu1;
+        private KLCToolbox.KLCControls.KLCButton btnSorgu2;
     }
 }

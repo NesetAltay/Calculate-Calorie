@@ -13,7 +13,7 @@ namespace CalorieCalculate.Crud
 {
     public static class DataCreate
     {
-        private static DatabaseContext _db;
+        private static DatabaseContext _db = DatabaseContext.GetInstance();
         private static User user;
         private static UserInformation userInformation;
         /// <summary>
@@ -21,9 +21,8 @@ namespace CalorieCalculate.Crud
         /// </summary>
         /// <param name="email"></param>
         /// <param name="password"></param>
-        public static void CreateUser(string email, string password)
+        public static void Create(string email, string password)
         {
-            _db = DatabaseContext.GetInstance();
             user = new User()
             {
                 Email = email,
@@ -40,9 +39,8 @@ namespace CalorieCalculate.Crud
         /// <param name="height"></param>
         /// <param name="weight"></param>
         /// <param name="dt"></param>
-        public static void CreateUserInformation(string name, string lastname, string height, string weight, DateTime dt)
+        public static void Create(string name, string lastname, string height, string weight, DateTime dt)
         {
-            _db = DatabaseContext.GetInstance();
             userInformation = new UserInformation()
             {
                 Id = user.Id,
@@ -61,9 +59,8 @@ namespace CalorieCalculate.Crud
         /// <param name="btn"></param>
         /// <param name="user"></param>
         /// <returns></returns>
-        public static Repast CreateRepast(Button btn, User user)
+        public static Repast Create(Button btn, User user)
         {
-            _db = DatabaseContext.GetInstance();
             Repast repast = new Repast()
             {
                 RepastName = btn.Text,

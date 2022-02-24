@@ -58,8 +58,8 @@ namespace CalorieCalculate.Forms
             { MessageBox.Show("Şifrenizi kontrol edin", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); return; }
             else
             {
-                DataCreate.CreateUser(txtEmail.KLCText, txtPassword.KLCText);
-                DataCreate.CreateUserInformation(txtName.KLCText, txtLastName.KLCText, txtHeight.KLCText, txtWeight.KLCText, dtpBirthdate.Value);
+                DataCreate.Create(txtEmail.KLCText, txtPassword.KLCText);
+                DataCreate.Create(txtName.KLCText, txtLastName.KLCText, txtHeight.KLCText, txtWeight.KLCText, dtpBirthdate.Value);
                 OturumAc ac = new OturumAc();
                 ac.txtEmail.KLCText = txtEmail.KLCText;
                 ac.ShowDialog();

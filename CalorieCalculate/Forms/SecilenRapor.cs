@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CalorieCalculate.Crud;
+using CalorieCalculate.Model.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,72 @@ namespace CalorieCalculate.Forms
 {
     public partial class SecilenRapor : Form
     {
+        private string btnTag;
+        private User user;
+
         public SecilenRapor()
         {
             InitializeComponent();
+        }
+
+        public SecilenRapor(string v, User user)
+        {
+            InitializeComponent();
+            this.btnTag = v;
+            this.user = user;
+        }
+
+        private void SecilenRapor_Load(object sender, EventArgs e)
+        {
+            switch (btnTag)
+            {
+                case "1":
+                    btnSorgu1.Text = "Öğün Bazlı Kalori Hesabı";
+                    btnSorgu1.Tag = "1";
+                    btnSorgu2.Text = "Günlük Toplam Kalori";
+                    btnSorgu2.Tag = "2";
+                    break;
+                case "2":
+                    btnSorgu1.Text = "Kıyas Raporu";
+                    btnSorgu1.Tag = "3";
+                    btnSorgu2.Enabled = false;
+                    break;
+                case "3":
+                    btnSorgu1.Text = "Öğün Bazlı En Çok Yenen Yemek";
+                    btnSorgu1.Tag = "4";
+                    btnSorgu2.Text = "En çok Yenen Yemekler";
+                    btnSorgu2.Tag = "5";
+                    break;
+            }
+        }
+
+        private void Click(object sender, EventArgs e)
+        {
+            dgvSorgu.Rows.Clear();
+            Button btn = (Button)sender;
+            switch (btn.Tag.ToString())
+            {
+                case "1":
+                   List<DailyDTO> dailies = DataRead.DailyRaport(user);
+                    dgvSorgu.DataSource = dailies;
+                    break;
+                case "2":
+                   double totalClarie = DataRead.DailyTotalCalorie(user);
+                    dgvSorgu.DataSource = totalClarie;
+                    break;
+                case "3":
+                    List<Challenge> challenges = DataRead.GetChallenge();
+                    dgvSorgu.DataSource = challenges;
+                    break;
+                case "4":
+                   List<MostPopularDTO> mosts = DataRead.MostPopularMeal(user);
+                    dgvSorgu.DataSource = mosts;
+                    break;
+                case "5":
+                   List<BestMealDTO> bestMeals = DataRead.BestMeal(user);
+                    dgvSorgu.DataSource = bestMeals;
+                    break;
+            }
         }
     }
 }

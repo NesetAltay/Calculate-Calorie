@@ -27,5 +27,14 @@ namespace CalorieCalculate.Forms
             //List<Challenge> challenge = DataRead.GetChallenge(); Öğün ve Toplam Kalori Hasabı ile sıralama Challenge Listesi dödürüyor
             // En çok tercih edilenleri hangi doğrultuda sıralamak istediğimiz konusunda fikirlere açığım :D
         }
+        private void Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            Form f = default;
+            f = new SecilenRapor(btn.Tag.ToString(), user);
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }

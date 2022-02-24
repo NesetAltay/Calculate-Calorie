@@ -35,7 +35,7 @@ namespace CalorieCalculate.Forms
         {
             Button btn = (Button)sender;
             Form frm = default;
-            Repast repast = DataCreate.CreateRepast(btn, user);
+            Repast repast = DataCreate.Create(btn, user);
             switch (btn.Tag.ToString())
             {
                 case "1":

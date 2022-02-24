@@ -42,13 +42,13 @@ namespace CalorieCalculate.Forms
 
         private void YemekListele()
         {
-            using (DatabaseContext db = new DatabaseContext())
-            {
+            DatabaseContext db = DatabaseContext.GetInstance();
+            
                 var yemekler = db.Meals.ToList();
                 var filter = yemekler.Select(x => new YemekDTO() { MealName = x.MealName, Calorie = x.Calorie, Description = x.MealDescription, MealType = x.TypeMealId }).ToList();
                 //List<Meal> meals = db.Meals.ToList();
                 dgvOgun.DataSource = yemekler;
-            }
+            
         }
     }
 }
