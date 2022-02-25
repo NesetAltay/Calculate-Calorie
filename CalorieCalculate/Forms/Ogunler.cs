@@ -19,9 +19,6 @@ namespace CalorieCalculate.Forms
         public Ogunler()
         {
             InitializeComponent();
-            //ogunler birer picturebox. üc öğün için secilen ogun formu olusturuldu hangi pb ye tıklanırsa formun texti o olur. tarih uyumluluğu sorgulanarak datadan veriler cekilir ve datagridview'da ekrana yazılır.
-            //örnek : kahvaltı tag 1, ögle yemeği tag 2, aksam yemegi tag 3, geri tuşu tag 4, ptofil tag 5. Switch case yapısıyla tıklanan ifadeyi cek ve işlem yap.
-
         }
 
         public Ogunler(User user)
@@ -34,29 +31,21 @@ namespace CalorieCalculate.Forms
         private void Interface_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            Form frm = default;
-            Repast repast = DataCreate.Create(btn, user);
-            switch (btn.Tag.ToString())
+            if (btn.Tag.ToString() == "4") this.Close();
+
+            //else if(btn.Tag.ToString() == "5")
+            //case "5":
+            //    frm = new Profil();    profil sayfası olusturulunca aktif olacak.
+            //    break;
+            else
             {
-                case "1":
-                    frm = new SecilenOgun(repast);
-                    break;
-                case "2":
-                    frm = new SecilenOgun(repast);
-                    break;
-                case "3":
-                    frm = new SecilenOgun(repast);
-                    break;
-                case "4":
-                    this.Close();
-                    break;
-                    //case "5":
-                    //    frm = new Profil();    profil sayfası olusturulunca aktif olacak.
-                    //    break;
+                Repast repast = DataCreate.Create(btn, user);
+                Form frm = default;
+                frm = new SecilenOgun(repast);
+                this.Hide();
+                frm.ShowDialog();
+                this.Show();
             }
-            this.Hide();
-            frm.ShowDialog();
-            this.Show();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using CalorieCalculate.Model.Data;
+﻿using CalorieCalculate.Crud;
+using CalorieCalculate.Model.Data;
 using CalorieCalculate.Model.Entities;
 using System;
 using System.Collections.Generic;
@@ -15,11 +16,9 @@ namespace CalorieCalculate.Forms
     public partial class SecilenOgun : Form
     {
         private Repast repast;
-
         public SecilenOgun()
         {
             InitializeComponent();
-
         }
 
         public SecilenOgun(Repast repast)
@@ -35,20 +34,9 @@ namespace CalorieCalculate.Forms
             switch (btn.Tag.ToString())
             {
                 case "1":
-                    YemekListele();
+                    DataRead.YemekListele(dgvOgun);
                     break;
             }
-        }
-
-        private void YemekListele()
-        {
-            DatabaseContext db = DatabaseContext.GetInstance();
-            
-                var yemekler = db.Meals.ToList();
-                var filter = yemekler.Select(x => new YemekDTO() { MealName = x.MealName, Calorie = x.Calorie, Description = x.MealDescription, MealType = x.TypeMealId }).ToList();
-                //List<Meal> meals = db.Meals.ToList();
-                dgvOgun.DataSource = yemekler;
-            
         }
     }
 }

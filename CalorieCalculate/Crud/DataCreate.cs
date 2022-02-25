@@ -13,9 +13,11 @@ namespace CalorieCalculate.Crud
 {
     public static class DataCreate
     {
-        private static DatabaseContext _db = DatabaseContext.GetInstance();
-        private static User user;
-        private static UserInformation userInformation;
+        private static DatabaseContext _db = BaseContext.GetInstance();
+        private static User _user;
+        private static UserInformation _userInformation;
+        private static Repast _repast;
+        private static RepastMeal _repastMeal;
         /// <summary>
         /// Yeni kullanıcı verisi oluşturur
         /// </summary>
@@ -23,12 +25,12 @@ namespace CalorieCalculate.Crud
         /// <param name="password"></param>
         public static void Create(string email, string password)
         {
-            user = new User()
+            _user = new User()
             {
                 Email = email,
                 Password = password
             };
-            _db.Users.Add(user);
+            _db.Users.Add(_user);
             _db.SaveChanges();
         }
         /// <summary>
@@ -41,16 +43,16 @@ namespace CalorieCalculate.Crud
         /// <param name="dt"></param>
         public static void Create(string name, string lastname, string height, string weight, DateTime dt)
         {
-            userInformation = new UserInformation()
+            _userInformation = new UserInformation()
             {
-                Id = user.Id,
+                Id = _user.Id,
                 FirstName = name,
                 LastName = lastname,
                 Height = decimal.Parse(height),
                 Weight = decimal.Parse(weight),
                 BirthDate = dt
             };
-            _db.UserInformations.Add(userInformation);
+            _db.UserInformations.Add(_userInformation);
             _db.SaveChanges();
         }
         /// <summary>
@@ -61,15 +63,27 @@ namespace CalorieCalculate.Crud
         /// <returns></returns>
         public static Repast Create(Button btn, User user)
         {
-            Repast repast = new Repast()
+            _repast = new Repast()
             {
                 RepastName = btn.Text,
                 UserId = user.Id,
                 Date = DateTime.Now
             };
-            _db.Repasts.Add(repast);
+            _db.Repasts.Add(_repast);
             _db.SaveChanges();
-            return repast;
+            return _repast;
+        }
+        public static void Create(Repast repast, Meal meal, double portion, string image)
+        {
+            _repastMeal = new RepastMeal()
+            {
+                EatenPortion = portion,
+                MealImage = image,
+                RepastId = repast.Id,
+                MealId = meal.Id
+            };
+            _db.RepastMeals.Add(_repastMeal);
+            _db.SaveChanges();
         }
     }
 }

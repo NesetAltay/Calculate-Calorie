@@ -1,4 +1,5 @@
-﻿using CalorieCalculate.Model.Data;
+﻿using CalorieCalculate.Crud;
+using CalorieCalculate.Model.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace CalorieCalculate.Extensions
 {
     public static class StringExtension
     {
-       private static DatabaseContext _db;
+        private static DatabaseContext _db = BaseContext.GetInstance();
         /// <summary>
         /// Kayıt oluşturan kullanıcının email adresinin geçerli olmasını kontrol eder
         /// </summary>
@@ -56,7 +57,6 @@ namespace CalorieCalculate.Extensions
         /// <returns></returns>
         public static bool IsEquelsEmail(this string email)
         {
-            _db = DatabaseContext.GetInstance();
             var result = _db.Users.Any(x => x.Email.Equals(email));
             return result;
         }
@@ -68,7 +68,6 @@ namespace CalorieCalculate.Extensions
         /// <returns></returns>
         public static bool AnyUser(string email, string password)
         {
-            _db = DatabaseContext.GetInstance();
             bool validUser = _db.Users.Any(x => x.Email == email && x.Password == password);
             return validUser;
         } 

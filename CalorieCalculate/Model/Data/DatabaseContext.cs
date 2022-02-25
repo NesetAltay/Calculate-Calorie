@@ -21,7 +21,7 @@ namespace CalorieCalculate.Model.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server = DESKTOP-EPLOA67\\MSSQLN88; database = CalorieDb; Integrated security = true ");
+            optionsBuilder.UseSqlServer(@"server = DESKTOP-EPLOA67\MSSQLN88; database = CalorieDb; Integrated Security = true");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -32,17 +32,6 @@ namespace CalorieCalculate.Model.Data
             modelBuilder.ApplyConfiguration(new RepastConfiguration());
             modelBuilder.ApplyConfiguration(new MealConfiguration());
         }
-        private DatabaseContext()
-        {
-
-        }
-        // Singilton yapı
-        private static DatabaseContext _db;
-        public static DatabaseContext GetInstance()
-        {
-            if (_db is null)
-                _db = new DatabaseContext();
-            return _db;
-        }
+       
     }
 }

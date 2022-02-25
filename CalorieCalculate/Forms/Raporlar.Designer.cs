@@ -127,6 +127,7 @@ namespace CalorieCalculate.Forms
             this.btnRekabetRaporu.Text = "Rekabet Raporum";
             this.btnRekabetRaporu.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnRekabetRaporu.UseVisualStyleBackColor = false;
+            this.btnRekabetRaporu.Click += new System.EventHandler(this.Click);
             // 
             // ımageList1
             // 
@@ -160,6 +161,7 @@ namespace CalorieCalculate.Forms
             this.btnKaloriRaporu.Text = "Kalori Raporum";
             this.btnKaloriRaporu.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnKaloriRaporu.UseVisualStyleBackColor = false;
+            this.btnKaloriRaporu.Click += new System.EventHandler(this.Click);
             // 
             // btnEnCokTercih
             // 
@@ -184,6 +186,7 @@ namespace CalorieCalculate.Forms
             this.btnEnCokTercih.Text = "En çok Tercih Edilenler";
             this.btnEnCokTercih.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnEnCokTercih.UseVisualStyleBackColor = false;
+            this.btnEnCokTercih.Click += new System.EventHandler(this.Click);
             // 
             // Raporlar
             // 

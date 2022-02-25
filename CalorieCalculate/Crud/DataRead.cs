@@ -1,4 +1,5 @@
 ﻿using CalorieCalculate.Extensions;
+using CalorieCalculate.Forms;
 using CalorieCalculate.Model.Data;
 using CalorieCalculate.Model.Entities;
 using System;
@@ -6,12 +7,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CalorieCalculate.Crud
 {
     public static class DataRead
     {
-        private static DatabaseContext _db = DatabaseContext.GetInstance();
+        private static DatabaseContext _db = BaseContext.GetInstance();
 
         /// <summary>
         /// Uygulamaya giriş yapan kullanıcının bilgilerini alır
@@ -21,7 +23,7 @@ namespace CalorieCalculate.Crud
         /// <returns></returns>
         public static User GetUser(string email, string password)
         {
-            User user = _db.Users.Where(x => x.Email.Equals("altayneset@gmail.com") && x.Password.Equals("12345Neset"))
+            User user = _db.Users.Where(x => x.Email.Equals(email) && x.Password.Equals(password))
                     .Select(x => x).FirstOrDefault();
             return user;
         }
@@ -43,9 +45,9 @@ namespace CalorieCalculate.Crud
         {
             // Zaman ayarlaması yapılacak
             List<Challenge> result = _db.RepastMeals
-                .GroupBy(x => new { x.Repast.RepastName, x.Repast.User.UserInformation.FirstName})
-                .Select(x => new Challenge() { UserName = x.Key.FirstName, Repast = x.Key.RepastName, TotalCalorie = x.Sum(y => y.Meal.Calorie*y.EatenPortion)})
-                .OrderBy(x => x.TotalCalorie).ToList();
+                    .GroupBy(x => new { x.Repast.RepastName, x.Repast.User.UserInformation.FirstName })
+                    .Select(x => new Challenge() { UserName = x.Key.FirstName, RepastName = x.Key.RepastName, TotalCalorie = x.Sum(y => y.Meal.Calorie * y.EatenPortion) })
+                    .OrderBy(x => x.TotalCalorie).ToList();
             return result;
         }
         /// <summary>
@@ -66,7 +68,7 @@ namespace CalorieCalculate.Crud
         public static List<BestMealDTO> BestMeal(User user)
         {
             List<BestMealDTO> result = _db.RepastMeals.Where(x => x.Repast.UserId.Equals(user.Id))
-                .GroupBy(x => x.Meal.MealName).Select(x => new BestMealDTO() { MealName = x.Key, TotalMeal = x.Key.Sum(y => y)})
+                .GroupBy(x => x.Meal.MealName).Select(x => new BestMealDTO() { MealName = x.Key, TotalMeal = x.Key.Sum(y => y) })
                 .OrderByDescending(x => x).ToList();
             return result;
         }
@@ -92,6 +94,17 @@ namespace CalorieCalculate.Crud
             double result = _db.RepastMeals.Where(x => x.Repast.UserId.Equals(user.Id) && x.Repast.Date.Day.Equals(DateTime.Today))
                 .Select(x => x.EatenPortion * x.Meal.Calorie).Sum();
             return result;
+        }
+        /// <summary>
+        /// Database'de kayıtlı yemek listesini getirir
+        /// </summary>
+        /// <param name="dgv"></param>
+        public static void YemekListele(DataGridView dgv)
+        {
+            var yemekler = _db.Meals.ToList();
+            var filter = yemekler.Select(x => new YemekDTO() { MealName = x.MealName, Calorie = x.Calorie, Description = x.MealDescription, MealType = x.TypeMealId }).ToList();
+            dgv.DataSource = yemekler;
+
         }
     }
 }

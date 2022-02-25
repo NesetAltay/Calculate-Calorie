@@ -19,7 +19,7 @@ namespace CalorieCalculate.Model.EntityTypeConfiguration
             builder.Property(x => x.Id).UseIdentityColumn();
 
             builder.Property(x => x.RepastName).IsRequired();
-            builder.Property(x => x.RepastName).HasMaxLength(10);
+            builder.Property(x => x.RepastName).HasMaxLength(50);
 
             builder.Property(x => x.Date).HasDefaultValueSql("GetDate()");
 

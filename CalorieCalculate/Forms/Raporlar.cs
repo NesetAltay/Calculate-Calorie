@@ -23,9 +23,8 @@ namespace CalorieCalculate.Forms
 
         public Raporlar(User user)
         {
+            InitializeComponent();
             this.user = user;
-            //List<Challenge> challenge = DataRead.GetChallenge(); Öğün ve Toplam Kalori Hasabı ile sıralama Challenge Listesi dödürüyor
-            // En çok tercih edilenleri hangi doğrultuda sıralamak istediğimiz konusunda fikirlere açığım :D
         }
         private void Click(object sender, EventArgs e)
         {

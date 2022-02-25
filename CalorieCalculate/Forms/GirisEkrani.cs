@@ -21,20 +21,18 @@ namespace CalorieCalculate.Forms
         private void Click(object sender, EventArgs e)
         {
             Label lbl = (Label)sender;
-            int a = int.Parse(lbl.Tag.ToString());
             Form f = default;
-            switch (a)
+            switch (lbl.Tag.ToString())
             {
-                case 1:
+                case "1":
                     f = new KayitOl();
                     break;
-                case 2:
+                case "2":
                     f = new OturumAc();
                     break;
             }
-            this.Hide();
             f.ShowDialog();
-            this.Show();
+            this.Close();
         }
 
     }
