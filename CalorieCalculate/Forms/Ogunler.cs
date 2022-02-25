@@ -32,20 +32,23 @@ namespace CalorieCalculate.Forms
         {
             Button btn = (Button)sender;
             if (btn.Tag.ToString() == "4") this.Close();
-
-            //else if(btn.Tag.ToString() == "5")
-            //case "5":
-            //    frm = new Profil();    profil sayfası olusturulunca aktif olacak.
-            //    break;
             else
             {
                 Repast repast = DataCreate.Create(btn, user);
                 Form frm = default;
-                frm = new SecilenOgun(repast);
+                frm = new SecilenOgun(repast, user);
                 this.Hide();
                 frm.ShowDialog();
                 this.Show();
             }
+        }
+
+        private void pbProfil_Click(object sender, EventArgs e)
+        {
+            Form f = new Profil(user);
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
     }
 }

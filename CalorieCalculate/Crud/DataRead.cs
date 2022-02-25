@@ -102,8 +102,8 @@ namespace CalorieCalculate.Crud
         public static void YemekListele(DataGridView dgv)
         {
             var yemekler = _db.Meals.ToList();
-            var filter = yemekler.Select(x => new YemekDTO() { MealName = x.MealName, Calorie = x.Calorie, Description = x.MealDescription, MealType = x.TypeMealId }).ToList();
-            dgv.DataSource = yemekler;
+            var filter = yemekler.Select(x => new YemekDTO() { MealName = x.MealName, Calorie = x.Calorie, Description = x.MealDescription}).ToList();
+            dgv.DataSource = filter;
 
         }
     }

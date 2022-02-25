@@ -21,7 +21,7 @@ namespace CalorieCalculate.Model.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"server = DESKTOP-EPLOA67\MSSQLN88; database = CalorieDb; Integrated Security = true");
+            optionsBuilder.UseSqlServer(@"Server = DESKTOP-EPLOA67\MSSQLN88; database = CalorieDb; Integrated Security = true");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

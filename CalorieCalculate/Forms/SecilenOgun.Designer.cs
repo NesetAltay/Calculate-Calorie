@@ -146,7 +146,7 @@ namespace CalorieCalculate.Forms
             this.btnÜrünEkle.Size = new System.Drawing.Size(94, 41);
             this.btnÜrünEkle.TabIndex = 1;
             this.btnÜrünEkle.Tag = "1";
-            this.btnÜrünEkle.Text = "Gıda Ekle";
+            this.btnÜrünEkle.Text = "Gıda Listesi";
             this.btnÜrünEkle.UseVisualStyleBackColor = false;
             this.btnÜrünEkle.Click += new System.EventHandler(this.Click);
             // 
