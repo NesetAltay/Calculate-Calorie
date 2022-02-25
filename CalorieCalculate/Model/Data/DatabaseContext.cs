@@ -1,5 +1,4 @@
 ﻿using CalorieCalculate.Model.Entities;
-using CalorieCalculate.Model.EntityTypeCondiguration;
 using CalorieCalculate.Model.EntityTypeConfiguration;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -32,6 +31,6 @@ namespace CalorieCalculate.Model.Data
             modelBuilder.ApplyConfiguration(new RepastConfiguration());
             modelBuilder.ApplyConfiguration(new MealConfiguration());
         }
-       
+
     }
 }

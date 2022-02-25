@@ -61,19 +61,22 @@ namespace CalorieCalculate.Forms
             this.panel1.Controls.Add(this.btnAksamYemegi);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(379, 664);
+            this.panel1.Size = new System.Drawing.Size(616, 1062);
             this.panel1.TabIndex = 3;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+
             this.pictureBox1.Location = new System.Drawing.Point(149, 607);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
+
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 53);
+            this.pictureBox1.Size = new System.Drawing.Size(114, 85);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
@@ -83,13 +86,14 @@ namespace CalorieCalculate.Forms
             this.pbBack.BackColor = System.Drawing.Color.Transparent;
             this.pbBack.Image = ((System.Drawing.Image)(resources.GetObject("pbBack.Image")));
             this.pbBack.Location = new System.Drawing.Point(0, 0);
-            this.pbBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbBack.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pbBack.Name = "pbBack";
-            this.pbBack.Size = new System.Drawing.Size(65, 45);
+            this.pbBack.Size = new System.Drawing.Size(106, 72);
             this.pbBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbBack.TabIndex = 24;
             this.pbBack.TabStop = false;
             this.pbBack.Tag = "4";
+            this.pbBack.Click += new System.EventHandler(this.pbBack_Click);
             // 
             // dtpDate
             // 
@@ -98,11 +102,11 @@ namespace CalorieCalculate.Forms
             this.dtpDate.KLCBorderSize = 0;
             this.dtpDate.KLCSkinColor = System.Drawing.Color.DarkSalmon;
             this.dtpDate.KLCTextColor = System.Drawing.Color.Black;
-            this.dtpDate.Location = new System.Drawing.Point(79, 47);
-            this.dtpDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtpDate.Location = new System.Drawing.Point(128, 75);
+            this.dtpDate.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.dtpDate.MinimumSize = new System.Drawing.Size(4, 35);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(217, 35);
+            this.dtpDate.Size = new System.Drawing.Size(350, 41);
             this.dtpDate.TabIndex = 23;
             // 
             // pbProfil
@@ -114,19 +118,22 @@ namespace CalorieCalculate.Forms
             this.pbProfil.KLCBorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             this.pbProfil.KLCBorderSize = 2;
             this.pbProfil.KLCGradientAngle = 50F;
-            this.pbProfil.Location = new System.Drawing.Point(319, 4);
-            this.pbProfil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbProfil.Location = new System.Drawing.Point(518, 6);
+            this.pbProfil.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pbProfil.Name = "pbProfil";
-            this.pbProfil.Size = new System.Drawing.Size(39, 39);
+            this.pbProfil.Size = new System.Drawing.Size(63, 63);
             this.pbProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbProfil.TabIndex = 22;
             this.pbProfil.TabStop = false;
             this.pbProfil.Tag = "5";
+
             this.pbProfil.Click += new System.EventHandler(this.pbProfil_Click);
+
             // 
             // btnOgleYemegi
             // 
             this.btnOgleYemegi.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnOgleYemegi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnOgleYemegi.FlatAppearance.BorderSize = 0;
             this.btnOgleYemegi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOgleYemegi.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -138,10 +145,10 @@ namespace CalorieCalculate.Forms
             this.btnOgleYemegi.KLCBorderRadius = 40;
             this.btnOgleYemegi.KLCBorderSize = 0;
             this.btnOgleYemegi.KLCTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnOgleYemegi.Location = new System.Drawing.Point(89, 269);
-            this.btnOgleYemegi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnOgleYemegi.Location = new System.Drawing.Point(145, 430);
+            this.btnOgleYemegi.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnOgleYemegi.Name = "btnOgleYemegi";
-            this.btnOgleYemegi.Size = new System.Drawing.Size(197, 124);
+            this.btnOgleYemegi.Size = new System.Drawing.Size(320, 198);
             this.btnOgleYemegi.TabIndex = 2;
             this.btnOgleYemegi.Tag = "2";
             this.btnOgleYemegi.Text = " Öğle Yemeği";
@@ -161,6 +168,7 @@ namespace CalorieCalculate.Forms
             // btnKahvalti
             // 
             this.btnKahvalti.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnKahvalti.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnKahvalti.FlatAppearance.BorderSize = 0;
             this.btnKahvalti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKahvalti.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -171,10 +179,10 @@ namespace CalorieCalculate.Forms
             this.btnKahvalti.KLCBorderRadius = 40;
             this.btnKahvalti.KLCBorderSize = 0;
             this.btnKahvalti.KLCTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnKahvalti.Location = new System.Drawing.Point(89, 119);
-            this.btnKahvalti.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnKahvalti.Location = new System.Drawing.Point(145, 190);
+            this.btnKahvalti.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnKahvalti.Name = "btnKahvalti";
-            this.btnKahvalti.Size = new System.Drawing.Size(197, 124);
+            this.btnKahvalti.Size = new System.Drawing.Size(320, 198);
             this.btnKahvalti.TabIndex = 1;
             this.btnKahvalti.Tag = "1";
             this.btnKahvalti.Text = " Kahvaltı";
@@ -195,10 +203,10 @@ namespace CalorieCalculate.Forms
             this.btnAksamYemegi.KLCBorderRadius = 40;
             this.btnAksamYemegi.KLCBorderSize = 0;
             this.btnAksamYemegi.KLCTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnAksamYemegi.Location = new System.Drawing.Point(89, 424);
-            this.btnAksamYemegi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAksamYemegi.Location = new System.Drawing.Point(145, 678);
+            this.btnAksamYemegi.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnAksamYemegi.Name = "btnAksamYemegi";
-            this.btnAksamYemegi.Size = new System.Drawing.Size(197, 124);
+            this.btnAksamYemegi.Size = new System.Drawing.Size(320, 198);
             this.btnAksamYemegi.TabIndex = 3;
             this.btnAksamYemegi.Tag = "3";
             this.btnAksamYemegi.Text = " Akşam Yemeği";
@@ -227,13 +235,13 @@ namespace CalorieCalculate.Forms
             // 
             // Ogunler
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 664);
+            this.ClientSize = new System.Drawing.Size(616, 1062);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Ogunler";

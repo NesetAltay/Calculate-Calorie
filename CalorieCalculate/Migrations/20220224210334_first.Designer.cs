@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CalorieCalculate.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20220223183646_Calorie")]
-    partial class Calorie
+    [Migration("20220224210334_first")]
+    partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

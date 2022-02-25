@@ -50,5 +50,10 @@ namespace CalorieCalculate.Forms
             f.ShowDialog();
             this.Show();
         }
+
+        private void pbBack_Click(object sender, EventArgs e)
+        {
+            this.Close();  
+        }
     }
 }
