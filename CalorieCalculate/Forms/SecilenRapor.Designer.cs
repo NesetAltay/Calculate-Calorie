@@ -57,9 +57,9 @@ namespace CalorieCalculate.Forms
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(379, 664);
+            this.panel1.Size = new System.Drawing.Size(616, 1062);
             this.panel1.TabIndex = 4;
             // 
             // btnSorgu1
@@ -73,9 +73,10 @@ namespace CalorieCalculate.Forms
             this.btnSorgu1.KLCBorderRadius = 40;
             this.btnSorgu1.KLCBorderSize = 0;
             this.btnSorgu1.KLCTextColor = System.Drawing.Color.White;
-            this.btnSorgu1.Location = new System.Drawing.Point(29, 439);
+            this.btnSorgu1.Location = new System.Drawing.Point(47, 702);
+            this.btnSorgu1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnSorgu1.Name = "btnSorgu1";
-            this.btnSorgu1.Size = new System.Drawing.Size(123, 50);
+            this.btnSorgu1.Size = new System.Drawing.Size(200, 80);
             this.btnSorgu1.TabIndex = 25;
             this.btnSorgu1.UseVisualStyleBackColor = false;
             this.btnSorgu1.Click += new System.EventHandler(this.Click);
@@ -91,9 +92,10 @@ namespace CalorieCalculate.Forms
             this.btnSorgu2.KLCBorderRadius = 40;
             this.btnSorgu2.KLCBorderSize = 0;
             this.btnSorgu2.KLCTextColor = System.Drawing.Color.White;
-            this.btnSorgu2.Location = new System.Drawing.Point(226, 439);
+            this.btnSorgu2.Location = new System.Drawing.Point(367, 702);
+            this.btnSorgu2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnSorgu2.Name = "btnSorgu2";
-            this.btnSorgu2.Size = new System.Drawing.Size(123, 50);
+            this.btnSorgu2.Size = new System.Drawing.Size(200, 80);
             this.btnSorgu2.TabIndex = 25;
             this.btnSorgu2.UseVisualStyleBackColor = false;
             this.btnSorgu2.Click += new System.EventHandler(this.Click);
@@ -107,10 +109,10 @@ namespace CalorieCalculate.Forms
             this.pbProfil.KLCBorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             this.pbProfil.KLCBorderSize = 2;
             this.pbProfil.KLCGradientAngle = 50F;
-            this.pbProfil.Location = new System.Drawing.Point(340, 0);
-            this.pbProfil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbProfil.Location = new System.Drawing.Point(552, 0);
+            this.pbProfil.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pbProfil.Name = "pbProfil";
-            this.pbProfil.Size = new System.Drawing.Size(39, 39);
+            this.pbProfil.Size = new System.Drawing.Size(63, 63);
             this.pbProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbProfil.TabIndex = 24;
             this.pbProfil.TabStop = false;
@@ -121,47 +123,48 @@ namespace CalorieCalculate.Forms
             this.pbBack.BackColor = System.Drawing.Color.Transparent;
             this.pbBack.Image = ((System.Drawing.Image)(resources.GetObject("pbBack.Image")));
             this.pbBack.Location = new System.Drawing.Point(0, 0);
-            this.pbBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbBack.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pbBack.Name = "pbBack";
-            this.pbBack.Size = new System.Drawing.Size(65, 45);
+            this.pbBack.Size = new System.Drawing.Size(106, 72);
             this.pbBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbBack.TabIndex = 23;
             this.pbBack.TabStop = false;
             this.pbBack.Tag = "4";
+            this.pbBack.Click += new System.EventHandler(this.pbBack_Click);
             // 
             // dgvSorgu
             // 
             this.dgvSorgu.BackgroundColor = System.Drawing.Color.PeachPuff;
             this.dgvSorgu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSorgu.Location = new System.Drawing.Point(3, 69);
-            this.dgvSorgu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvSorgu.Location = new System.Drawing.Point(5, 110);
+            this.dgvSorgu.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.dgvSorgu.Name = "dgvSorgu";
             this.dgvSorgu.RowHeadersWidth = 51;
             this.dgvSorgu.RowTemplate.Height = 25;
-            this.dgvSorgu.Size = new System.Drawing.Size(376, 348);
+            this.dgvSorgu.Size = new System.Drawing.Size(611, 557);
             this.dgvSorgu.TabIndex = 20;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(153, 611);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(249, 978);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(70, 53);
+            this.pictureBox2.Size = new System.Drawing.Size(114, 85);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 19;
             this.pictureBox2.TabStop = false;
             // 
             // SecilenRapor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 664);
+            this.ClientSize = new System.Drawing.Size(616, 1062);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SecilenRapor";

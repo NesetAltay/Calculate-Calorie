@@ -1,5 +1,4 @@
 ﻿using CalorieCalculate.Model.Entities;
-using CalorieCalculate.Model.EntityTypeCondiguration;
 using CalorieCalculate.Model.EntityTypeConfiguration;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -21,7 +20,7 @@ namespace CalorieCalculate.Model.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server = DESKTOP-EPLOA67\\MSSQLN88; database = CalorieDb; Integrated security = true ");
+            optionsBuilder.UseSqlServer("server = 192.168.1.146; database = CalorieDb; user = SA; password = 18.Defne.01;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -32,11 +31,11 @@ namespace CalorieCalculate.Model.Data
             modelBuilder.ApplyConfiguration(new RepastConfiguration());
             modelBuilder.ApplyConfiguration(new MealConfiguration());
         }
-        private DatabaseContext()
-        {
+        //private DatabaseContext()
+        //{
 
-        }
-        // Singilton yapı
+        //}
+        ////Singilton yapı
         private static DatabaseContext _db;
         public static DatabaseContext GetInstance()
         {

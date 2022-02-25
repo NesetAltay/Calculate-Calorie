@@ -55,23 +55,24 @@ namespace CalorieCalculate.Forms
             this.panel1.Controls.Add(this.btnÜrünEkle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(379, 664);
+            this.panel1.Size = new System.Drawing.Size(616, 1062);
             this.panel1.TabIndex = 3;
             // 
             // pbBack
             // 
             this.pbBack.BackColor = System.Drawing.Color.Transparent;
             this.pbBack.Image = ((System.Drawing.Image)(resources.GetObject("pbBack.Image")));
-            this.pbBack.Location = new System.Drawing.Point(3, 0);
-            this.pbBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbBack.Location = new System.Drawing.Point(5, 0);
+            this.pbBack.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pbBack.Name = "pbBack";
-            this.pbBack.Size = new System.Drawing.Size(65, 45);
+            this.pbBack.Size = new System.Drawing.Size(106, 72);
             this.pbBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbBack.TabIndex = 24;
             this.pbBack.TabStop = false;
             this.pbBack.Tag = "4";
+            this.pbBack.Click += new System.EventHandler(this.pbBack_Click);
             // 
             // lblOgunAdi
             // 
@@ -79,31 +80,32 @@ namespace CalorieCalculate.Forms
             this.lblOgunAdi.BackColor = System.Drawing.Color.Silver;
             this.lblOgunAdi.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblOgunAdi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblOgunAdi.Location = new System.Drawing.Point(14, 83);
+            this.lblOgunAdi.Location = new System.Drawing.Point(23, 133);
+            this.lblOgunAdi.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblOgunAdi.Name = "lblOgunAdi";
-            this.lblOgunAdi.Size = new System.Drawing.Size(80, 22);
+            this.lblOgunAdi.Size = new System.Drawing.Size(127, 36);
             this.lblOgunAdi.TabIndex = 23;
             this.lblOgunAdi.Text = "OgunAdi";
             // 
             // dgvOgun
             // 
             this.dgvOgun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOgun.Location = new System.Drawing.Point(0, 115);
-            this.dgvOgun.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvOgun.Location = new System.Drawing.Point(0, 184);
+            this.dgvOgun.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.dgvOgun.Name = "dgvOgun";
             this.dgvOgun.RowHeadersWidth = 51;
             this.dgvOgun.RowTemplate.Height = 25;
-            this.dgvOgun.Size = new System.Drawing.Size(383, 313);
+            this.dgvOgun.Size = new System.Drawing.Size(622, 501);
             this.dgvOgun.TabIndex = 3;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(143, 564);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(232, 902);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 53);
+            this.pictureBox1.Size = new System.Drawing.Size(114, 85);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
@@ -119,10 +121,10 @@ namespace CalorieCalculate.Forms
             this.klcButton1.KLCBorderRadius = 24;
             this.klcButton1.KLCBorderSize = 0;
             this.klcButton1.KLCTextColor = System.Drawing.Color.Black;
-            this.klcButton1.Location = new System.Drawing.Point(286, 64);
-            this.klcButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.klcButton1.Location = new System.Drawing.Point(465, 102);
+            this.klcButton1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.klcButton1.Name = "klcButton1";
-            this.klcButton1.Size = new System.Drawing.Size(94, 41);
+            this.klcButton1.Size = new System.Drawing.Size(153, 66);
             this.klcButton1.TabIndex = 2;
             this.klcButton1.Tag = "2";
             this.klcButton1.Text = "Gıda Sil";
@@ -140,10 +142,10 @@ namespace CalorieCalculate.Forms
             this.btnÜrünEkle.KLCBorderRadius = 24;
             this.btnÜrünEkle.KLCBorderSize = 0;
             this.btnÜrünEkle.KLCTextColor = System.Drawing.Color.Black;
-            this.btnÜrünEkle.Location = new System.Drawing.Point(286, 16);
-            this.btnÜrünEkle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnÜrünEkle.Location = new System.Drawing.Point(465, 26);
+            this.btnÜrünEkle.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnÜrünEkle.Name = "btnÜrünEkle";
-            this.btnÜrünEkle.Size = new System.Drawing.Size(94, 41);
+            this.btnÜrünEkle.Size = new System.Drawing.Size(153, 66);
             this.btnÜrünEkle.TabIndex = 1;
             this.btnÜrünEkle.Tag = "1";
             this.btnÜrünEkle.Text = "Gıda Ekle";
@@ -152,13 +154,13 @@ namespace CalorieCalculate.Forms
             // 
             // SecilenOgun
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 664);
+            this.ClientSize = new System.Drawing.Size(616, 1062);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SecilenOgun";

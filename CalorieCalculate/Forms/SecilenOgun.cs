@@ -50,5 +50,10 @@ namespace CalorieCalculate.Forms
                 dgvOgun.DataSource = yemekler;
             
         }
+
+        private void pbBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

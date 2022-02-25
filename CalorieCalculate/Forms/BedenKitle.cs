@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalorieCalculate.Model.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,12 @@ namespace CalorieCalculate.Forms
             InitializeComponent();
             this.v = v;
             lblSonuc.Text = v;
+         
+        }
+
+        private void pbBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -12,6 +12,7 @@ namespace CalorieCalculate.Crud
     public static class DataRead
     {
         private static DatabaseContext _db = DatabaseContext.GetInstance();
+       
 
         /// <summary>
         /// Uygulamaya giriş yapan kullanıcının bilgilerini alır
@@ -21,7 +22,7 @@ namespace CalorieCalculate.Crud
         /// <returns></returns>
         public static User GetUser(string email, string password)
         {
-            User user = _db.Users.Where(x => x.Email.Equals("altayneset@gmail.com") && x.Password.Equals("12345Neset"))
+            User user = _db.Users.Where(x => x.Email.Equals(email) && x.Password.Equals(password))
                     .Select(x => x).FirstOrDefault();
             return user;
         }

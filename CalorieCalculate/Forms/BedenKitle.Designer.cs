@@ -59,9 +59,9 @@ namespace CalorieCalculate.Forms
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(379, 664);
+            this.panel1.Size = new System.Drawing.Size(616, 1062);
             this.panel1.TabIndex = 3;
             // 
             // pbBack
@@ -69,13 +69,14 @@ namespace CalorieCalculate.Forms
             this.pbBack.BackColor = System.Drawing.Color.Transparent;
             this.pbBack.Image = ((System.Drawing.Image)(resources.GetObject("pbBack.Image")));
             this.pbBack.Location = new System.Drawing.Point(0, 0);
-            this.pbBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbBack.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pbBack.Name = "pbBack";
-            this.pbBack.Size = new System.Drawing.Size(65, 45);
+            this.pbBack.Size = new System.Drawing.Size(106, 72);
             this.pbBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbBack.TabIndex = 24;
             this.pbBack.TabStop = false;
             this.pbBack.Tag = "4";
+            this.pbBack.Click += new System.EventHandler(this.pbBack_Click);
             // 
             // pbProfil
             // 
@@ -86,10 +87,10 @@ namespace CalorieCalculate.Forms
             this.pbProfil.KLCBorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             this.pbProfil.KLCBorderSize = 2;
             this.pbProfil.KLCGradientAngle = 50F;
-            this.pbProfil.Location = new System.Drawing.Point(340, 0);
-            this.pbProfil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbProfil.Location = new System.Drawing.Point(552, 0);
+            this.pbProfil.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pbProfil.Name = "pbProfil";
-            this.pbProfil.Size = new System.Drawing.Size(39, 39);
+            this.pbProfil.Size = new System.Drawing.Size(63, 63);
             this.pbProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbProfil.TabIndex = 22;
             this.pbProfil.TabStop = false;
@@ -99,10 +100,10 @@ namespace CalorieCalculate.Forms
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(141, 611);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(229, 978);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(70, 53);
+            this.pictureBox2.Size = new System.Drawing.Size(114, 85);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 19;
             this.pictureBox2.TabStop = false;
@@ -111,9 +112,10 @@ namespace CalorieCalculate.Forms
             // 
             this.lblOneri.AutoSize = true;
             this.lblOneri.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblOneri.Location = new System.Drawing.Point(90, 353);
+            this.lblOneri.Location = new System.Drawing.Point(146, 565);
+            this.lblOneri.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblOneri.Name = "lblOneri";
-            this.lblOneri.Size = new System.Drawing.Size(88, 18);
+            this.lblOneri.Size = new System.Drawing.Size(142, 28);
             this.lblOneri.TabIndex = 3;
             this.lblOneri.Text = "Öneriler :";
             // 
@@ -121,9 +123,10 @@ namespace CalorieCalculate.Forms
             // 
             this.lblSonuc.AutoSize = true;
             this.lblSonuc.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSonuc.Location = new System.Drawing.Point(270, 280);
+            this.lblSonuc.Location = new System.Drawing.Point(439, 448);
+            this.lblSonuc.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblSonuc.Name = "lblSonuc";
-            this.lblSonuc.Size = new System.Drawing.Size(24, 18);
+            this.lblSonuc.Size = new System.Drawing.Size(38, 28);
             this.lblSonuc.TabIndex = 2;
             this.lblSonuc.Text = "..";
             // 
@@ -131,32 +134,33 @@ namespace CalorieCalculate.Forms
             // 
             this.lblKitle.AutoSize = true;
             this.lblKitle.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblKitle.Location = new System.Drawing.Point(83, 281);
+            this.lblKitle.Location = new System.Drawing.Point(135, 450);
+            this.lblKitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblKitle.Name = "lblKitle";
-            this.lblKitle.Size = new System.Drawing.Size(200, 17);
+            this.lblKitle.Size = new System.Drawing.Size(300, 26);
             this.lblKitle.TabIndex = 1;
             this.lblKitle.Text = "Vücut Kitle İndeksiniz :";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(83, 61);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(135, 98);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(210, 181);
+            this.pictureBox1.Size = new System.Drawing.Size(341, 290);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // BedenKitle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 664);
+            this.ClientSize = new System.Drawing.Size(616, 1062);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BedenKitle";

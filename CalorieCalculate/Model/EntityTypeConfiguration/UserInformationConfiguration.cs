@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CalorieCalculate.Model.EntityTypeCondiguration
+namespace CalorieCalculate.Model.EntityTypeConfiguration
 {
     public class UserInformationConfiguration : IEntityTypeConfiguration<UserInformation>
     {
