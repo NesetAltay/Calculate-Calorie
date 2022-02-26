@@ -14,8 +14,10 @@ using System.Windows.Forms;
 
 namespace CalorieCalculate.Forms
 {
+    
     public partial class SecilenOgun : Form
     {
+        private DatabaseContext _db = new DatabaseContext();
         private Repast repast;
         private User user;
         public SecilenOgun()
@@ -40,6 +42,7 @@ namespace CalorieCalculate.Forms
                 case "1":
                     DataRead.YemekListele(dgvOgun);
                     break;
+                
 
                     // Resim ekleme yapısı oluşturulduğunda click event içerisine yazılacak kod, resim yolu aynı zamanda RepastMeals içerisinde Image kısmına aktarılarak 
                     /*
@@ -55,5 +58,17 @@ namespace CalorieCalculate.Forms
             this.Close();
         }
 
+        private void dgvOgun_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            int row = e.RowIndex;
+            string mealName = dgvOgun[0, row].Value.ToString();
+            _db = BaseContext.GetInstance();
+            var result = _db.Meals.Where(x => x.MealName == mealName).FirstOrDefault();
+            double portion = 1;
+            string image = null;
+            DataCreate.Create(repast, result, portion, image);
+
+        }
     }
 }

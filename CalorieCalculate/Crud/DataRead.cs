@@ -95,9 +95,10 @@ namespace CalorieCalculate.Crud
             List<DailyDTO> result = default;
             if (StringExtension.AnyDaily(user))
             {
-                result = _db.RepastMeals.Where(x => x.Repast.User.Id.Equals(user.Id) && x.Repast.Date.Day.Equals(DateTime.Today))
-                   .GroupBy(x => new { x.Repast.RepastName, x.Meal.Calorie })
-                   .Select(x => new DailyDTO() { RepastName = x.Key.RepastName, TotalCalorie = x.Sum(y => y.Meal.Calorie * y.EatenPortion) }).ToList(); 
+                result = _db.RepastMeals.Where(x => x.Repast.User.Id.Equals(user.Id) && x.Repast.Date.Day.Equals(DateTime.Today.Day) && x.Repast.Date.Month.Equals(DateTime.Today.Month))
+                   .GroupBy(x => new { x.Repast.RepastName, x.Meal.Calorie})
+                   .Select(x => new DailyDTO() { RepastName = x.Key.RepastName, 
+                       TotalCalorie = x.Sum(y => y.Meal.Calorie * y.EatenPortion) }).ToList(); 
             }
             dgv.DataSource = result;
         }
@@ -111,7 +112,7 @@ namespace CalorieCalculate.Crud
             double result = default;
             if (StringExtension.AnyDaily(user))
             {
-                result = _db.RepastMeals.Where(x => x.Repast.User.Id.Equals(user.Id) && x.Repast.Date.Day.Equals(DateTime.Today))
+                result = _db.RepastMeals.Where(x => x.Repast.User.Id.Equals(user.Id) && x.Repast.Date.Day.Equals(DateTime.Today.Day) && x.Repast.Date.Month.Equals(DateTime.Today.Month))
                        .Select(x => x.EatenPortion * x.Meal.Calorie).Sum(); 
             }
             dgvSorgu.DataSource = result;
@@ -139,7 +140,7 @@ namespace CalorieCalculate.Crud
             if (StringExtension.AnyDaily(user))
             {
                 dailyEat = _db.RepastMeals
-               .Where(x => x.Repast.User.Id.Equals(user.Id) && x.Repast.Date.Equals(DateTime.Today) && x.Repast.RepastName.Equals(repast))
+               .Where(x => x.Repast.User.Id.Equals(user.Id) && x.Repast.Date.Day.Equals(DateTime.Today.Day) && x.Repast.RepastName.Equals(repast)&& x.Repast.Date.Month.Equals(DateTime.Today.Month)) 
                .Select(x => new YenenYemekDTO { RepastName = x.Repast.RepastName, MealName = x.Meal.MealName }).ToList(); 
             }
             dgv.DataSource = dailyEat;
