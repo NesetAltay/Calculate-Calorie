@@ -4,6 +4,7 @@ using CalorieCalculate.Model.Data;
 using CalorieCalculate.Model.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -122,11 +123,11 @@ namespace CalorieCalculate.Crud
         /// Database'de kayıtlı yemek listesini getirir
         /// </summary>
         /// <param name="dgv"></param>
-        public static void YemekListele(DataGridView dgv)
+        public static BindingList<YemekDTO> YemekListele()
         {
             var yemekler = _db.Meals
-                .Select(x => new YemekDTO() { MealName = x.MealName, Calorie = x.Calorie, Description = x.MealDescription }).ToList();
-            dgv.DataSource = yemekler;
+                .Select(x => new YemekDTO() {Id = x.Id, MealName = x.MealName, Calorie = x.Calorie, Description = x.MealDescription }).ToList();
+            return new BindingList<YemekDTO> (yemekler);
         }
         /// <summary>
         /// Kullanıcının öğünlerde yediği yemeklerin raporunu getirir

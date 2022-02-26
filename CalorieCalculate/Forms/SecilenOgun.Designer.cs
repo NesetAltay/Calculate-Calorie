@@ -104,11 +104,13 @@ namespace CalorieCalculate.Forms
             // 
             this.dgvOgun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOgun.Location = new System.Drawing.Point(0, 86);
+            this.dgvOgun.MultiSelect = false;
             this.dgvOgun.Name = "dgvOgun";
             this.dgvOgun.ReadOnly = true;
             this.dgvOgun.RowHeadersWidth = 51;
             this.dgvOgun.RowTemplate.Height = 25;
             this.dgvOgun.RowTemplate.ReadOnly = true;
+            this.dgvOgun.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOgun.Size = new System.Drawing.Size(335, 235);
             this.dgvOgun.TabIndex = 3;
             this.dgvOgun.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOgun_CellClick);
