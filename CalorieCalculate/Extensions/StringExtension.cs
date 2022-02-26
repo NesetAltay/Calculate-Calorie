@@ -98,7 +98,7 @@ namespace CalorieCalculate.Extensions
         /// <returns></returns>
         public static bool AnyDaily(User user)
         {
-            bool anyDaily = _db.RepastMeals.Where(x => x.Repast.User.Id.Equals(user.Id) && x.Repast.Date.Equals(DateTime.Today))
+            bool anyDaily = _db.RepastMeals.Where(x => x.Repast.User.Id.Equals(user.Id) && x.Repast.Date.Day.Equals(DateTime.Today.Day) && x.Repast.Date.Month.Equals(DateTime.Today.Month))
                 .Any(x => x.EatenPortion * x.Meal.Calorie > 0);
             return anyDaily;
         }

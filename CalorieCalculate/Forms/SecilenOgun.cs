@@ -14,8 +14,10 @@ using System.Windows.Forms;
 
 namespace CalorieCalculate.Forms
 {
+
     public partial class SecilenOgun : Form
     {
+        private DatabaseContext _db = new DatabaseContext();
         private Repast repast;
         private User user;
         public SecilenOgun()
@@ -32,14 +34,17 @@ namespace CalorieCalculate.Forms
             DataRead.RepastRaport(user, dgvOgun, repast.RepastName);
         }
         // DataGridView den seçilen yemekler RepastMeal a eklenecek
+        BindingList<YemekDTO> yemekDTOList;
         private void Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
             switch (btn.Tag.ToString())
             {
                 case "1":
-                    DataRead.YemekListele(dgvOgun);
+                    yemekDTOList = DataRead.YemekListele();
+                    dgvOgun.DataSource = yemekDTOList;
                     break;
+
 
                     // Resim ekleme yapısı oluşturulduğunda click event içerisine yazılacak kod, resim yolu aynı zamanda RepastMeals içerisinde Image kısmına aktarılarak 
                     /*
@@ -55,5 +60,23 @@ namespace CalorieCalculate.Forms
             this.Close();
         }
 
+        private void dgvOgun_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = dgvOgun.SelectedRows[0].Index;
+            var yemek = dgvOgun.SelectedRows[0].DataBoundItem as YemekDTO;
+            var listItem = yemekDTOList.FirstOrDefault(x => x.Id == yemek.Id);
+            listItem.Adet = 5; //yeni forma parametre olarak listitem gönder nud dan değeri al 5 yerine güncelle .
+            dgvOgun.SelectedRows[0].Selected = false;
+            dgvOgun.Rows[index].Selected = true;
+
+
+            _db = BaseContext.GetInstance();
+            var result = _db.Meals.Where(x => x.MealName == yemek.MealName).FirstOrDefault();
+            //double portion = 1;
+            string image = null;
+            DataCreate.Create(repast, result, listItem.Adet, image);
+
+
+        }
     }
 }

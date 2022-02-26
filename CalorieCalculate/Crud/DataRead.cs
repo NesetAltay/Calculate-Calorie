@@ -4,6 +4,7 @@ using CalorieCalculate.Model.Data;
 using CalorieCalculate.Model.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,12 +48,17 @@ namespace CalorieCalculate.Crud
             if (StringExtension.AnyChallenge())
             {
                 result = _db.RepastMeals
-                          .Where(x => x.Repast.Date >= x.Repast.Date.AddDays(-7) && x.Repast.Date.Equals(DateTime.Today))
-                          .GroupBy(x => new { x.Repast.RepastName, x.Repast.User.UserInformation.FirstName })
-                          .Select(x => new Challenge() { UserName = x.Key.FirstName, RepastName = x.Key.RepastName, TotalCalorie = x.Sum(y => y.Meal.Calorie * y.EatenPortion) })
-                           .OrderBy(x => x.TotalCalorie).ToList();
+                          .Where(x => x.Repast.Date.Day.Equals(DateTime.Today.Day) 
+                          && x.Repast.Date >= x.Repast.Date.AddDays(-7))
+                          .Select(x => new Challenge()
+                          {
+                              UserName = x.Repast.User.UserInformation.FirstName,
+                              RepastName = x.Repast.RepastName,
+                              TotalCalorie = (x.EatenPortion * x.Meal.Calorie)
+                          } )
+                          .OrderBy(x => x.TotalCalorie).ToList();
             }
-            dgv.DataSource = result;
+            dgv.DataSource = new BindingList<Challenge>(result);
         }
         /// <summary>
         /// Kullanıcının öğün bazlı en çok yediği yemek raporu
@@ -65,9 +71,9 @@ namespace CalorieCalculate.Crud
             {
                 result = _db.RepastMeals.Where(x => x.Repast.User.Id.Equals(user.Id))
                         .GroupBy(x => new { x.Repast.RepastName, x.Meal.MealName })
-                        .Select(x => new MostPopularDTO() { RepastName = x.Key.RepastName, MealName = x.Key.MealName, Total = x.Key.MealName.Sum(y => y) }).ToList();
+                        .Select(x => new MostPopularDTO() { RepastName = x.Key.RepastName, MealName = x.Key.MealName, Total = x.Key.MealName.Count()}).ToList();
             }
-                dgvSorgu.DataSource = result;
+                dgvSorgu.DataSource = new BindingList<MostPopularDTO>(result);
            
         }
         /// <summary>
@@ -79,11 +85,10 @@ namespace CalorieCalculate.Crud
             List<BestMealDTO> result = default;
             if (StringExtension.AnyMeal(user))
             {
-                result = _db.RepastMeals.Where(x => x.Repast.User.Id.Equals(user.Id))
-                        .GroupBy(x => x.Meal.MealName).Select(x => new BestMealDTO() { MealName = x.Key, TotalMeal = x.Key.Sum(y => y) })
-                        .OrderByDescending(x => x).ToList();
+                result = _db.RepastMeals.Where(x => x.Repast.User.Id.Equals(user.Id)).GroupBy(x => x.Meal.MealName)
+                    .Select(x => new BestMealDTO() { MealName = x.Key, TotalMeal = x.Key.Count() }).ToList();
             }
-                dgvSorgu.DataSource = result;
+                dgvSorgu.DataSource = new BindingList<BestMealDTO>(result);
         }
         /// <summary>
         /// Kullanıcının günlük öğün bazlı almış olduğu toplam kalori raporu
@@ -95,37 +100,37 @@ namespace CalorieCalculate.Crud
             List<DailyDTO> result = default;
             if (StringExtension.AnyDaily(user))
             {
-                result = _db.RepastMeals.Where(x => x.Repast.User.Id.Equals(user.Id) && x.Repast.Date.Day.Equals(DateTime.Today))
-                   .GroupBy(x => new { x.Repast.RepastName, x.Meal.Calorie })
-                   .Select(x => new DailyDTO() { RepastName = x.Key.RepastName, TotalCalorie = x.Sum(y => y.Meal.Calorie * y.EatenPortion) }).ToList(); 
+                result = _db.RepastMeals.Where(x => x.Repast.User.Id.Equals(user.Id) && x.Repast.Date.Day.Equals(DateTime.Today.Day) && x.Repast.Date.Month.Equals(DateTime.Today.Month))
+                   .Select(x => new DailyDTO() { RepastName = x.Repast.RepastName, 
+                       TotalCalorie = x.EatenPortion*x.Meal.Calorie }).ToList(); 
             }
-            dgv.DataSource = result;
+            dgv.DataSource = new BindingList<DailyDTO>(result);
         }
         /// <summary>
         /// Kullanıcının günlük almış olduğu toplam kolri raporu
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public static double DailyTotalCalorie(User user, DataGridView dgvSorgu)
+        public static void DailyTotalCalorie(User user, DataGridView dgvSorgu)
         {
-            double result = default;
+           double result = default;
             if (StringExtension.AnyDaily(user))
             {
-                result = _db.RepastMeals.Where(x => x.Repast.User.Id.Equals(user.Id) && x.Repast.Date.Day.Equals(DateTime.Today))
-                       .Select(x => x.EatenPortion * x.Meal.Calorie).Sum(); 
+                result = _db.RepastMeals.Where(x => x.Repast.User.Id.Equals(user.Id)
+                && x.Repast.Date.Day.Equals(DateTime.Today.Day) && x.Repast.Date.Month.Equals(DateTime.Today.Month))
+                       .Select(x => x.EatenPortion * x.Meal.Calorie).Sum();
             }
-            dgvSorgu.DataSource = result;
-            return result;
+            dgvSorgu.Rows.Add(result);
         }
         /// <summary>
         /// Database'de kayıtlı yemek listesini getirir
         /// </summary>
         /// <param name="dgv"></param>
-        public static void YemekListele(DataGridView dgv)
+        public static BindingList<YemekDTO> YemekListele()
         {
             var yemekler = _db.Meals
-                .Select(x => new YemekDTO() { MealName = x.MealName, Calorie = x.Calorie, Description = x.MealDescription }).ToList();
-            dgv.DataSource = yemekler;
+                .Select(x => new YemekDTO() {Id = x.Id, MealName = x.MealName, Calorie = x.Calorie, Description = x.MealDescription }).ToList();
+            return new BindingList<YemekDTO> (yemekler);
         }
         /// <summary>
         /// Kullanıcının öğünlerde yediği yemeklerin raporunu getirir
@@ -139,8 +144,8 @@ namespace CalorieCalculate.Crud
             if (StringExtension.AnyDaily(user))
             {
                 dailyEat = _db.RepastMeals
-               .Where(x => x.Repast.User.Id.Equals(user.Id) && x.Repast.Date.Equals(DateTime.Today) && x.Repast.RepastName.Equals(repast))
-               .Select(x => new YenenYemekDTO { RepastName = x.Repast.RepastName, MealName = x.Meal.MealName }).ToList(); 
+               .Where(x => x.Repast.User.Id.Equals(user.Id) && x.Repast.Date.Day.Equals(DateTime.Today.Day) && x.Repast.RepastName.Equals(repast)&& x.Repast.Date.Month.Equals(DateTime.Today.Month)) 
+               .Select(x => new YenenYemekDTO { RepastName = x.Repast.RepastName, MealName = x.Meal.MealName, TotalCalorie = x.EatenPortion*x.Meal.Calorie }).ToList(); 
             }
             dgv.DataSource = dailyEat;
         }

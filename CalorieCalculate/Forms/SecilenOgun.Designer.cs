@@ -37,10 +37,8 @@ namespace CalorieCalculate.Forms
             this.dgvOgun = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.klcButton1 = new KLCToolbox.KLCControls.KLCButton();
-            this.btnÜrünEkle = new KLCToolbox.KLCControls.KLCButton();
+            this.btnListe = new KLCToolbox.KLCControls.KLCButton();
             this.ofdPictureFile = new System.Windows.Forms.OpenFileDialog();
-            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbYemek)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).BeginInit();
@@ -58,7 +56,7 @@ namespace CalorieCalculate.Forms
             this.panel1.Controls.Add(this.dgvOgun);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.klcButton1);
-            this.panel1.Controls.Add(this.btnÜrünEkle);
+            this.panel1.Controls.Add(this.btnListe);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -71,7 +69,7 @@ namespace CalorieCalculate.Forms
             this.pbYemek.BackColor = System.Drawing.Color.Transparent;
             this.pbYemek.Location = new System.Drawing.Point(123, 16);
             this.pbYemek.Name = "pbYemek";
-            this.pbYemek.Size = new System.Drawing.Size(125, 62);
+            this.pbYemek.Size = new System.Drawing.Size(125, 61);
             this.pbYemek.TabIndex = 25;
             this.pbYemek.TabStop = false;
             // 
@@ -104,16 +102,18 @@ namespace CalorieCalculate.Forms
             // dgvOgun
             // 
             this.dgvOgun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOgun.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
             this.dgvOgun.Location = new System.Drawing.Point(0, 115);
-            this.dgvOgun.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvOgun.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.dgvOgun.MultiSelect = false;
             this.dgvOgun.Name = "dgvOgun";
+            this.dgvOgun.ReadOnly = true;
             this.dgvOgun.RowHeadersWidth = 51;
             this.dgvOgun.RowTemplate.Height = 25;
+            this.dgvOgun.RowTemplate.ReadOnly = true;
+            this.dgvOgun.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOgun.Size = new System.Drawing.Size(383, 313);
             this.dgvOgun.TabIndex = 3;
+            this.dgvOgun.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOgun_CellClick);
             // 
             // pictureBox1
             // 
@@ -148,44 +148,30 @@ namespace CalorieCalculate.Forms
             this.klcButton1.UseVisualStyleBackColor = false;
             this.klcButton1.Click += new System.EventHandler(this.Click);
             // 
-            // btnÜrünEkle
+            // btnListe
             // 
-            this.btnÜrünEkle.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnÜrünEkle.FlatAppearance.BorderSize = 0;
-            this.btnÜrünEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnÜrünEkle.ForeColor = System.Drawing.Color.Black;
-            this.btnÜrünEkle.KLCBackgroundColor = System.Drawing.Color.OrangeRed;
-            this.btnÜrünEkle.KLCBorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnÜrünEkle.KLCBorderRadius = 24;
-            this.btnÜrünEkle.KLCBorderSize = 0;
-            this.btnÜrünEkle.KLCTextColor = System.Drawing.Color.Black;
-            this.btnÜrünEkle.Location = new System.Drawing.Point(286, 16);
-            this.btnÜrünEkle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnÜrünEkle.Name = "btnÜrünEkle";
-            this.btnÜrünEkle.Size = new System.Drawing.Size(94, 41);
-            this.btnÜrünEkle.TabIndex = 1;
-            this.btnÜrünEkle.Tag = "1";
-            this.btnÜrünEkle.Text = "Gıda Listesi";
-            this.btnÜrünEkle.UseVisualStyleBackColor = false;
-            this.btnÜrünEkle.Click += new System.EventHandler(this.Click);
+            this.btnListe.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnListe.FlatAppearance.BorderSize = 0;
+            this.btnListe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListe.ForeColor = System.Drawing.Color.Black;
+            this.btnListe.KLCBackgroundColor = System.Drawing.Color.OrangeRed;
+            this.btnListe.KLCBorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnListe.KLCBorderRadius = 24;
+            this.btnListe.KLCBorderSize = 0;
+            this.btnListe.KLCTextColor = System.Drawing.Color.Black;
+            this.btnListe.Location = new System.Drawing.Point(286, 16);
+            this.btnListe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnListe.Name = "btnListe";
+            this.btnListe.Size = new System.Drawing.Size(94, 41);
+            this.btnListe.TabIndex = 1;
+            this.btnListe.Tag = "1";
+            this.btnListe.Text = "Gıda Listesi";
+            this.btnListe.UseVisualStyleBackColor = false;
+            this.btnListe.Click += new System.EventHandler(this.Click);
             // 
             // ofdPictureFile
             // 
             this.ofdPictureFile.FileName = "openFileDialog1";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column4";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
             // 
             // SecilenOgun
             // 
@@ -215,14 +201,15 @@ namespace CalorieCalculate.Forms
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private KLCToolbox.KLCControls.KLCButton btnÜrünEkle;
+        private KLCToolbox.KLCControls.KLCButton btnListe;
         private KLCToolbox.KLCControls.KLCButton klcButton1;
         private System.Windows.Forms.DataGridView dgvOgun;
         private System.Windows.Forms.Label lblOgunAdi;
         private System.Windows.Forms.PictureBox pbBack;
         private System.Windows.Forms.OpenFileDialog ofdPictureFile;
         private System.Windows.Forms.PictureBox pbYemek;
-        private System.Windows.Forms.DataGridViewButtonColumn Column1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column2;
+//=======
+        private KLCToolbox.KLCControls.KLCButton btnEkle;
+//>>>>>>> d4e158d73931f2355e2c65dc17812d64cb7cc1df
     }
 }

@@ -55,8 +55,9 @@ namespace CalorieCalculate.Forms
 
         private void Click(object sender, EventArgs e)
         {
-            if(dgvSorgu.Rows.Count!=0)
-            dgvSorgu.Rows.Clear();
+            if (dgvSorgu.Rows.Count != 0)
+                dgvSorgu.Rows.Clear();
+
             Button btn = (Button)sender;
             switch (btn.Tag.ToString())
             {
@@ -64,7 +65,9 @@ namespace CalorieCalculate.Forms
                    DataRead.DailyRaport(user, dgvSorgu);
                     break;
                 case "2":
-                   DataRead.DailyTotalCalorie(user, dgvSorgu);
+                    TextBox txt = new TextBox();
+                    dgvSorgu.Columns.Add("Total Calorie", "Toplam Kalori");
+                    DataRead.DailyTotalCalorie(user, dgvSorgu);
                     break;
                 case "3":
                      DataRead.GetChallenge(dgvSorgu);
