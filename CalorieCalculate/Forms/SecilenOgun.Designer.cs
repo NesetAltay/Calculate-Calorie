@@ -39,6 +39,8 @@ namespace CalorieCalculate.Forms
             this.klcButton1 = new KLCToolbox.KLCControls.KLCButton();
             this.btnÜrünEkle = new KLCToolbox.KLCControls.KLCButton();
             this.ofdPictureFile = new System.Windows.Forms.OpenFileDialog();
+            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbYemek)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).BeginInit();
@@ -102,6 +104,9 @@ namespace CalorieCalculate.Forms
             // dgvOgun
             // 
             this.dgvOgun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOgun.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
             this.dgvOgun.Location = new System.Drawing.Point(0, 115);
             this.dgvOgun.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvOgun.Name = "dgvOgun";
@@ -168,6 +173,20 @@ namespace CalorieCalculate.Forms
             // 
             this.ofdPictureFile.FileName = "openFileDialog1";
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Column1";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Column4";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
             // SecilenOgun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -203,5 +222,7 @@ namespace CalorieCalculate.Forms
         private System.Windows.Forms.PictureBox pbBack;
         private System.Windows.Forms.OpenFileDialog ofdPictureFile;
         private System.Windows.Forms.PictureBox pbYemek;
+        private System.Windows.Forms.DataGridViewButtonColumn Column1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column2;
     }
 }
