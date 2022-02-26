@@ -41,58 +41,80 @@ namespace CalorieCalculate.Crud
         /// Kullanıcıların yediğiği yemeklerin ve aldıkları kalorilerin karşılaştırılması
         /// </summary>
         /// <returns></returns>
-        public static List<Challenge> GetChallenge()
+        public static void GetChallenge(DataGridView dgv)
         {
-            // Zaman ayarlaması yapılacak
-            List<Challenge> result = _db.RepastMeals
-                    .GroupBy(x => new { x.Repast.RepastName, x.Repast.User.UserInformation.FirstName })
-                    .Select(x => new Challenge() { UserName = x.Key.FirstName, RepastName = x.Key.RepastName, TotalCalorie = x.Sum(y => y.Meal.Calorie * y.EatenPortion) })
-                    .OrderBy(x => x.TotalCalorie).ToList();
-            return result;
+            List<Challenge> result = default;
+            if (StringExtension.AnyChallenge())
+            {
+                result = _db.RepastMeals
+                          .Where(x => x.Repast.Date >= x.Repast.Date.AddDays(-7) && x.Repast.Date.Equals(DateTime.Today))
+                          .GroupBy(x => new { x.Repast.RepastName, x.Repast.User.UserInformation.FirstName })
+                          .Select(x => new Challenge() { UserName = x.Key.FirstName, RepastName = x.Key.RepastName, TotalCalorie = x.Sum(y => y.Meal.Calorie * y.EatenPortion) })
+                           .OrderBy(x => x.TotalCalorie).ToList();
+            }
+            dgv.DataSource = result;
         }
         /// <summary>
         /// Kullanıcının öğün bazlı en çok yediği yemek raporu
         /// </summary>
         /// <param name="user"></param>
-        public static List<MostPopularDTO> MostPopularMeal(User user)
+        public static void MostPopularMeal(User user, DataGridView dgvSorgu)
         {
-            List<MostPopularDTO> result = _db.RepastMeals.Where(x => x.Repast.UserId.Equals(user.Id))
-                .GroupBy(x => new { x.Repast.RepastName, x.Meal.MealName })
-                .Select(x => new MostPopularDTO() { RepastName = x.Key.RepastName, MealName = x.Key.MealName, Total = x.Key.MealName.Sum(y => y) }).ToList();
-            return result;
+            List<MostPopularDTO> result = default;
+            if (StringExtension.AnyMeal(user))
+            {
+                result = _db.RepastMeals.Where(x => x.Repast.User.Id.Equals(user.Id))
+                        .GroupBy(x => new { x.Repast.RepastName, x.Meal.MealName })
+                        .Select(x => new MostPopularDTO() { RepastName = x.Key.RepastName, MealName = x.Key.MealName, Total = x.Key.MealName.Sum(y => y) }).ToList();
+            }
+                dgvSorgu.DataSource = result;
+           
         }
         /// <summary>
         /// Kullanıcının en çok tercih ettiği yemek raporu
         /// </summary>
         /// <param name="user"></param>
-        public static List<BestMealDTO> BestMeal(User user)
+        public static void BestMeal(User user, DataGridView dgvSorgu)
         {
-            List<BestMealDTO> result = _db.RepastMeals.Where(x => x.Repast.UserId.Equals(user.Id))
-                .GroupBy(x => x.Meal.MealName).Select(x => new BestMealDTO() { MealName = x.Key, TotalMeal = x.Key.Sum(y => y) })
-                .OrderByDescending(x => x).ToList();
-            return result;
+            List<BestMealDTO> result = default;
+            if (StringExtension.AnyMeal(user))
+            {
+                result = _db.RepastMeals.Where(x => x.Repast.User.Id.Equals(user.Id))
+                        .GroupBy(x => x.Meal.MealName).Select(x => new BestMealDTO() { MealName = x.Key, TotalMeal = x.Key.Sum(y => y) })
+                        .OrderByDescending(x => x).ToList();
+            }
+                dgvSorgu.DataSource = result;
         }
         /// <summary>
         /// Kullanıcının günlük öğün bazlı almış olduğu toplam kalori raporu
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public static List<DailyDTO> DailyRaport(User user)
+        public static void DailyRaport(User user, DataGridView dgv)
         {
-            List<DailyDTO> result = _db.RepastMeals.Where(x => x.Repast.UserId.Equals(user.Id) && x.Repast.Date.Day.Equals(DateTime.Today))
-                .GroupBy(x => new { x.Repast.RepastName, x.Meal.Calorie })
-                .Select(x => new DailyDTO() { RepastName = x.Key.RepastName, TotalCalorie = x.Sum(y => y.Meal.Calorie * y.EatenPortion) }).ToList();
-            return result;
+            List<DailyDTO> result = default;
+            if (StringExtension.AnyDaily(user))
+            {
+                result = _db.RepastMeals.Where(x => x.Repast.User.Id.Equals(user.Id) && x.Repast.Date.Day.Equals(DateTime.Today))
+                   .GroupBy(x => new { x.Repast.RepastName, x.Meal.Calorie })
+                   .Select(x => new DailyDTO() { RepastName = x.Key.RepastName, TotalCalorie = x.Sum(y => y.Meal.Calorie * y.EatenPortion) }).ToList(); 
+            }
+            dgv.DataSource = result;
         }
         /// <summary>
         /// Kullanıcının günlük almış olduğu toplam kolri raporu
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public static double DailyTotalCalorie(User user)
+        public static double DailyTotalCalorie(User user, DataGridView dgvSorgu)
         {
-            double result = _db.RepastMeals.Where(x => x.Repast.UserId.Equals(user.Id) && x.Repast.Date.Day.Equals(DateTime.Today))
-                .Select(x => x.EatenPortion * x.Meal.Calorie).Sum();
+            double result = default;
+            if (StringExtension.AnyDaily(user))
+            {
+                result = _db.RepastMeals.Where(x => x.Repast.User.Id.Equals(user.Id) && x.Repast.Date.Day.Equals(DateTime.Today))
+                       .Select(x => x.EatenPortion * x.Meal.Calorie).Sum(); 
+            }
+            dgvSorgu.DataSource = result;
             return result;
         }
         /// <summary>
@@ -101,10 +123,26 @@ namespace CalorieCalculate.Crud
         /// <param name="dgv"></param>
         public static void YemekListele(DataGridView dgv)
         {
-            var yemekler = _db.Meals.ToList();
-            var filter = yemekler.Select(x => new YemekDTO() { MealName = x.MealName, Calorie = x.Calorie, Description = x.MealDescription}).ToList();
-            dgv.DataSource = filter;
-
+            var yemekler = _db.Meals
+                .Select(x => new YemekDTO() { MealName = x.MealName, Calorie = x.Calorie, Description = x.MealDescription }).ToList();
+            dgv.DataSource = yemekler;
+        }
+        /// <summary>
+        /// Kullanıcının öğünlerde yediği yemeklerin raporunu getirir
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="dgv"></param>
+        /// <param name="repast"></param>
+        public static void RepastRaport(User user, DataGridView dgv, string repast)
+        {
+            List<YenenYemekDTO> dailyEat = default;
+            if (StringExtension.AnyDaily(user))
+            {
+                dailyEat = _db.RepastMeals
+               .Where(x => x.Repast.User.Id.Equals(user.Id) && x.Repast.Date.Equals(DateTime.Today) && x.Repast.RepastName.Equals(repast))
+               .Select(x => new YenenYemekDTO { RepastName = x.Repast.RepastName, MealName = x.Meal.MealName }).ToList(); 
+            }
+            dgv.DataSource = dailyEat;
         }
     }
 }

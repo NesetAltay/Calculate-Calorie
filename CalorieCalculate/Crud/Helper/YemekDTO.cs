@@ -6,8 +6,8 @@
         {
 
         }
-        public string MealName { get; set; }
-        public double Calorie { get; set; }
-        public string Description { get; set; }
+        public string MealName { get; set; } = "Boş";
+        public double Calorie { get; set; } = 0;
+        public string Description { get; set; } = "Boş";
     }
 }

@@ -20,19 +20,21 @@ namespace CalorieCalculate.Forms
         {
             InitializeComponent();
             txtEmail.Select();
+            Remember();
         }
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
-            //"altayneset@gmail.com", "12345Neset"
             bool result = StringExtension.AnyUser(txtEmail.KLCText, txtPassword.KLCText);
             User user = DataRead.GetUser(txtEmail.KLCText, txtPassword.KLCText);
-                if (result)
-                {
-                    Interface frm = new Interface(user);
-                    frm.ShowDialog();
-                }
-                else
-                    MessageBox.Show("Girdiğiniz bilgiler eşleşmiyor", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (result)
+            {
+                SaveRemember();
+                Interface frm = new Interface(user);
+                this.Close();
+                frm.ShowDialog();
+            }
+            else
+                MessageBox.Show("Girdiğiniz bilgiler eşleşmiyor", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         private void lnkKayitOl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -49,6 +51,39 @@ namespace CalorieCalculate.Forms
         {
             if (e.KeyCode == Keys.Enter)
                 btnGirisYap.PerformClick();
+        }
+        private void Remember()
+        {
+            if (Properties.Settings.Default.UserName != string.Empty)
+            {
+                if (Properties.Settings.Default.Remember == true)
+                {
+                    txtEmail.KLCText = Properties.Settings.Default.UserName;
+                    txtPassword.KLCText = Properties.Settings.Default.Password;
+                    klcToggleButton1.Checked = true;
+                }
+                else
+                {
+                    txtEmail.KLCText = Properties.Settings.Default.UserName;
+                }
+            }
+        }
+        private void SaveRemember()
+        {
+            if (klcToggleButton1.Checked)
+            {
+                Properties.Settings.Default.UserName = txtEmail.KLCText;
+                Properties.Settings.Default.Password = txtPassword.KLCText;
+                Properties.Settings.Default.Remember = true;
+                Properties.Settings.Default.Save();
+            }
+            else
+            {
+                Properties.Settings.Default.UserName = "";
+                Properties.Settings.Default.Password = "";
+                Properties.Settings.Default.Remember = false;
+                Properties.Settings.Default.Save();
+            }
         }
     }
 }

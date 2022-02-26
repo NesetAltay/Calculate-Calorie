@@ -6,7 +6,7 @@
         {
         }
 
-        public string MealName { get; set; }
-        public int TotalMeal { get; set; }
+        public string MealName { get; set; } = "Boş";
+        public int TotalMeal { get; set; } = 0;
     }
 }

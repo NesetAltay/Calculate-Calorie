@@ -27,20 +27,15 @@ namespace CalorieCalculate.Forms
             this.user = user;
         }
 
-        //oop icin yapı olusturuldugunda acılacak form isimleri veri olarak metod icerisinde gönderilecek.
         private void Interface_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            if (btn.Tag.ToString() == "4") this.Close();
-            else
-            {
-                Repast repast = DataCreate.Create(btn, user);
-                Form frm = default;
-                frm = new SecilenOgun(repast, user);
-                this.Hide();
-                frm.ShowDialog();
-                this.Show();
-            }
+            Repast repast = DataCreate.Create(btn, user);
+            Form frm = default;
+            frm = new SecilenOgun(repast, user);
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
         }
 
         private void pbProfil_Click(object sender, EventArgs e)
@@ -53,7 +48,7 @@ namespace CalorieCalculate.Forms
 
         private void pbBack_Click(object sender, EventArgs e)
         {
-            this.Close();  
+            this.Close();
         }
     }
 }

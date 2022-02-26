@@ -1,5 +1,6 @@
 ﻿using CalorieCalculate.Crud;
 using CalorieCalculate.Model.Data;
+using CalorieCalculate.Model.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -71,7 +72,36 @@ namespace CalorieCalculate.Extensions
             bool validUser = _db.Users.Any(x => x.Email == email && x.Password == password);
             return validUser;
         } 
-
+        /// <summary>
+        /// Kullanıcılar arasında kayıtlı kalori miktarının sıfırdan farklı bir olan bir kullanıcı var mı kontrol eder
+        /// </summary>
+        /// <returns></returns>
+        public static bool AnyChallenge()
+        {
+            bool validChallenge = _db.RepastMeals.Any(x => x.EatenPortion * x.Meal.Calorie != 0);
+            return validChallenge;
+        }
+        /// <summary>
+        /// Kullanıcının yediği her hangi bir yemek var mı kontrol eder
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public static bool AnyMeal(User user)
+        {
+            bool anyMeal = _db.Repasts.Where(x => x.User.Id.Equals(user.Id)).Any(x => x.RepastMeals.Count() > 0);
+            return anyMeal;
+        }
+        /// <summary>
+        /// kullanıcının yediği yemekler arasında kalorisi sıfırdan büyük olan var mı kontrol eder
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public static bool AnyDaily(User user)
+        {
+            bool anyDaily = _db.RepastMeals.Where(x => x.Repast.User.Id.Equals(user.Id) && x.Repast.Date.Equals(DateTime.Today))
+                .Any(x => x.EatenPortion * x.Meal.Calorie > 0);
+            return anyDaily;
+        }
         #endregion
     }
 }

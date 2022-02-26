@@ -28,7 +28,7 @@ namespace CalorieCalculate.Forms
             this.btnTag = v;
             this.user = user;
         }
-
+        
         private void SecilenRapor_Load(object sender, EventArgs e)
         {
             switch (btnTag)
@@ -55,36 +55,30 @@ namespace CalorieCalculate.Forms
 
         private void Click(object sender, EventArgs e)
         {
+            if(dgvSorgu.Rows.Count!=0)
             dgvSorgu.Rows.Clear();
             Button btn = (Button)sender;
             switch (btn.Tag.ToString())
             {
                 case "1":
-                   List<DailyDTO> dailies = DataRead.DailyRaport(user);
-                    dgvSorgu.DataSource = dailies;
+                   DataRead.DailyRaport(user, dgvSorgu);
                     break;
                 case "2":
-                   double totalClarie = DataRead.DailyTotalCalorie(user);
-                    dgvSorgu.DataSource = totalClarie;
+                   DataRead.DailyTotalCalorie(user, dgvSorgu);
                     break;
                 case "3":
-                    List<Challenge> challenges = DataRead.GetChallenge();
-                    dgvSorgu.DataSource = challenges;
+                     DataRead.GetChallenge(dgvSorgu);
                     break;
                 case "4":
-                   List<MostPopularDTO> mosts = DataRead.MostPopularMeal(user);
-                    dgvSorgu.DataSource = mosts;
+                   DataRead.MostPopularMeal(user, dgvSorgu);
                     break;
                 case "5":
-                   List<BestMealDTO> bestMeals = DataRead.BestMeal(user);
-                    dgvSorgu.DataSource = bestMeals;
+                   DataRead.BestMeal(user, dgvSorgu);
+                    break;
+                case "9":
+                    this.Close();
                     break;
             }
-        }
-
-        private void pbBack_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -17,7 +17,6 @@ namespace CalorieCalculate.Model.Data
         public DbSet<TypeOfMeal> TypeOfMeals { get; set; }
         public DbSet<Repast> Repasts { get; set; }
         public DbSet<RepastMeal> RepastMeals { get; set; }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server = DESKTOP-EPLOA67\MSSQLN88; database = CalorieDb; Integrated Security = true");

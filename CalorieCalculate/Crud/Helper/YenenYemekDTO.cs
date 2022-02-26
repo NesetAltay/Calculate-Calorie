@@ -1,14 +1,8 @@
 ﻿namespace CalorieCalculate.Crud
 {
-    public class MostPopularDTO
+    public class YenenYemekDTO
     {
-        public MostPopularDTO()
-        {
-
-        }
-
         public string RepastName { get; set; } = "Boş";
         public string MealName { get; set; } = "Boş";
-        public int Total { get; set; } = 0;
     }
 }

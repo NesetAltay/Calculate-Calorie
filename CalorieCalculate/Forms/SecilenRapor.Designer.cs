@@ -31,15 +31,14 @@ namespace CalorieCalculate.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SecilenRapor));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBack = new KLCToolbox.KLCControls.KLCButton();
             this.btnSorgu1 = new KLCToolbox.KLCControls.KLCButton();
             this.btnSorgu2 = new KLCToolbox.KLCControls.KLCButton();
             this.pbProfil = new KLCToolbox.KLCControls.KLCCircularPictureBox();
-            this.pbBack = new System.Windows.Forms.PictureBox();
             this.dgvSorgu = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfil)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSorgu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -49,18 +48,40 @@ namespace CalorieCalculate.Forms
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.btnSorgu1);
             this.panel1.Controls.Add(this.btnSorgu2);
             this.panel1.Controls.Add(this.pbProfil);
-            this.panel1.Controls.Add(this.pbBack);
             this.panel1.Controls.Add(this.dgvSorgu);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(616, 1062);
+            this.panel1.Size = new System.Drawing.Size(379, 664);
             this.panel1.TabIndex = 4;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.KLCBackgroundColor = System.Drawing.Color.Transparent;
+            this.btnBack.KLCBorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnBack.KLCBorderRadius = 34;
+            this.btnBack.KLCBorderSize = 0;
+            this.btnBack.KLCTextColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(0, 0);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(65, 45);
+            this.btnBack.TabIndex = 27;
+            this.btnBack.Tag = "9";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.Click);
             // 
             // btnSorgu1
             // 
@@ -70,13 +91,12 @@ namespace CalorieCalculate.Forms
             this.btnSorgu1.ForeColor = System.Drawing.Color.White;
             this.btnSorgu1.KLCBackgroundColor = System.Drawing.Color.OrangeRed;
             this.btnSorgu1.KLCBorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnSorgu1.KLCBorderRadius = 40;
+            this.btnSorgu1.KLCBorderRadius = 38;
             this.btnSorgu1.KLCBorderSize = 0;
             this.btnSorgu1.KLCTextColor = System.Drawing.Color.White;
-            this.btnSorgu1.Location = new System.Drawing.Point(47, 702);
-            this.btnSorgu1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnSorgu1.Location = new System.Drawing.Point(29, 439);
             this.btnSorgu1.Name = "btnSorgu1";
-            this.btnSorgu1.Size = new System.Drawing.Size(200, 80);
+            this.btnSorgu1.Size = new System.Drawing.Size(123, 51);
             this.btnSorgu1.TabIndex = 25;
             this.btnSorgu1.UseVisualStyleBackColor = false;
             this.btnSorgu1.Click += new System.EventHandler(this.Click);
@@ -89,13 +109,12 @@ namespace CalorieCalculate.Forms
             this.btnSorgu2.ForeColor = System.Drawing.Color.White;
             this.btnSorgu2.KLCBackgroundColor = System.Drawing.Color.OrangeRed;
             this.btnSorgu2.KLCBorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnSorgu2.KLCBorderRadius = 40;
+            this.btnSorgu2.KLCBorderRadius = 38;
             this.btnSorgu2.KLCBorderSize = 0;
             this.btnSorgu2.KLCTextColor = System.Drawing.Color.White;
-            this.btnSorgu2.Location = new System.Drawing.Point(367, 702);
-            this.btnSorgu2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnSorgu2.Location = new System.Drawing.Point(226, 439);
             this.btnSorgu2.Name = "btnSorgu2";
-            this.btnSorgu2.Size = new System.Drawing.Size(200, 80);
+            this.btnSorgu2.Size = new System.Drawing.Size(123, 51);
             this.btnSorgu2.TabIndex = 25;
             this.btnSorgu2.UseVisualStyleBackColor = false;
             this.btnSorgu2.Click += new System.EventHandler(this.Click);
@@ -109,62 +128,48 @@ namespace CalorieCalculate.Forms
             this.pbProfil.KLCBorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             this.pbProfil.KLCBorderSize = 2;
             this.pbProfil.KLCGradientAngle = 50F;
-            this.pbProfil.Location = new System.Drawing.Point(552, 0);
-            this.pbProfil.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.pbProfil.Location = new System.Drawing.Point(341, 0);
+            this.pbProfil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbProfil.Name = "pbProfil";
-            this.pbProfil.Size = new System.Drawing.Size(63, 63);
+            this.pbProfil.Size = new System.Drawing.Size(39, 39);
             this.pbProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbProfil.TabIndex = 24;
             this.pbProfil.TabStop = false;
             this.pbProfil.Tag = "5";
             // 
-            // pbBack
-            // 
-            this.pbBack.BackColor = System.Drawing.Color.Transparent;
-            this.pbBack.Image = ((System.Drawing.Image)(resources.GetObject("pbBack.Image")));
-            this.pbBack.Location = new System.Drawing.Point(0, 0);
-            this.pbBack.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.pbBack.Name = "pbBack";
-            this.pbBack.Size = new System.Drawing.Size(106, 72);
-            this.pbBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbBack.TabIndex = 23;
-            this.pbBack.TabStop = false;
-            this.pbBack.Tag = "4";
-            this.pbBack.Click += new System.EventHandler(this.pbBack_Click);
-            // 
             // dgvSorgu
             // 
             this.dgvSorgu.BackgroundColor = System.Drawing.Color.PeachPuff;
             this.dgvSorgu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSorgu.Location = new System.Drawing.Point(5, 110);
-            this.dgvSorgu.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.dgvSorgu.Location = new System.Drawing.Point(3, 69);
+            this.dgvSorgu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvSorgu.Name = "dgvSorgu";
             this.dgvSorgu.RowHeadersWidth = 51;
             this.dgvSorgu.RowTemplate.Height = 25;
-            this.dgvSorgu.Size = new System.Drawing.Size(611, 557);
+            this.dgvSorgu.Size = new System.Drawing.Size(376, 348);
             this.dgvSorgu.TabIndex = 20;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(249, 978);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.pictureBox2.Location = new System.Drawing.Point(153, 601);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(114, 85);
+            this.pictureBox2.Size = new System.Drawing.Size(74, 59);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 19;
             this.pictureBox2.TabStop = false;
             // 
             // SecilenRapor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 1062);
+            this.ClientSize = new System.Drawing.Size(379, 664);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SecilenRapor";
@@ -173,7 +178,6 @@ namespace CalorieCalculate.Forms
             this.Load += new System.EventHandler(this.SecilenRapor_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbProfil)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSorgu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -185,9 +189,9 @@ namespace CalorieCalculate.Forms
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridView dgvSorgu;
-        private System.Windows.Forms.PictureBox pbBack;
         private KLCToolbox.KLCControls.KLCCircularPictureBox pbProfil;
         private KLCToolbox.KLCControls.KLCButton btnSorgu1;
         private KLCToolbox.KLCControls.KLCButton btnSorgu2;
+        private KLCToolbox.KLCControls.KLCButton btnBack;
     }
 }

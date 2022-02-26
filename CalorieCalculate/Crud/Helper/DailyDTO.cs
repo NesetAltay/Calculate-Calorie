@@ -6,7 +6,7 @@
         {
         }
 
-        public string RepastName { get; set; }
-        public double TotalCalorie { get; set; }
+        public string RepastName { get; set; } = "Boş";
+        public double TotalCalorie { get; set; } = 0;
     }
 }

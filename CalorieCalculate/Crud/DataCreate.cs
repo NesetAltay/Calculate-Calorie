@@ -73,7 +73,14 @@ namespace CalorieCalculate.Crud
             _db.SaveChanges();
             return _repast;
         }
-        public static void Create(Repast repast, Meal meal, double portion, string image)
+        /// <summary>
+        /// Kullanıcının yaptığı öğün ve yemek seçimlerini oluşturur
+        /// </summary>
+        /// <param name="repast"></param>
+        /// <param name="meal"></param>
+        /// <param name="portion"></param>
+        /// <param name="image"></param>
+        public static void Create(Repast repast, Meal meal, double portion = 0, string image = null)
         {
             _repastMeal = new RepastMeal()
             {
