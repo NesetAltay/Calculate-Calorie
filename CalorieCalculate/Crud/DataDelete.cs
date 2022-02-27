@@ -1,4 +1,5 @@
-﻿using CalorieCalculate.Model.Data;
+﻿using CalorieCalculate.Forms;
+using CalorieCalculate.Model.Data;
 using CalorieCalculate.Model.Entities;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace CalorieCalculate.Crud
             var result1 = _db.UserInformations.FirstOrDefault(x => x.Id.Equals(user.Id));
             _db.Users.Remove(result);
             _db.UserInformations.Remove(result1);
+            _db.SaveChanges();
         }
         public static void Delete(Repast repast)
         {
@@ -27,12 +29,14 @@ namespace CalorieCalculate.Crud
             for (int i = 0; i < result1.Count; i++)
             {
                 _db.RepastMeals.Remove(result1[i]);
+                _db.SaveChanges();
             }
         }
-        public static void Delete(Meal meal, Repast repast)
+        public static void Delete(YenenYemekDTO meal, Repast repast)
         {
-            var result = _db.RepastMeals.FirstOrDefault(x => x.Repast.Id.Equals(repast.Id) && x.Meal.Id.Equals(meal.Id));
+            var result = _db.RepastMeals.FirstOrDefault(x => x.Repast.RepastName.Equals(repast.RepastName) && x.Meal.Id.Equals(meal.Id) && x.Repast.Date.Day.Equals(DateTime.Today.Day) && x.Repast.Date.Month.Equals(DateTime.Today.Month));
             _db.RepastMeals.Remove(result);
+            _db.SaveChanges();
         }
     }
 }

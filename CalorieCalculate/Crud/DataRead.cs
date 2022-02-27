@@ -56,7 +56,7 @@ namespace CalorieCalculate.Crud
                               RepastName = x.Repast.RepastName,
                               TotalCalorie = (x.EatenPortion * x.Meal.Calorie)
                           })
-                          .OrderBy(x => x.TotalCalorie).ToList();
+                          .ToList();
                 dgv.DataSource = new BindingList<Challenge>(result);
             }
 
@@ -155,7 +155,7 @@ namespace CalorieCalculate.Crud
         /// <param name="user"></param>
         /// <param name="dgv"></param>
         /// <param name="repast"></param>
-        public static void RepastRaport(User user, DataGridView dgv, string repast)
+        public static BindingList<YenenYemekDTO> RepastRaport(User user, DataGridView dgv, string repast)
         {
             List<YenenYemekDTO> dailyEat = default;
             if (StringExtension.AnyDaily(user))
@@ -164,13 +164,15 @@ namespace CalorieCalculate.Crud
                .Where(x => x.Repast.User.Id.Equals(user.Id) && x.Repast.Date.Day.Equals(DateTime.Today.Day) && x.Repast.RepastName.Equals(repast) && x.Repast.Date.Month.Equals(DateTime.Today.Month))
                .Select(x => new YenenYemekDTO
                {
+                   Id = x.MealId,
                    RepastName = x.Repast.RepastName,
                    MealName = x.Meal.MealName,
                    TotalCalorie = x.EatenPortion * x.Meal.Calorie
                }).ToList();
-                dgv.DataSource = dailyEat;
+                dgv.DataSource = new BindingList<YenenYemekDTO> (dailyEat);
+                
             }
-
+            return new BindingList<YenenYemekDTO>(dailyEat);
         }
     }
 }

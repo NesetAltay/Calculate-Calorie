@@ -88,7 +88,8 @@ namespace CalorieCalculate.Extensions
         /// <returns></returns>
         public static bool AnyMeal(User user)
         {
-            bool anyMeal = _db.Repasts.Where(x => x.User.Id.Equals(user.Id)).Select(x => x.RepastMeals.Count() > 0).FirstOrDefault();
+            bool anyMeal = _db.RepastMeals.Where(x => x.Repast.User.Id.Equals(user.Id))
+                .Select(x => x.Meal.MealName.Count() > 0).FirstOrDefault();
             return anyMeal;
         }
         /// <summary>

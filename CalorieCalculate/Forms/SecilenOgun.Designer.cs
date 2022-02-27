@@ -31,11 +31,14 @@ namespace CalorieCalculate.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SecilenOgun));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPortion = new KLCToolbox.KLCControls.KLCTextBox();
             this.pbYemek = new System.Windows.Forms.PictureBox();
             this.pbBack = new System.Windows.Forms.PictureBox();
             this.lblOgunAdi = new System.Windows.Forms.Label();
             this.dgvOgun = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.klcButton2 = new KLCToolbox.KLCControls.KLCButton();
             this.klcButton1 = new KLCToolbox.KLCControls.KLCButton();
             this.btnListe = new KLCToolbox.KLCControls.KLCButton();
             this.ofdPictureFile = new System.Windows.Forms.OpenFileDialog();
@@ -50,11 +53,14 @@ namespace CalorieCalculate.Forms
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txtPortion);
             this.panel1.Controls.Add(this.pbYemek);
             this.panel1.Controls.Add(this.pbBack);
             this.panel1.Controls.Add(this.lblOgunAdi);
             this.panel1.Controls.Add(this.dgvOgun);
             this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.klcButton2);
             this.panel1.Controls.Add(this.klcButton1);
             this.panel1.Controls.Add(this.btnListe);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -63,6 +69,38 @@ namespace CalorieCalculate.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(379, 657);
             this.panel1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Constantia", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(3, 437);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 33);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Porsiyon";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtPortion
+            // 
+            this.txtPortion.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPortion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPortion.ForeColor = System.Drawing.Color.DimGray;
+            this.txtPortion.KLCBorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtPortion.KLCBorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtPortion.KLCBorderRadius = 0;
+            this.txtPortion.KLCBorderSize = 2;
+            this.txtPortion.KLCMultiline = false;
+            this.txtPortion.KLCPasswordChar = false;
+            this.txtPortion.KLCPlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtPortion.KLCPlaceholderText = "";
+            this.txtPortion.KLCText = "";
+            this.txtPortion.KLCUnderlinedStyle = false;
+            this.txtPortion.Location = new System.Drawing.Point(129, 437);
+            this.txtPortion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPortion.Name = "txtPortion";
+            this.txtPortion.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtPortion.Size = new System.Drawing.Size(250, 35);
+            this.txtPortion.TabIndex = 26;
             // 
             // pbYemek
             // 
@@ -114,6 +152,7 @@ namespace CalorieCalculate.Forms
             this.dgvOgun.Size = new System.Drawing.Size(383, 313);
             this.dgvOgun.TabIndex = 3;
             this.dgvOgun.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOgun_CellClick);
+            this.dgvOgun.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvOgun_MouseClick);
             // 
             // pictureBox1
             // 
@@ -127,6 +166,27 @@ namespace CalorieCalculate.Forms
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
+            // klcButton2
+            // 
+            this.klcButton2.BackColor = System.Drawing.Color.OrangeRed;
+            this.klcButton2.FlatAppearance.BorderSize = 0;
+            this.klcButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.klcButton2.ForeColor = System.Drawing.Color.Black;
+            this.klcButton2.KLCBackgroundColor = System.Drawing.Color.OrangeRed;
+            this.klcButton2.KLCBorderColor = System.Drawing.Color.PaleVioletRed;
+            this.klcButton2.KLCBorderRadius = 24;
+            this.klcButton2.KLCBorderSize = 0;
+            this.klcButton2.KLCTextColor = System.Drawing.Color.Black;
+            this.klcButton2.Location = new System.Drawing.Point(194, 496);
+            this.klcButton2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.klcButton2.Name = "klcButton2";
+            this.klcButton2.Size = new System.Drawing.Size(173, 41);
+            this.klcButton2.TabIndex = 2;
+            this.klcButton2.Tag = "3";
+            this.klcButton2.Text = "Gıda Ekle";
+            this.klcButton2.UseVisualStyleBackColor = false;
+            this.klcButton2.Click += new System.EventHandler(this.Click);
+            // 
             // klcButton1
             // 
             this.klcButton1.BackColor = System.Drawing.Color.OrangeRed;
@@ -138,10 +198,10 @@ namespace CalorieCalculate.Forms
             this.klcButton1.KLCBorderRadius = 24;
             this.klcButton1.KLCBorderSize = 0;
             this.klcButton1.KLCTextColor = System.Drawing.Color.Black;
-            this.klcButton1.Location = new System.Drawing.Point(286, 64);
+            this.klcButton1.Location = new System.Drawing.Point(0, 496);
             this.klcButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.klcButton1.Name = "klcButton1";
-            this.klcButton1.Size = new System.Drawing.Size(94, 41);
+            this.klcButton1.Size = new System.Drawing.Size(157, 41);
             this.klcButton1.TabIndex = 2;
             this.klcButton1.Tag = "2";
             this.klcButton1.Text = "Gıda Sil";
@@ -210,6 +270,9 @@ namespace CalorieCalculate.Forms
         private System.Windows.Forms.PictureBox pbYemek;
 //=======
         private KLCToolbox.KLCControls.KLCButton btnEkle;
+        private System.Windows.Forms.Label label1;
+        private KLCToolbox.KLCControls.KLCTextBox txtPortion;
+        private KLCToolbox.KLCControls.KLCButton klcButton2;
         //>>>>>>> d4e158d73931f2355e2c65dc17812d64cb7cc1df
     }
 }
