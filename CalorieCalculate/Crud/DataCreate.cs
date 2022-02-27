@@ -1,4 +1,5 @@
 ﻿using CalorieCalculate.Extensions;
+using CalorieCalculate.Forms;
 using CalorieCalculate.Model.Data;
 using CalorieCalculate.Model.Entities;
 using KLCToolbox.KLCControls;
@@ -80,7 +81,7 @@ namespace CalorieCalculate.Crud
         /// <param name="meal"></param>
         /// <param name="portion"></param>
         /// <param name="image"></param>
-        public static void Create(Repast repast, Meal meal, double portion = 1, string image = null)
+        public static void Create(Repast repast, YemekDTO meal, double portion = 1, string image = null)
         {
             _repastMeal = new RepastMeal()
             {

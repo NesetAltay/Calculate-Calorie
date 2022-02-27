@@ -210,6 +210,6 @@ namespace CalorieCalculate.Forms
         private System.Windows.Forms.PictureBox pbYemek;
 //=======
         private KLCToolbox.KLCControls.KLCButton btnEkle;
-//>>>>>>> d4e158d73931f2355e2c65dc17812d64cb7cc1df
+        //>>>>>>> d4e158d73931f2355e2c65dc17812d64cb7cc1df
     }
 }

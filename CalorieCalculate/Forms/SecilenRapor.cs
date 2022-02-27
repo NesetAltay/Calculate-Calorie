@@ -62,12 +62,11 @@ namespace CalorieCalculate.Forms
             switch (btn.Tag.ToString())
             {
                 case "1":
-                   DataRead.DailyRaport(user, dgvSorgu);
+                        DataRead.DailyRaport(user, dgvSorgu); 
                     break;
                 case "2":
                     TextBox txt = new TextBox();
-                    dgvSorgu.Columns.Add("Total Calorie", "Toplam Kalori");
-                    DataRead.DailyTotalCalorie(user, dgvSorgu);
+                    dgvSorgu.Columns.Add("Total Calorie", DataRead.DailyTotalCalorie(user, dgvSorgu).ToString());
                     break;
                 case "3":
                      DataRead.GetChallenge(dgvSorgu);

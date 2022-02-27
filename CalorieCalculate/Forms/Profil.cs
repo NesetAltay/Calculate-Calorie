@@ -32,15 +32,15 @@ namespace CalorieCalculate.Forms
 
             InitializeComponent();
 
-            lblAd1.Text = _db.UserInformations.Where(x => x.Id == x.User.Id)
+            lblAd1.Text = _db.UserInformations.Where(x => x.Id == user.Id)
                 .Select(x => x.FirstName).FirstOrDefault().ToString();
-            lblSoyad1.Text = _db.UserInformations.Where(x => x.Id == x.User.Id)
+            lblSoyad1.Text = _db.UserInformations.Where(x => x.Id == user.Id)
                 .Select(x => x.LastName).FirstOrDefault().ToString();
-            lblDogumTarihi1.Text = _db.UserInformations.Where(x => x.Id == x.User.Id)
+            lblDogumTarihi1.Text = _db.UserInformations.Where(x => x.Id == user.Id)
                 .Select(x => x.BirthDate).FirstOrDefault().ToString();
-            lblBoy1.Text = _db.UserInformations.Where(x => x.Id == x.User.Id)
+            lblBoy1.Text = _db.UserInformations.Where(x => x.Id == user.Id)
                 .Select(x => x.Height).FirstOrDefault().ToString();
-            lblKilo1.Text = _db.UserInformations.Where(x => x.Id == x.User.Id)
+            lblKilo1.Text = _db.UserInformations.Where(x => x.Id == user.Id)
                 .Select(x => x.Weight).FirstOrDefault().ToString();
         }
     }

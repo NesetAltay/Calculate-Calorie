@@ -88,7 +88,7 @@ namespace CalorieCalculate.Extensions
         /// <returns></returns>
         public static bool AnyMeal(User user)
         {
-            bool anyMeal = _db.Repasts.Where(x => x.User.Id.Equals(user.Id)).Any(x => x.RepastMeals.Count() > 0);
+            bool anyMeal = _db.Repasts.Where(x => x.User.Id.Equals(user.Id)).Select(x => x.RepastMeals.Count() > 0).FirstOrDefault();
             return anyMeal;
         }
         /// <summary>
@@ -99,7 +99,7 @@ namespace CalorieCalculate.Extensions
         public static bool AnyDaily(User user)
         {
             bool anyDaily = _db.RepastMeals.Where(x => x.Repast.User.Id.Equals(user.Id) && x.Repast.Date.Day.Equals(DateTime.Today.Day) && x.Repast.Date.Month.Equals(DateTime.Today.Month))
-                .Any(x => x.EatenPortion * x.Meal.Calorie > 0);
+                .Select(x => x.EatenPortion*x.Meal.Calorie > 0).FirstOrDefault();
             return anyDaily;
         }
         #endregion

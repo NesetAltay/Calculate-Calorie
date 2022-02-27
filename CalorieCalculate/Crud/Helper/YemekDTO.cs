@@ -7,9 +7,8 @@
 
         }
         public int Id { get; set; }
-        public int Adet { get; set; }
+        public double Portion { get; set; }
         public string MealName { get; set; } 
         public double Calorie { get; set; } 
-        public string Description { get; set; } 
     }
 }

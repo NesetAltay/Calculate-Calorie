@@ -43,7 +43,7 @@ namespace CalorieCalculate.Forms
                     frm = new Raporlar(user);
                     break;
                 case "3":
-                    var result = DataRead.GetInformation(user.Id);
+                    var result = DataRead.GetInformation(user);
                     frm = new BedenKitle(BedenKitleHesapla(result.Height, result.Weight).ToString());
                     break;
             }
