@@ -155,9 +155,9 @@ namespace CalorieCalculate.Crud
         /// <param name="user"></param>
         /// <param name="dgv"></param>
         /// <param name="repast"></param>
-        public static BindingList<YenenYemekDTO> RepastRaport(User user, DataGridView dgv, string repast)
+        public static List<YenenYemekDTO> RepastRaport(User user, DataGridView dgv, string repast)
         {
-            List<YenenYemekDTO> dailyEat = default;
+            List<YenenYemekDTO> dailyEat = null;
             if (StringExtension.AnyDaily(user))
             {
                 dailyEat = _db.RepastMeals
@@ -167,12 +167,11 @@ namespace CalorieCalculate.Crud
                    Id = x.MealId,
                    RepastName = x.Repast.RepastName,
                    MealName = x.Meal.MealName,
-                   TotalCalorie = x.EatenPortion * x.Meal.Calorie
+                   TotalCalorie = x.EatenPortion * x.Meal.Calorie,
+                   EatenPortion = (float)x.EatenPortion
                }).ToList();
-                dgv.DataSource = new BindingList<YenenYemekDTO> (dailyEat);
-                
             }
-            return new BindingList<YenenYemekDTO>(dailyEat);
+            return dailyEat;
         }
     }
 }

@@ -21,7 +21,10 @@ namespace CalorieCalculate.Forms
         private Repast repast;
         private User user;
         BindingList<YemekDTO> yemekDTOList;
-        BindingList<YenenYemekDTO> lst;
+        List<YenenYemekDTO> _yenenYemekDTOList;
+        BindingList<YemekDTO> _secilenYemekler;
+        BindingList<YenenYemekDTO> _silinecekYemekler;
+        BindingList<YenenYemekDTO> _guncellemeList;
         public SecilenOgun()
         {
             InitializeComponent();
@@ -32,17 +35,21 @@ namespace CalorieCalculate.Forms
             this.repast = repast;
             this.user = user;
             lblOgunAdi.Text = repast.RepastName;
-            lst = DataRead.RepastRaport(user, dgvOgun, repast.RepastName);
+            _yenenYemekDTOList = DataRead.RepastRaport(user, dgvOgun, repast.RepastName);
             yemekDTOList = DataRead.YemekListele();
+            _secilenYemekler = new BindingList<YemekDTO>();
+            _silinecekYemekler = new BindingList<YenenYemekDTO>();
+            _guncellemeList = new BindingList<YenenYemekDTO>();
         }
-        // DataGridView den seçilen yemekler RepastMeal a eklenecek
-
-        List<YemekDTO> _yemek = new List<YemekDTO>();
-        private void Click(object sender, EventArgs e)
+        private void SecilenOgun_Load(object sender, EventArgs e)
         {
-            if (dgvOgun.Rows.Count != 0)
-                dgvOgun.Rows.Clear();
-
+            if (_yenenYemekDTOList != null)
+            {
+                dgvOgun.DataSource =new BindingList<YenenYemekDTO> (_yenenYemekDTOList);
+            }
+        }
+        private void btnListe_Click(object sender, EventArgs e)
+        {
             Button btn = (Button)sender;
             switch (btn.Tag.ToString())
             {
@@ -50,20 +57,100 @@ namespace CalorieCalculate.Forms
                     dgvOgun.DataSource = yemekDTOList;
                     break;
                 case "2":
-                    //Sil();
+                    YemekSil();
                     break;
                 case "3":
-                    Ekle();
+                    YemekEkle();
+                    break;
+                case "4":
+                    PorsiyonGuncelle();
                     break;
 
-                    // Resim ekleme yapısı oluşturulduğunda click event içerisine yazılacak kod, resim yolu aynı zamanda RepastMeals içerisinde Image kısmına aktarılarak 
-                    /*
-                    pbYemek.SizeMode = PictureBoxSizeMode.StretchImage;
-                    ofdPictureFile.ShowDialog();
-                    string fileName = ofdPictureFile.FileName;
-                    pbYemek.ImageLocation = fileName;
-                    */
             }
+        }
+
+        private void PorsiyonGuncelle()
+        {
+            for (int i = 0; i < _guncellemeList.Count; i++)
+            {
+                DataUpdate.Update(user, repast, _guncellemeList[i]); 
+            }
+        }
+
+        private void YemekSil()
+        {
+            for (int i = 0; i < _silinecekYemekler.Count; i++)
+            {
+                DataDelete.Delete(user, _silinecekYemekler[i], repast);
+            }
+        }
+
+        private void YemekEkle()
+        {
+            for (int i = 0; i < _secilenYemekler.Count; i++)
+            {
+                DataCreate.Create(repast, _secilenYemekler[i], _secilenYemekler[i].Portion);
+            }
+        }
+
+        private void dgvOgun_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            int id = int.Parse(dgvOgun[0, rowIndex].Value.ToString());
+
+            if (e.Button.Equals(MouseButtons.Left))
+            {
+                SecilenYemekListesi(id);
+                SilinecekYemekListesi(id);
+                Guncelleme(id);
+            }
+        }
+
+        private void Guncelleme(int id)
+        {
+            if (_yenenYemekDTOList!=null)
+            {
+                YenenYemekDTO guncellenecekYemek = _yenenYemekDTOList.Where(x => x.Id.Equals(id)).FirstOrDefault();
+
+                double porsiyon;
+                bool pors = double.TryParse(txtPortion.KLCText, out porsiyon);
+
+                if (String.IsNullOrEmpty(txtPortion.KLCText) || !pors)
+                { guncellenecekYemek.EatenPortion = 1; }
+
+                else { guncellenecekYemek.EatenPortion = (float)porsiyon; }
+
+                if (!_guncellemeList.Contains(guncellenecekYemek))
+                { _guncellemeList.Add(guncellenecekYemek); }
+
+                else { _guncellemeList.Remove(guncellenecekYemek); } 
+            }
+        }
+
+        private void SilinecekYemekListesi(int id)
+        {
+            if (_yenenYemekDTOList!=null)
+            {
+                var silinecelYemek = _yenenYemekDTOList.Where(x => x.Id.Equals(id)).FirstOrDefault();
+                if (!_silinecekYemekler.Contains(silinecelYemek))
+                { _silinecekYemekler.Add(silinecelYemek); }
+                else { _silinecekYemekler.Remove(silinecelYemek); } 
+            }
+        }
+
+        private void SecilenYemekListesi(int id)
+        {
+            var secilenYemek = yemekDTOList.Where(x => x.Id.Equals(id)).FirstOrDefault();
+            double porsiyon;
+            bool pors = double.TryParse(txtPortion.KLCText, out porsiyon);
+
+            if (String.IsNullOrEmpty(txtPortion.KLCText) || !pors)
+            { secilenYemek.Portion = 1; }
+            else { secilenYemek.Portion = porsiyon; }
+
+            if (!_secilenYemekler.Contains(secilenYemek))
+            { _secilenYemekler.Add(secilenYemek); }
+            else { _secilenYemekler.Remove(secilenYemek); }
         }
 
         private void pbBack_Click(object sender, EventArgs e)
@@ -71,61 +158,5 @@ namespace CalorieCalculate.Forms
             this.Close();
         }
 
-        private void dgvOgun_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int index = dgvOgun.SelectedRows[0].Index;
-            var yemek = dgvOgun.SelectedRows[0].DataBoundItem as YemekDTO;
-            var listItem = yemekDTOList.FirstOrDefault(x => x.Id == yemek.Id);
-            double portion;
-            bool p = double.TryParse(txtPortion.KLCText, out portion);
-
-            if (txtPortion.KLCText != "" && p)
-            {
-                listItem.Portion = portion;
-            }
-            else
-            {
-                listItem.Portion = 1;
-            }
-
-            dgvOgun.SelectedRows[0].Selected = false;
-            dgvOgun.Rows[index].Selected = true;
-
-            if (!_yemek.Contains(yemek))
-            {
-                _yemek.Add(listItem);
-            }
-            else
-            {
-                _yemek.Remove(listItem);
-            }
-        }
-        private void Ekle()
-        {
-            string image = null;
-            for (int i = 0; i < _yemek.Count; i++)
-            {
-                DataCreate.Create(repast, _yemek[i] , _yemek[i].Portion , image);
-            }
-        }
-
-        //private void Sil()
-        //{
-        //    for (int i = 0; i < _yemek.Count; i++)
-        //    {
-        //        DataDelete.Delete(_yemek[i], repast);
-        //    }
-        //}
-
-        private void dgvOgun_MouseClick(object sender, MouseEventArgs e)
-        {
-            int index = dgvOgun.SelectedRows[0].Index;
-            var yemek = dgvOgun.SelectedRows[0].DataBoundItem as YenenYemekDTO;
-            var yenenYemek = lst.FirstOrDefault(x => x.Id == yemek.Id);
-            if (e.Button == MouseButtons.Right)
-            {
-                DataDelete.Delete(yenenYemek, repast);
-            }
-        }
     }
 }

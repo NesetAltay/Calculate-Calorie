@@ -1,11 +1,9 @@
-﻿namespace CalorieCalculate.Forms
-{
-    public class YemekDTO
-    {
-        public YemekDTO()
-        {
+﻿
 
-        }
+namespace CalorieCalculate.Forms
+{
+    public class YemekDTO 
+    {
         public int Id { get; set; }
         public double Portion { get; set; }
         public string MealName { get; set; } 

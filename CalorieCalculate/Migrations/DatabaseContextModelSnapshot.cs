@@ -915,8 +915,7 @@ namespace CalorieCalculate.Migrations
                         .HasColumnType("int");
 
                     b.Property<double>("EatenPortion")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("float(18)");
+                        .HasColumnType("float");
 
                     b.Property<string>("MealImage")
                         .HasMaxLength(600)

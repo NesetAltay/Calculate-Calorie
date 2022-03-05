@@ -32,9 +32,11 @@ namespace CalorieCalculate.Crud
                 _db.SaveChanges();
             }
         }
-        public static void Delete(YenenYemekDTO meal, Repast repast)
+        public static void Delete(User user, YenenYemekDTO meal, Repast repast)
         {
-            var result = _db.RepastMeals.FirstOrDefault(x => x.Repast.RepastName.Equals(repast.RepastName) && x.Meal.Id.Equals(meal.Id) && x.Repast.Date.Day.Equals(DateTime.Today.Day) && x.Repast.Date.Month.Equals(DateTime.Today.Month));
+            RepastMeal result = _db.RepastMeals
+                .FirstOrDefault(x => x.Repast.UserId.Equals(user.Id) && x.Meal.MealName.Equals(meal.MealName) && x.Repast.RepastName.Equals(repast.RepastName) && x.Repast.Date.Day.Equals(DateTime.Today.Day) &&
+                x.Repast.Date.Month.Equals(DateTime.Today.Month));
             _db.RepastMeals.Remove(result);
             _db.SaveChanges();
         }

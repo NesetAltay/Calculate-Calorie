@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CalorieCalculate.Migrations
 {
-    public partial class first : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -62,7 +62,7 @@ namespace CalorieCalculate.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    RepastName = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    RepastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GetDate()"),
                     UserId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -105,7 +105,7 @@ namespace CalorieCalculate.Migrations
                 {
                     RepastId = table.Column<int>(type: "int", nullable: false),
                     MealId = table.Column<int>(type: "int", nullable: false),
-                    EatenPortion = table.Column<double>(type: "float(18)", precision: 18, scale: 2, nullable: false),
+                    EatenPortion = table.Column<double>(type: "float", nullable: false),
                     MealImage = table.Column<string>(type: "nvarchar(600)", maxLength: 600, nullable: true)
                 },
                 constraints: table =>

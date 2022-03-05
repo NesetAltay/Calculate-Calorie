@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CalorieCalculate.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20220224210334_first")]
-    partial class first
+    [Migration("20220305025715_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -895,8 +895,8 @@ namespace CalorieCalculate.Migrations
 
                     b.Property<string>("RepastName")
                         .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -917,8 +917,7 @@ namespace CalorieCalculate.Migrations
                         .HasColumnType("int");
 
                     b.Property<double>("EatenPortion")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("float(18)");
+                        .HasColumnType("float");
 
                     b.Property<string>("MealImage")
                         .HasMaxLength(600)

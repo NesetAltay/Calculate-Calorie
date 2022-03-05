@@ -15,8 +15,6 @@ namespace CalorieCalculate.Model.EntityTypeConfiguration
         {
             builder.ToTable("OgunYemek");
 
-            builder.Property(x => x.EatenPortion).HasPrecision(18, 2);
-
             builder.Property(x => x.MealImage).IsRequired(false); // null geçilebilir
             builder.Property(x => x.MealImage).HasMaxLength(600);
 
