@@ -165,13 +165,24 @@ namespace CalorieCalculate.Crud
                .Select(x => new YenenYemekDTO
                {
                    Id = x.MealId,
-                   RepastName = x.Repast.RepastName,
                    MealName = x.Meal.MealName,
+                   RepastName = x.Repast.RepastName,
                    TotalCalorie = x.EatenPortion * x.Meal.Calorie,
-                   EatenPortion = (float)x.EatenPortion
+                   EatenPortion = (float)x.EatenPortion,
+                   Image = x.MealImage
                }).ToList();
             }
             return dailyEat;
+        }
+        public static string MealDescription(int id)
+        {
+            string description = _db.Meals.Where(x => x.Id.Equals(id)).Select(x => x.MealDescription).FirstOrDefault();
+            return description;
+        }
+        public static string MealImage(int id)
+        {
+            string image = _db.RepastMeals.Where(x => x.MealId.Equals(id)).Select(x => x.MealImage).FirstOrDefault();
+            return image;
         }
     }
 }

@@ -25,6 +25,7 @@ namespace CalorieCalculate.Forms
         BindingList<YemekDTO> _secilenYemekler;
         BindingList<YenenYemekDTO> _silinecekYemekler;
         BindingList<YenenYemekDTO> _guncellemeList;
+        string _dosyaYolu = default;
         public SecilenOgun()
         {
             InitializeComponent();
@@ -45,7 +46,7 @@ namespace CalorieCalculate.Forms
         {
             if (_yenenYemekDTOList != null)
             {
-                dgvOgun.DataSource =new BindingList<YenenYemekDTO> (_yenenYemekDTOList);
+                dgvOgun.DataSource = new BindingList<YenenYemekDTO>(_yenenYemekDTOList);
             }
         }
         private void btnListe_Click(object sender, EventArgs e)
@@ -65,7 +66,6 @@ namespace CalorieCalculate.Forms
                 case "4":
                     PorsiyonGuncelle();
                     break;
-
             }
         }
 
@@ -73,7 +73,7 @@ namespace CalorieCalculate.Forms
         {
             for (int i = 0; i < _guncellemeList.Count; i++)
             {
-                DataUpdate.Update(user, repast, _guncellemeList[i]); 
+                DataUpdate.Update(user, repast, _guncellemeList[i]);
             }
         }
 
@@ -89,58 +89,53 @@ namespace CalorieCalculate.Forms
         {
             for (int i = 0; i < _secilenYemekler.Count; i++)
             {
-                DataCreate.Create(repast, _secilenYemekler[i], _secilenYemekler[i].Portion);
-            }
-        }
-
-        private void dgvOgun_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            int rowIndex = e.RowIndex;
-            int id = int.Parse(dgvOgun[0, rowIndex].Value.ToString());
-
-            if (e.Button.Equals(MouseButtons.Left))
-            {
-                SecilenYemekListesi(id);
-                SilinecekYemekListesi(id);
-                Guncelleme(id);
+                DataCreate.Create(repast, _secilenYemekler[i], _secilenYemekler[i].Portion, _dosyaYolu);
             }
         }
 
         private void Guncelleme(int id)
         {
-            if (_yenenYemekDTOList!=null)
+            if (_yenenYemekDTOList != null)
             {
                 YenenYemekDTO guncellenecekYemek = _yenenYemekDTOList.Where(x => x.Id.Equals(id)).FirstOrDefault();
 
-                double porsiyon;
-                bool pors = double.TryParse(txtPortion.KLCText, out porsiyon);
+                if (guncellenecekYemek != null)
+                {
+                    double porsiyon;
+                    bool pors = double.TryParse(txtPortion.KLCText, out porsiyon);
 
-                if (String.IsNullOrEmpty(txtPortion.KLCText) || !pors)
-                { guncellenecekYemek.EatenPortion = 1; }
+                    if (String.IsNullOrEmpty(txtPortion.KLCText) || !pors)
+                    { guncellenecekYemek.EatenPortion = 1; }
 
-                else { guncellenecekYemek.EatenPortion = (float)porsiyon; }
+                    else { guncellenecekYemek.EatenPortion = (float)porsiyon; }
 
-                if (!_guncellemeList.Contains(guncellenecekYemek))
-                { _guncellemeList.Add(guncellenecekYemek); }
+                    if (!_guncellemeList.Contains(guncellenecekYemek))
+                    { _guncellemeList.Add(guncellenecekYemek); }
 
-                else { _guncellemeList.Remove(guncellenecekYemek); } 
+                    else { _guncellemeList.Remove(guncellenecekYemek); }
+                }
             }
         }
 
         private void SilinecekYemekListesi(int id)
         {
-            if (_yenenYemekDTOList!=null)
+            if (_yenenYemekDTOList != null)
             {
                 var silinecelYemek = _yenenYemekDTOList.Where(x => x.Id.Equals(id)).FirstOrDefault();
-                if (!_silinecekYemekler.Contains(silinecelYemek))
-                { _silinecekYemekler.Add(silinecelYemek); }
-                else { _silinecekYemekler.Remove(silinecelYemek); } 
+
+                if (silinecelYemek != null)
+                {
+                    if (!_silinecekYemekler.Contains(silinecelYemek))
+                    { _silinecekYemekler.Add(silinecelYemek); }
+                    else { _silinecekYemekler.Remove(silinecelYemek); }
+                }
             }
         }
 
         private void SecilenYemekListesi(int id)
         {
             var secilenYemek = yemekDTOList.Where(x => x.Id.Equals(id)).FirstOrDefault();
+
             double porsiyon;
             bool pors = double.TryParse(txtPortion.KLCText, out porsiyon);
 
@@ -158,5 +153,28 @@ namespace CalorieCalculate.Forms
             this.Close();
         }
 
+        private void dgvOgun_CellMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            int id = int.Parse(dgvOgun[0, rowIndex].Value.ToString());
+            if (e.Button.Equals(MouseButtons.Left))
+            {
+                SecilenYemekListesi(id);
+                SilinecekYemekListesi(id);
+                Guncelleme(id);
+            }
+        }
+
+        private void dgvOgun_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+
+            if ((e.ColumnIndex == this.dgvOgun.Columns["Id"].Index) && e.Value != null)
+            {
+                int id = int.Parse(dgvOgun[0, rowIndex].Value.ToString());
+                DataGridViewCell cell = dgvOgun.Rows[rowIndex].Cells[e.ColumnIndex];
+                cell.ToolTipText = DataRead.MealDescription(id);
+            }
+        }
     }
 }

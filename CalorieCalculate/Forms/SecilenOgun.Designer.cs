@@ -38,10 +38,10 @@ namespace CalorieCalculate.Forms
             this.dgvOgun = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEkle = new KLCToolbox.KLCControls.KLCButton();
+            this.klcButton1 = new KLCToolbox.KLCControls.KLCButton();
             this.btnSil = new KLCToolbox.KLCControls.KLCButton();
             this.btnListe = new KLCToolbox.KLCControls.KLCButton();
             this.ofdPictureFile = new System.Windows.Forms.OpenFileDialog();
-            this.klcButton1 = new KLCToolbox.KLCControls.KLCButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOgun)).BeginInit();
@@ -140,7 +140,8 @@ namespace CalorieCalculate.Forms
             this.dgvOgun.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOgun.Size = new System.Drawing.Size(383, 313);
             this.dgvOgun.TabIndex = 3;
-            this.dgvOgun.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvOgun_CellMouseClick);
+            this.dgvOgun.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvOgun_CellFormatting);
+            this.dgvOgun.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvOgun_CellMouseClick_1);
             // 
             // pictureBox1
             // 
@@ -174,6 +175,27 @@ namespace CalorieCalculate.Forms
             this.btnEkle.Text = "Gıda Ekle";
             this.btnEkle.UseVisualStyleBackColor = false;
             this.btnEkle.Click += new System.EventHandler(this.btnListe_Click);
+            // 
+            // klcButton1
+            // 
+            this.klcButton1.BackColor = System.Drawing.Color.OrangeRed;
+            this.klcButton1.FlatAppearance.BorderSize = 0;
+            this.klcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.klcButton1.ForeColor = System.Drawing.Color.Black;
+            this.klcButton1.KLCBackgroundColor = System.Drawing.Color.OrangeRed;
+            this.klcButton1.KLCBorderColor = System.Drawing.Color.PaleVioletRed;
+            this.klcButton1.KLCBorderRadius = 24;
+            this.klcButton1.KLCBorderSize = 0;
+            this.klcButton1.KLCTextColor = System.Drawing.Color.Black;
+            this.klcButton1.Location = new System.Drawing.Point(3, 545);
+            this.klcButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.klcButton1.Name = "klcButton1";
+            this.klcButton1.Size = new System.Drawing.Size(157, 41);
+            this.klcButton1.TabIndex = 2;
+            this.klcButton1.Tag = "4";
+            this.klcButton1.Text = "Güncelle";
+            this.klcButton1.UseVisualStyleBackColor = false;
+            this.klcButton1.Click += new System.EventHandler(this.btnListe_Click);
             // 
             // btnSil
             // 
@@ -220,27 +242,6 @@ namespace CalorieCalculate.Forms
             // ofdPictureFile
             // 
             this.ofdPictureFile.FileName = "openFileDialog1";
-            // 
-            // klcButton1
-            // 
-            this.klcButton1.BackColor = System.Drawing.Color.OrangeRed;
-            this.klcButton1.FlatAppearance.BorderSize = 0;
-            this.klcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.klcButton1.ForeColor = System.Drawing.Color.Black;
-            this.klcButton1.KLCBackgroundColor = System.Drawing.Color.OrangeRed;
-            this.klcButton1.KLCBorderColor = System.Drawing.Color.PaleVioletRed;
-            this.klcButton1.KLCBorderRadius = 24;
-            this.klcButton1.KLCBorderSize = 0;
-            this.klcButton1.KLCTextColor = System.Drawing.Color.Black;
-            this.klcButton1.Location = new System.Drawing.Point(3, 545);
-            this.klcButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.klcButton1.Name = "klcButton1";
-            this.klcButton1.Size = new System.Drawing.Size(157, 41);
-            this.klcButton1.TabIndex = 2;
-            this.klcButton1.Tag = "4";
-            this.klcButton1.Text = "Güncelle";
-            this.klcButton1.UseVisualStyleBackColor = false;
-            this.klcButton1.Click += new System.EventHandler(this.btnListe_Click);
             // 
             // SecilenOgun
             // 
